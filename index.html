@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="inema-course" content="llms-orquestradas">
+  <title>LLMs Orquestradas | A nova forma de rodar vários modelos juntos</title>
+
+  <!-- ANTI-FOUC: bloqueante, ANTES do Tailwind. Aplica tema antes do 1º paint. -->
+  <script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='inema-dark'; }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = {
+        'inema-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'},
+        'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'}
+      };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark')?'dark':'light'));
+      html.setAttribute('data-font', p.font||'inter'); html.setAttribute('data-accent', p.accent||'emerald');
+      var s = html.style, scale = (+p.fontScale||100);
+      s.setProperty('--inema-font-scale',(scale/100).toString()); s.setProperty('font-size', scale+'%');
+      s.setProperty('--measure',(+p.lineWidth||68)+'ch'); s.setProperty('--lh-body',(+p.leading||1.7).toString());
+      var fam = p.font==='system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font==='leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald:[152,76,45], blue:[217,91,60], purple:[258,90,66], amber:[38,92,50], teal:[174,72,41], rose:[350,89,60] };
+      var a = ACC[p.accent]||ACC.emerald;
+      s.setProperty('--accent-h',a[0]+''); s.setProperty('--accent-s',a[1]+'%'); s.setProperty('--accent-l',a[2]+'%'); s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)');
+    } catch (err) { try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme='dark'; } catch(e){} }
+  })();
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { colors: {
+        primary: '#FACC15',
+        dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' }
+      } } }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Manifesto do curso (idêntico em TODA página) -->
+  <script type="application/json" data-inema-manifest>
+  {
+    "course": "llms-orquestradas",
+    "tracks": [
+      { "n": "1", "title": "Fundamentos", "modules": [
+        { "id": "1-1", "title": "O que é orquestrar várias LLMs", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "O espectro: da mão ao modelo-maestro", "topics": 6, "href": "curso/trilha1/modulo-1-2.html" }
+      ]},
+      { "n": "2", "title": "Fugu Ultra", "modules": [
+        { "id": "2-1", "title": "Como o Fugu funciona", "topics": 6, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "O veredito: 38 testes", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" }
+      ]},
+      { "n": "3", "title": "OpenRouter Fusion", "modules": [
+        { "id": "3-1", "title": "Mesmo prompt, N modelos, um juiz", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Fusion na prática", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" }
+      ]}
+    ]
+  }
+  </script>
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+
+    /* ===== Light mode — Base ===== */
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    /* ===== Light mode — acentos das 3 trilhas ===== */
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,0.12); }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5,150,105,0.25); }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .group:hover .group-hover\:text-emerald-400 { color: #059669; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,0.12); }
+    html:not(.dark) .bg-blue-500\/10 { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37,99,235,0.25); }
+    html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .hover\:text-blue-400:hover { color: #2563eb; }
+    html:not(.dark) .group:hover .group-hover\:text-blue-400 { color: #2563eb; }
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124,58,237,0.12); }
+    html:not(.dark) .bg-purple-500\/10 { background-color: rgba(124,58,237,0.08); }
+    html:not(.dark) .border-purple-500\/30 { border-color: rgba(124,58,237,0.25); }
+    html:not(.dark) .hover\:bg-purple-500\/10:hover { background-color: rgba(124,58,237,0.08); }
+    html:not(.dark) .hover\:text-purple-400:hover { color: #7c3aed; }
+    html:not(.dark) .group:hover .group-hover\:text-purple-400 { color: #7c3aed; }
+
+    /* ===== Light mode — gradientes + cores especiais ===== */
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161,98,7,0.08); }
+    html:not(.dark) .border-primary\/30 { border-color: rgba(161,98,7,0.25); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161,98,7,0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .text-red-400 { color: #b91c1c; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+
+    /* ===== Light mode — nav ===== */
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+
+    /* ===== Dark mode — bordas/divisores suaves ===== */
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+
+    /* ===== SVG diagramas — suavizar no light ===== */
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    /* pulso dos agentes do hero (contido, reduced-motion safe) */
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
+      .wf-a:nth-child(4){animation-delay:.75s} .wf-a:nth-child(5){animation-delay:1s}
+    }
+  </style>
+
+  <link rel="stylesheet" href="assets/learn.css">
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <a href="#conteudo" class="skip sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-2 focus:left-2 focus:px-4 focus:py-2 focus:bg-dark-800 focus:rounded-lg focus:text-primary">Pular para o conteúdo</a>
+
+  <!-- ===== NAV ===== -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+            <span class="text-2xl">🐟</span>
+            <span class="font-bold text-lg hidden sm:inline">LLMs Orquestradas</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="curso/trilha1/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors">
+            <span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span>
+          </a>
+          <a href="curso/trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors">
+            <span class="sm:hidden">T2</span><span class="hidden sm:inline">Fugu</span>
+          </a>
+          <a href="curso/trilha3/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors">
+            <span class="sm:hidden">T3</span><span class="hidden sm:inline">Fusion</span>
+          </a>
+
+          <button type="button" data-inema-journey-open class="ml-1 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors">
+            <span aria-hidden="true">◷</span><span class="hidden sm:inline">Jornada</span>
+            <span class="inema-journey-badge hidden" data-inema-journey-badge data-count="0" aria-hidden="true"></span>
+          </button>
+
+          <div class="relative">
+            <button type="button" data-inema-appearance-toggle="[data-inema-appearance]" aria-expanded="false" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors">
+              <span aria-hidden="true">◑</span><span class="hidden sm:inline">Aparência</span>
+            </button>
+            <div data-inema-appearance class="inema-appearance-pop">
+              <div class="inema-segment" role="group" aria-label="Tema">
+                <button data-inema-set-theme="inema-dark">Escuro</button>
+                <button data-inema-set-theme="claro">Claro</button>
+                <button data-inema-set-theme="sepia">Sépia</button>
+                <button data-inema-set-theme="foco">Foco</button>
+                <button data-inema-set-theme="contraste">Alto contraste</button>
+              </div>
+              <div class="inema-segment" role="group" aria-label="Fonte">
+                <button data-inema-set-font="inter">Inter</button>
+                <button data-inema-set-font="system">Sistema</button>
+                <button data-inema-set-font="leitura">Leitura</button>
+              </div>
+              <div class="inema-segment" role="group" aria-label="Tamanho do texto">
+                <button data-inema-set-fontscale="100">A</button>
+                <button data-inema-set-fontscale="112">A+</button>
+                <button data-inema-set-fontscale="125">A++</button>
+              </div>
+              <div class="inema-segment" role="group" aria-label="Largura da linha">
+                <button data-inema-set-linewidth="60">Estreito</button>
+                <button data-inema-set-linewidth="68">Médio</button>
+                <button data-inema-set-linewidth="75">Largo</button>
+              </div>
+              <div class="inema-segment" role="group" aria-label="Entrelinha">
+                <button data-inema-set-leading="1.45">Compacto</button>
+                <button data-inema-set-leading="1.7">Confortável</button>
+              </div>
+              <div class="inema-accent-grid" role="group" aria-label="Cor de acento">
+                <button data-inema-set-accent="emerald" title="Esmeralda"></button>
+                <button data-inema-set-accent="blue" title="Azul"></button>
+                <button data-inema-set-accent="purple" title="Roxo"></button>
+                <button data-inema-set-accent="amber" title="Âmbar"></button>
+                <button data-inema-set-accent="teal" title="Teal"></button>
+                <button data-inema-set-accent="rose" title="Rosa"></button>
+              </div>
+            </div>
+          </div>
+
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" aria-label="Alternar tema claro/escuro">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="conteudo">
+
+    <!-- ===== HERO ===== -->
+    <header class="bg-gradient-to-br from-emerald-900/20 via-dark-900 to-dark-900 border-b border-dark-600">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full mb-5 border border-primary/30">CURSO · ORQUESTRAÇÃO MULTI-LLM</span>
+        <h1 class="text-4xl sm:text-5xl font-bold mb-5 leading-tight">🐟 LLMs Orquestradas</h1>
+        <p class="text-lg sm:text-xl text-neutral-300 max-w-3xl mb-6 leading-relaxed">
+          A nova forma de rodar <strong class="text-emerald-400">vários modelos de IA juntos</strong>: um maestro decide quem faz cada parte e como combinar. Do conceito ao <strong class="text-blue-400">Fugu Ultra</strong> e ao <strong class="text-purple-400">OpenRouter Fusion</strong> — com os números reais de quando vale a pena.
+        </p>
+
+        <!-- Hero SVG: fan-out (orquestração A → N → 1) -->
+        <div class="rounded-2xl border border-primary/30 bg-dark-900/40 p-3 sm:p-4 mb-8 overflow-hidden">
+          <svg viewBox="0 0 1000 240" class="w-full h-auto" role="img" aria-label="Um maestro dispara vários modelos de IA em paralelo que convergem em um único resultado">
+            <defs>
+              <linearGradient id="hero-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FACC15"/><stop offset="1" stop-color="#f59e0b"/></linearGradient>
+              <filter id="hero-glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="1.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <pattern id="hero-grid" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="1.3" cy="1.3" r="1.3" fill="#f59e0b" opacity="0.10"/></pattern>
+              <marker id="hero-ah" markerWidth="9" markerHeight="9" refX="6.5" refY="4.5" orient="auto"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#FACC15"/></marker>
+              <marker id="hero-ahc" markerWidth="9" markerHeight="9" refX="6.5" refY="4.5" orient="auto"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"/></marker>
+            </defs>
+            <rect x="0" y="0" width="1000" height="240" fill="url(#hero-grid)"/>
+            <g fill="none" stroke="#FACC15" stroke-width="1.8" opacity="0.5">
+              <path d="M196,120 C300,120 320,38 452,38" marker-end="url(#hero-ah)"/>
+              <path d="M196,120 C300,120 320,79 452,79" marker-end="url(#hero-ah)"/>
+              <path d="M196,120 L452,120" marker-end="url(#hero-ah)"/>
+              <path d="M196,120 C300,120 320,161 452,161" marker-end="url(#hero-ah)"/>
+              <path d="M196,120 C300,120 320,202 452,202" marker-end="url(#hero-ah)"/>
+            </g>
+            <g fill="none" stroke="#38bdf8" stroke-width="1.8" opacity="0.5">
+              <path d="M588,38  C700,38 720,120 800,120" marker-end="url(#hero-ahc)"/>
+              <path d="M588,79  C700,79 720,120 800,120" marker-end="url(#hero-ahc)"/>
+              <path d="M588,120 L800,120" marker-end="url(#hero-ahc)"/>
+              <path d="M588,161 C700,161 720,120 800,120" marker-end="url(#hero-ahc)"/>
+              <path d="M588,202 C700,202 720,120 800,120" marker-end="url(#hero-ahc)"/>
+            </g>
+            <g filter="url(#hero-glow)"><rect x="40" y="88" width="156" height="64" rx="14" fill="#1f1604" stroke="url(#hero-grad)" stroke-width="2.5"/></g>
+            <text x="118" y="114" text-anchor="middle" fill="#FACC15" font-family="Inter,sans-serif" font-weight="700" font-size="19">Maestro</text>
+            <text x="118" y="134" text-anchor="middle" fill="#fcd9a0" font-family="Inter,sans-serif" font-size="12">decompõe + roteia</text>
+            <g font-family="Inter,sans-serif" font-size="13" font-weight="600">
+              <g class="wf-a"><rect x="452" y="22"  width="136" height="32" rx="9" fill="#0e1b26" stroke="#38bdf8" stroke-width="2"/><text x="520" y="43"  text-anchor="middle" fill="#bfe6ff">modelo</text></g>
+              <g class="wf-a"><rect x="452" y="63"  width="136" height="32" rx="9" fill="#0e1b26" stroke="#38bdf8" stroke-width="2"/><text x="520" y="84"  text-anchor="middle" fill="#bfe6ff">modelo</text></g>
+              <g class="wf-a"><rect x="452" y="104" width="136" height="32" rx="9" fill="#0e1b26" stroke="#38bdf8" stroke-width="2"/><text x="520" y="125" text-anchor="middle" fill="#bfe6ff">modelo</text></g>
+              <g class="wf-a"><rect x="452" y="145" width="136" height="32" rx="9" fill="#0e1b26" stroke="#38bdf8" stroke-width="2"/><text x="520" y="166" text-anchor="middle" fill="#bfe6ff">modelo</text></g>
+              <g class="wf-a"><rect x="452" y="186" width="136" height="32" rx="9" fill="#0e1b26" stroke="#38bdf8" stroke-width="2"/><text x="520" y="207" text-anchor="middle" fill="#bfe6ff">modelo …</text></g>
+            </g>
+            <g filter="url(#hero-glow)"><rect x="800" y="88" width="156" height="64" rx="14" fill="#1f1604" stroke="url(#hero-grad)" stroke-width="2.5"/></g>
+            <text x="878" y="116" text-anchor="middle" fill="#FACC15" font-family="Inter,sans-serif" font-weight="700" font-size="15">Resultado</text>
+            <text x="878" y="135" text-anchor="middle" fill="#fcd9a0" font-family="Inter,sans-serif" font-size="11">fundido</text>
+          </svg>
+          <p class="text-xs text-neutral-400 mt-2 text-center">O padrão da orquestração: um <strong class="text-primary">maestro</strong> reparte o trabalho entre vários <strong class="text-sky-400">modelos</strong> e funde as respostas em um resultado. É o que o Fugu faz dentro de uma só API.</p>
+        </div>
+
+        <!-- Progresso do curso + CTA -->
+        <div class="grid sm:grid-cols-[1fr_auto] gap-4 items-center max-w-3xl">
+          <div data-inema-meter="curso" class="inema-meter bg-dark-800/60 rounded-xl border border-dark-600 p-4" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso do curso">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-sm text-neutral-400">Seu progresso no curso</span>
+              <span class="text-sm font-semibold text-emerald-400" data-inema-meter-pct>0%</span>
+            </div>
+            <div class="inema-bar"><div class="inema-bar__fill" data-inema-meter-fill></div></div>
+            <span class="text-xs text-neutral-500 mt-2 inline-block" data-inema-meter-frac>0 de 0 tópicos</span>
+          </div>
+          <a href="curso/trilha1/index.html" class="text-center px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg font-semibold transition-colors">Começar pela Trilha 1 →</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+
+      <!-- ===== O QUE É ===== -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6">O que você vai aprender</h2>
+        <div class="inema-prose">
+          <p class="text-neutral-300 mb-4 leading-relaxed">
+            Por muito tempo a escolha era simples: você pegava <strong>um</strong> modelo de IA e torcia para ele dar conta. A "nova forma" inverte isso — em vez de apostar em um só, você coloca <strong class="text-emerald-400">vários modelos para trabalharem juntos</strong>, coordenados por um maestro que decide quem faz o quê e como juntar as respostas. Isso se chama <strong class="text-emerald-400">orquestração de múltiplas LLMs</strong>.
+          </p>
+          <p class="text-neutral-300 mb-4 leading-relaxed">
+            Este curso te leva do <strong>conceito</strong> até dois produtos reais que entregam essa ideia pronta — o <strong class="text-blue-400">Sakana Fugu Ultra</strong> (que esconde um time de modelos atrás de uma única API) e a <strong class="text-purple-400">OpenRouter Fusion</strong> (que pergunta a vários modelos ao mesmo tempo e funde) — e termina na pergunta que mais importa: <strong>quando isso vale o custo, e quando um modelo forte sozinho já basta.</strong>
+          </p>
+        </div>
+        <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mt-6">
+          <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> A ideia em uma frase</h3>
+          <p class="text-neutral-300">Orquestrar é responder a duas perguntas: <strong>quem faz cada parte</strong> do trabalho, e <strong>como as respostas se combinam</strong> num resultado só. Tudo neste curso é variação dessas duas perguntas.</p>
+        </div>
+      </section>
+
+      <!-- ===== COMO FUNCIONA ===== -->
+      <section class="mb-16">
+        <h2 class="text-2xl font-bold mb-6">Como o curso está organizado</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+            <div class="w-10 h-10 rounded-full bg-emerald-500/20 text-emerald-400 font-bold flex items-center justify-center mb-4">1</div>
+            <h3 class="font-semibold mb-2 text-emerald-400">Fundamentos</h3>
+            <p class="text-sm text-neutral-400">O que é orquestrar, as 2 perguntas, e o espectro que vai de "você fia tudo na mão" até "um modelo treinado faz a orquestração por você".</p>
+          </div>
+          <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+            <div class="w-10 h-10 rounded-full bg-blue-500/20 text-blue-400 font-bold flex items-center justify-center mb-4">2</div>
+            <h3 class="font-semibold mb-2 text-blue-400">Fugu Ultra</h3>
+            <p class="text-sm text-neutral-400">O maestro que decompõe e delega. Como funciona por dentro e o veredito de 38 testes: 36 empates, 4.5× mais lento, 5× mais caro que um modelo só.</p>
+          </div>
+          <div class="bg-dark-800 rounded-xl border border-dark-600 p-6">
+            <div class="w-10 h-10 rounded-full bg-purple-500/20 text-purple-400 font-bold flex items-center justify-center mb-4">3</div>
+            <h3 class="font-semibold mb-2 text-purple-400">OpenRouter Fusion</h3>
+            <p class="text-sm text-neutral-400">O outro padrão: mesmo prompt para N modelos em paralelo, um juiz funde. Quando paralelo-e-fundir ganha, e a skill de otimizar custo × qualidade.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== TRILHAS ===== -->
+      <section class="mb-8">
+        <h2 class="text-2xl font-bold mb-6">As trilhas</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <a href="curso/trilha1/index.html" class="group bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 hover:border-emerald-500/50 transition-all">
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full">TRILHA 1</span>
+              <span class="text-xs text-neutral-500">2 módulos · 12 tópicos</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-2 group-hover:text-emerald-400 transition-colors">🧩 Fundamentos</h3>
+            <p class="text-sm text-neutral-400 mb-4">A nova forma e o vocabulário: o que é orquestrar, as 2 perguntas e o espectro da mão ao maestro.</p>
+            <span class="text-emerald-400 text-sm font-semibold">Abrir trilha →</span>
+          </a>
+          <a href="curso/trilha2/index.html" class="group bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 hover:border-blue-500/50 transition-all">
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full">TRILHA 2</span>
+              <span class="text-xs text-neutral-500">2 módulos · 12 tópicos</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-2 group-hover:text-blue-400 transition-colors">🐡 Fugu Ultra</h3>
+            <p class="text-sm text-neutral-400 mb-4">O maestro que contrata um time. Como funciona, o benchmark de 38 testes e quando vale a pena.</p>
+            <span class="text-blue-400 text-sm font-semibold">Abrir trilha →</span>
+          </a>
+          <a href="curso/trilha3/index.html" class="group bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 hover:border-purple-500/50 transition-all">
+            <div class="flex items-center justify-between mb-3">
+              <span class="px-2.5 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full">TRILHA 3</span>
+              <span class="text-xs text-neutral-500">2 módulos · 12 tópicos</span>
+            </div>
+            <h3 class="text-2xl font-bold mb-2 group-hover:text-purple-400 transition-colors">⚖️ OpenRouter Fusion</h3>
+            <p class="text-sm text-neutral-400 mb-4">O ensemble paralelo: mesmo prompt, N modelos, um juiz. E a skill de otimizar custo × qualidade.</p>
+            <span class="text-purple-400 text-sm font-semibold">Abrir trilha →</span>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="border-t border-dark-600 py-8 mt-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p>LLMs Orquestradas — curso INEMA · 2026 · <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
+      <p class="mt-1 text-xs">Conteúdo educacional. Dados de benchmark do field test "Fugu Ultra vs Opus 4.8" (2026-06-22).</p>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    // v1 núcleo: toggle de tópicos
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800') || document;
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => { if (exp !== explanation) exp.classList.remove('active'); });
+      explanation.classList.toggle('active');
+      const expanded = explanation.classList.contains('active');
+      button.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    }
+
+    // v1 núcleo: theme toggle (absorvido pelo learn.js, mas mantido)
+    (function () {
+      const themeToggle = document.getElementById('theme-toggle');
+      const darkIcon = document.getElementById('theme-toggle-dark-icon');
+      const lightIcon = document.getElementById('theme-toggle-light-icon');
+      const html = document.documentElement;
+      function sync() {
+        if (html.classList.contains('dark')) { lightIcon.classList.remove('hidden'); darkIcon.classList.add('hidden'); }
+        else { darkIcon.classList.remove('hidden'); lightIcon.classList.add('hidden'); }
+      }
+      sync();
+      themeToggle.addEventListener('click', () => {
+        const nowDark = !html.classList.contains('dark');
+        html.classList.toggle('dark', nowDark);
+        if (window.INEMA && INEMA.setPref) { INEMA.setPref('theme', nowDark ? 'inema-dark' : 'claro'); }
+        else { localStorage.setItem('theme', nowDark ? 'dark' : 'light'); }
+        sync();
+      });
+    })();
+
+    // v1 núcleo: modal (reusado pela jornada)
+    function openModal(modalId) { const m = document.getElementById(modalId); if (m) { m.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
+    function closeModal() { document.querySelectorAll('.modal').forEach(m => m.classList.add('hidden')); document.body.style.overflow = 'auto'; }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+
+  <script src="assets/learn.js"></script>
+  <script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init(); }
+  </script>
+</body>
+</html>

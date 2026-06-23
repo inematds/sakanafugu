@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="inema-course" content="llms-orquestradas">
+  <title>Módulo 2.1 · Como o Fugu funciona | LLMs Orquestradas</title>
+
+  <script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='inema-dark'; }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = { 'inema-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark')?'dark':'light'));
+      html.setAttribute('data-font', p.font||'inter'); html.setAttribute('data-accent', p.accent||'emerald');
+      var s = html.style, scale = (+p.fontScale||100);
+      s.setProperty('--inema-font-scale',(scale/100).toString()); s.setProperty('font-size', scale+'%');
+      s.setProperty('--measure',(+p.lineWidth||68)+'ch'); s.setProperty('--lh-body',(+p.leading||1.7).toString());
+      var fam = p.font==='system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font==='leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald:[152,76,45], blue:[217,91,60], purple:[258,90,66], amber:[38,92,50], teal:[174,72,41], rose:[350,89,60] };
+      var a = ACC[p.accent]||ACC.emerald;
+      s.setProperty('--accent-h',a[0]+''); s.setProperty('--accent-s',a[1]+'%'); s.setProperty('--accent-l',a[2]+'%'); s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)');
+    } catch (err) { try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme='dark'; } catch(e){} }
+  })();
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script type="application/json" data-inema-manifest>
+  {
+    "course": "llms-orquestradas",
+    "tracks": [
+      { "n": "1", "title": "Fundamentos", "modules": [
+        { "id": "1-1", "title": "O que é orquestrar várias LLMs", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "O espectro: da mão ao modelo-maestro", "topics": 6, "href": "curso/trilha1/modulo-1-2.html" }
+      ]},
+      { "n": "2", "title": "Fugu Ultra", "modules": [
+        { "id": "2-1", "title": "Como o Fugu funciona", "topics": 6, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "O veredito: 38 testes", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" }
+      ]},
+      { "n": "3", "title": "OpenRouter Fusion", "modules": [
+        { "id": "3-1", "title": "Mesmo prompt, N modelos, um juiz", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Fusion na prática", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" }
+      ]}
+    ]
+  }
+  </script>
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,0.12); }
+    html:not(.dark) .bg-blue-500\/10 { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37,99,235,0.25); }
+    html:not(.dark) .hover\:bg-blue-500\/30:hover { background-color: rgba(37,99,235,0.18); }
+    html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .hover\:text-blue-400:hover { color: #2563eb; }
+    html:not(.dark) .group:hover .group-hover\:text-blue-400 { color: #2563eb; }
+    html:not(.dark) .bg-blue-900\/20 { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .bg-blue-900\/30 { background-color: rgba(37,99,235,0.10); }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .bg-purple-500\/10 { background-color: rgba(124,58,237,0.08); }
+    html:not(.dark) .hover\:bg-purple-500\/10:hover { background-color: rgba(124,58,237,0.08); }
+    html:not(.dark) .hover\:text-purple-400:hover { color: #7c3aed; }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161,98,7,0.08); }
+    html:not(.dark) .border-primary\/30 { border-color: rgba(161,98,7,0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .text-red-400 { color: #b91c1c; }
+    html:not(.dark) .bg-red-900\/20 { background-color: rgba(185,28,28,0.07); }
+    html:not(.dark) .border-red-500\/30 { border-color: rgba(185,28,28,0.25); }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
+      .wf-a:nth-child(4){animation-delay:.75s} .wf-a:nth-child(5){animation-delay:1s}
+    }
+  </style>
+
+  <link rel="stylesheet" href="../../assets/learn.css">
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <a href="#conteudo" class="skip sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-2 focus:left-2 focus:px-4 focus:py-2 focus:bg-dark-800 focus:rounded-lg focus:text-primary">Pular para o conteúdo</a>
+
+  <!-- ===== NAV (trilha 2 ativa) ===== -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+            <span class="text-2xl">🐟</span><span class="font-bold text-lg hidden sm:inline">LLMs Orquestradas</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+          <a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Fugu</span></a>
+          <a href="../trilha3/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Fusion</span></a>
+          <button type="button" data-inema-journey-open class="ml-1 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors">
+            <span aria-hidden="true">◷</span><span class="hidden sm:inline">Jornada</span><span class="inema-journey-badge hidden" data-inema-journey-badge data-count="0" aria-hidden="true"></span>
+          </button>
+          <div class="relative">
+            <button type="button" data-inema-appearance-toggle="[data-inema-appearance]" aria-expanded="false" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors">
+              <span aria-hidden="true">◑</span><span class="hidden sm:inline">Aparência</span>
+            </button>
+            <div data-inema-appearance class="inema-appearance-pop">
+              <div class="inema-segment" role="group" aria-label="Tema">
+                <button data-inema-set-theme="inema-dark">Escuro</button><button data-inema-set-theme="claro">Claro</button><button data-inema-set-theme="sepia">Sépia</button><button data-inema-set-theme="foco">Foco</button><button data-inema-set-theme="contraste">Alto contraste</button>
+              </div>
+              <div class="inema-segment" role="group" aria-label="Fonte">
+                <button data-inema-set-font="inter">Inter</button><button data-inema-set-font="system">Sistema</button><button data-inema-set-font="leitura">Leitura</button>
+              </div>
+              <div class="inema-segment" role="group" aria-label="Tamanho do texto">
+                <button data-inema-set-fontscale="100">A</button><button data-inema-set-fontscale="112">A+</button><button data-inema-set-fontscale="125">A++</button>
+              </div>
+              <div class="inema-segment" role="group" aria-label="Largura da linha">
+                <button data-inema-set-linewidth="60">Estreito</button><button data-inema-set-linewidth="68">Médio</button><button data-inema-set-linewidth="75">Largo</button>
+              </div>
+              <div class="inema-segment" role="group" aria-label="Entrelinha">
+                <button data-inema-set-leading="1.45">Compacto</button><button data-inema-set-leading="1.7">Confortável</button>
+              </div>
+              <div class="inema-accent-grid" role="group" aria-label="Cor de acento">
+                <button data-inema-set-accent="emerald" title="Esmeralda"></button><button data-inema-set-accent="blue" title="Azul"></button><button data-inema-set-accent="purple" title="Roxo"></button><button data-inema-set-accent="amber" title="Âmbar"></button><button data-inema-set-accent="teal" title="Teal"></button><button data-inema-set-accent="rose" title="Rosa"></button>
+              </div>
+            </div>
+          </div>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" aria-label="Alternar tema claro/escuro">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4" aria-label="Trilha de navegação">
+    <div class="flex items-center space-x-2 text-sm text-neutral-400">
+      <a href="../../index.html" class="hover:text-blue-400">Início</a><span>/</span>
+      <a href="index.html" class="hover:text-blue-400">Trilha 2</a><span>/</span>
+      <span class="text-blue-400">Módulo 2.1</span>
+    </div>
+  </nav>
+
+  <!-- Header do módulo -->
+  <header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÓDULO 2.1</span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">🐡 Como o Fugu funciona</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">A mecânica do maestro: o Fugu não é mais inteligente, é um gerente. Um conductor pequeno decide, um pool secreto de modelos frontier executa, e o ciclo decompor→delegar→fundir acontece todo atrás de 1 endpoint. Aqui você vê a anatomia, o preço, e o spoiler do veredito.</p>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-3xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">~30</div><div class="text-xs text-neutral-400">Minutos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Intermed.</div><div class="text-xs text-neutral-400">Nível</div></div>
+        <div data-inema-meter="modulo:2-1" class="inema-meter bg-dark-800/50 rounded-lg p-3 border border-dark-600" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso do módulo 2.1">
+          <div class="text-xl font-bold text-blue-400" data-inema-meter-pct>0%</div><div class="text-xs text-neutral-400" data-inema-meter-frac>0 de 6</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo" data-inema-track="2" data-inema-module="2-1" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="lg:grid lg:grid-cols-[210px_1fr] lg:gap-10">
+
+      <!-- TOC sticky + scrollspy -->
+      <nav data-inema-toc aria-label="Índice da página" class="hidden lg:block sticky top-24 self-start">
+        <p class="text-sm text-neutral-400 mb-3">Seção <span data-inema-section-counter>1 de 6</span></p>
+        <ol class="space-y-1.5 text-sm">
+          <li><a href="#topico-1" class="inema-toc-link text-neutral-400 hover:text-blue-400">1. Não é mais inteligente, é um gerente</a></li>
+          <li><a href="#topico-2" class="inema-toc-link text-neutral-400 hover:text-blue-400">2. O conductor pequeno</a></li>
+          <li><a href="#topico-3" class="inema-toc-link text-neutral-400 hover:text-blue-400">3. O pool secreto</a></li>
+          <li><a href="#topico-4" class="inema-toc-link text-neutral-400 hover:text-blue-400">4. Decompor → delegar → fundir</a></li>
+          <li><a href="#topico-5" class="inema-toc-link text-neutral-400 hover:text-blue-400">5. Fugu vs Fugu Ultra + preço</a></li>
+          <li><a href="#topico-6" class="inema-toc-link text-neutral-400 hover:text-blue-400">6. O que o time nunca viu</a></li>
+        </ol>
+      </nav>
+
+      <div>
+
+        <!-- ===== TÓPICO 1 ===== -->
+        <section id="topico-1" data-inema-topic="modulo-2-1#topico-1" class="mb-16 scroll-mt-24">
+          <div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
+            <div class="flex items-center space-x-4">
+              <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">1</span>
+              <h2 class="text-2xl font-bold">👔 Não é mais inteligente, é um gerente</h2>
+            </div>
+            <button type="button" data-inema-doubt-toggle aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
+          </div>
+
+          <div class="inema-prose">
+            <p data-inema-block="m2-1-t1-p1" class="text-neutral-300 mb-6 leading-relaxed">A confusão que vale desfazer logo: <strong class="text-blue-400">o Fugu não é um LLM novo com um cérebro melhor</strong>. É um orquestrador — um sistema que coordena <em>outros</em> modelos — empacotado para parecer um modelo só. A "inteligência" dele está em gerenciar, não em saber mais. O nome ajuda: Sakana é "peixe" em japonês, e o logo mostra vários peixinhos formando um peixe maior. O peixe grande é o sistema; os pequenos são o time.</p>
+            <p data-inema-block="m2-1-t1-p2" class="text-neutral-300 mb-6 leading-relaxed">Por que isso muda tudo? Porque define a pergunta certa. Se você espera "mais QI", vai se frustrar — em raciocínio bruto, o Fugu não supera um modelo frontier sozinho. Se você espera "melhor coordenação", passa a perguntar as coisas úteis: <em>quanto custa o time</em> e <em>quando ele entrega algo que o solo não entrega</em>. O resto da trilha responde exatamente isso.</p>
+          </div>
+
+          <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+            <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">🆕</span> Novo aqui? Três termos</h3>
+            <ul class="space-y-2 text-neutral-300 text-sm">
+              <li><strong>Orquestrador:</strong> um sistema que reparte uma tarefa entre vários modelos e junta as respostas — não um modelo único.</li>
+              <li><strong>Conductor:</strong> o componente "gerente" que decide quem faz cada parte (mais detalhe no tópico 2).</li>
+              <li><strong>Modelo frontier:</strong> um dos modelos de ponta do mercado (Opus 4.8, GPT-5.5, Gemini…) — os "especialistas" que o time chama.</li>
+            </ul>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+              <h4 class="font-bold text-blue-400 mb-4">✓ O que o Fugu É</h4>
+              <ul class="space-y-3 text-neutral-300 text-sm">
+                <li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Um orquestrador entregue como 1 API</span></li>
+                <li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Um gerente que reparte e funde</span></li>
+                <li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Um time de modelos frontier escondido</span></li>
+              </ul>
+            </div>
+            <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+              <h4 class="font-bold text-red-400 mb-4">✗ O que ele NÃO é</h4>
+              <ul class="space-y-3 text-neutral-300 text-sm">
+                <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Um modelo novo "mais inteligente"</span></li>
+                <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Um cérebro único com mais QI</span></li>
+                <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Algo conceitualmente inédito</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Orquestrador</div><div class="text-xs text-neutral-400">coordena outros</div></div>
+            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Gerente vs gênio</div><div class="text-xs text-neutral-400">gestão ≠ QI</div></div>
+            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">1 API</div><div class="text-xs text-neutral-400">parece 1 modelo</div></div>
+            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Peixe maior</div><div class="text-xs text-neutral-400">muitos viram um</div></div>
+          </div>
+
+          <div class="flex justify-start mt-6">
+            <button type="button" data-inema-read-toggle aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors">
+              <span class="inema-ico-todo" aria-hidden="true">○</span><span class="inema-ico-done" aria-hidden="true">●</span>
+              <span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- ===== TÓPICO 2 ===== -->
+        <section id="topico-2" data-inema-topic="modulo-2-1#topico-2" class="mb-16 scroll-mt-24">
+          <div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
+            <div class="flex items-center space-x-4">
+              <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">2</span>
+              <h2 class="text-2xl font-bold">🎚️ O conductor pequeno</h2>
+            </div>
+            <button type="button" data-inema-doubt-toggle aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
+          </div>
+
+          <div class="inema-prose">
+            <p data-inema-block="m2-1-t2-p1" class="text-neutral-300 mb-6 leading-relaxed">No coração do Fugu há um modelo "gerente" pequeno: o <strong class="text-blue-400">conductor</strong> (ou roteador). Ele lê o seu pedido e toma uma decisão antes de qualquer trabalho pesado: <em>resolvo isso sozinho, ou monto um time?</em> O conductor não é o especialista que escreve o código ou o ensaio — ele é quem decide para quem mandar. É a primeira das duas perguntas da Trilha 1 ("quem faz cada parte") virada peso de modelo.</p>
+          </div>
+
+          <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
+            <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🔀</span> A decisão do conductor</h3>
+            <ul class="space-y-3 text-neutral-300">
+              <li class="flex items-start space-x-2"><span class="text-blue-400 mt-1 font-bold">A.</span><span><strong>Resolve sozinho</strong> — pedidos simples não justificam montar time; o conductor responde direto e rápido.</span></li>
+              <li class="flex items-start space-x-2"><span class="text-blue-400 mt-1 font-bold">B.</span><span><strong>Chama o time</strong> — pedidos que ele julga difíceis viram decomposição + delegação ao pool. Aqui nascem os minutos e os custos.</span></li>
+            </ul>
+          </div>
+
+          <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+            <h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">💡</span> Por que "pequeno" importa</h3>
+            <p class="text-neutral-300 text-sm">Um conductor pequeno é barato de rodar — a inteligência cara fica nos especialistas que ele chama. O risco: se ele decide "chamar o time" para algo que um modelo forte resolveria sozinho, você paga o time inteiro por nada. Esse é o nó que o veredito (2.2) aperta.</p>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Conductor</div><div class="text-xs text-neutral-400">o gerente</div></div>
+            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Alone vs team</div><div class="text-xs text-neutral-400">a decisão</div></div>
+            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Roteamento</div><div class="text-xs text-neutral-400">pra quem mando</div></div>
+            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Por tarefa</div><div class="text-xs text-neutral-400">decide caso a caso</div></div>
+          </div>
+
+          <div class="flex justify-start mt-6">
+            <button type="button" data-inema-read-toggle aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors">
+              <span class="inema-ico-todo" aria-hidden="true">○</span><span class="inema-ico-done" aria-hidden="true">●</span><span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- ===== TÓPICO 3 ===== -->
+        <section id="topico-3" data-inema-topic="modulo-2-1#topico-3" class="mb-16 scroll-mt-24">
+          <div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
+            <div class="flex items-center space-x-4">
+              <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">3</span>
+              <h2 class="text-2xl font-bold">🐟 O pool secreto de modelos frontier</h2>
+            </div>
+            <button type="button" data-inema-doubt-toggle aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
+          </div>
+
+          <div class="inema-prose">
+            <p data-inema-block="m2-1-t3-p1" class="text-neutral-300 mb-6 leading-relaxed">Atrás do endpoint vive um <strong class="text-blue-400">pool de modelos frontier</strong> — os especialistas. Pelo que se observa, inclui Opus 4.8, GPT-5.5, Gemini e possivelmente outros. A Sakana mantém esse roster proprietário e fechado: você não escolhe quem entra, nem vê quem foi chamado em cada pedido. É um <em>time escondido</em>.</p>
+            <p data-inema-block="m2-1-t3-p2" class="text-neutral-300 mb-6 leading-relaxed">Cuidado com uma distinção fina: "Opus está no pool" é uma <strong>inferência razoável</strong>, não um fato publicado pela Sakana. Saber separar o que é confirmado do que é dedução te protege de tratar marketing como verdade — uma habilidade que vale para qualquer produto de IA.</p>
+          </div>
+
+          <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+            <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🔒</span> O que o "pool" esconde de você</h3>
+            <ul class="space-y-2 text-neutral-300 text-sm">
+              <li><strong>Quem entrou:</strong> você não vê quais modelos foram chamados nem quantos.</li>
+              <li><strong>Por que entrou:</strong> a lógica de seleção é interna ao conductor.</li>
+              <li><strong>Quanto cada um custou:</strong> tudo chega agregado como tokens do Fugu.</li>
+            </ul>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Pool proprietário</div><div class="text-xs text-neutral-400">roster da Sakana</div></div>
+            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Cross-provider</div><div class="text-xs text-neutral-400">vários vendors</div></div>
+            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Roster fechado</div><div class="text-xs text-neutral-400">você não escolhe</div></div>
+            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Inferência ≠ fato</div><div class="text-xs text-neutral-400">"Opus no pool"</div></div>
+          </div>
+
+          <div class="flex justify-start mt-6">
+            <button type="button" data-inema-read-toggle aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors">
+              <span class="inema-ico-todo" aria-hidden="true">○</span><span class="inema-ico-done" aria-hidden="true">●</span><span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- ===== TÓPICO 4 ===== -->
+        <section id="topico-4" data-inema-topic="modulo-2-1#topico-4" class="mb-16 scroll-mt-24">
+          <div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
+            <div class="flex items-center space-x-4">
+              <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">4</span>
+              <h2 class="text-2xl font-bold">🔀 Decompor → delegar → fundir (1 endpoint)</h2>
+            </div>
+            <button type="button" data-inema-doubt-toggle aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
+          </div>
+
+          <div class="inema-prose">
+            <p data-inema-block="m2-1-t4-p1" class="text-neutral-300 mb-6 leading-relaxed">Aqui está o ciclo completo do Fugu, e ele é a anatomia maestro–especialistas–fusor da Trilha 1 ficando concreta. O conductor <strong class="text-blue-400">decompõe</strong> sua tarefa em partes, <strong class="text-blue-400">delega</strong> cada parte a um especialista do pool, espera todos, e um modelo <strong class="text-blue-400">funde</strong> as respostas num resultado único. Tudo isso atrás de <em>uma</em> chamada de API sua.</p>
+          </div>
+
+          <div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+            <svg viewBox="0 0 1000 240" class="w-full h-auto" role="img" aria-label="O conductor do Fugu decompõe a tarefa, delega aos especialistas do pool em paralelo, e um fusor converge tudo num resultado">
+              <defs>
+                <linearGradient id="m21t4-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#60a5fa"/><stop offset="1" stop-color="#3b82f6"/></linearGradient>
+                <filter id="m21t4-glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="1.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                <pattern id="m21t4-grid" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="1.3" cy="1.3" r="1.3" fill="#3b82f6" opacity="0.10"/></pattern>
+                <marker id="m21t4-ah" markerWidth="9" markerHeight="9" refX="6.5" refY="4.5" orient="auto"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#60a5fa"/></marker>
+                <marker id="m21t4-ahc" markerWidth="9" markerHeight="9" refX="6.5" refY="4.5" orient="auto"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"/></marker>
+              </defs>
+              <rect x="0" y="0" width="1000" height="240" fill="url(#m21t4-grid)"/>
+              <g fill="none" stroke="#60a5fa" stroke-width="1.8" opacity="0.5">
+                <path d="M196,120 C300,120 320,38 452,38" marker-end="url(#m21t4-ah)"/>
+                <path d="M196,120 C300,120 320,79 452,79" marker-end="url(#m21t4-ah)"/>
+                <path d="M196,120 L452,120" marker-end="url(#m21t4-ah)"/>
+                <path d="M196,120 C300,120 320,161 452,161" marker-end="url(#m21t4-ah)"/>
+                <path d="M196,120 C300,120 320,202 452,202" marker-end="url(#m21t4-ah)"/>
+              </g>
+              <g fill="none" stroke="#38bdf8" stroke-width="1.8" opacity="0.5">
+                <path d="M588,38  C700,38 720,120 800,120" marker-end="url(#m21t4-ahc)"/>
+                <path d="M588,79  C700,79 720,120 800,120" marker-end="url(#m21t4-ahc)"/>
+                <path d="M588,120 L800,120" marker-end="url(#m21t4-ahc)"/>
+                <path d="M588,161 C700,161 720,120 800,120" marker-end="url(#m21t4-ahc)"/>
+                <path d="M588,202 C700,202 720,120 800,120" marker-end="url(#m21t4-ahc)"/>
+              </g>
+              <g filter="url(#m21t4-glow)"><rect x="40" y="88" width="156" height="64" rx="14" fill="#0e1622" stroke="url(#m21t4-grad)" stroke-width="2.5"/></g>
+              <text x="118" y="114" text-anchor="middle" fill="#60a5fa" font-family="Inter,sans-serif" font-weight="700" font-size="17">Conductor</text>
+              <text x="118" y="134" text-anchor="middle" fill="#bcd6ff" font-family="Inter,sans-serif" font-size="12">decompõe</text>
+              <g font-family="Inter,sans-serif" font-size="13" font-weight="600">
+                <g class="wf-a"><rect x="452" y="22" width="136" height="32" rx="9" fill="#0e1b26" stroke="#38bdf8" stroke-width="2"/><text x="520" y="43" text-anchor="middle" fill="#bfe6ff">especialista</text></g>
+                <g class="wf-a"><rect x="452" y="63" width="136" height="32" rx="9" fill="#0e1b26" stroke="#38bdf8" stroke-width="2"/><text x="520" y="84" text-anchor="middle" fill="#bfe6ff">especialista</text></g>
+                <g class="wf-a"><rect x="452" y="104" width="136" height="32" rx="9" fill="#0e1b26" stroke="#38bdf8" stroke-width="2"/><text x="520" y="125" text-anchor="middle" fill="#bfe6ff">especialista</text></g>
+                <g class="wf-a"><rect x="452" y="145" width="136" height="32" rx="9" fill="#0e1b26" stroke="#38bdf8" stroke-width="2"/><text x="520" y="166" text-anchor="middle" fill="#bfe6ff">especialista</text></g>
+                <g class="wf-a"><rect x="452" y="186" width="136" height="32" rx="9" fill="#0e1b26" stroke="#38bdf8" stroke-width="2"/><text x="520" y="207" text-anchor="middle" fill="#bfe6ff">especialista …</text></g>
+              </g>
+              <g filter="url(#m21t4-glow)"><rect x="800" y="88" width="156" height="64" rx="14" fill="#0e1622" stroke="url(#m21t4-grad)" stroke-width="2.5"/></g>
+              <text x="878" y="116" text-anchor="middle" fill="#60a5fa" font-family="Inter,sans-serif" font-weight="700" font-size="16">Fusor</text>
+              <text x="878" y="135" text-anchor="middle" fill="#bcd6ff" font-family="Inter,sans-serif" font-size="11">funde</text>
+            </svg>
+            <p class="text-xs text-neutral-400 mt-2 text-center">Conductor (decompõe) → especialistas do pool em paralelo (ciano) → fusor (funde). Você manda 1 chamada; por dentro acontecem várias — e você paga por todas.</p>
+          </div>
+
+          <div class="space-y-6 mb-6">
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">1</span></div>
+              <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Decompõe</h4><p class="text-neutral-300 text-sm">O conductor quebra o pedido em sub-tarefas. Uma boa decomposição é metade do trabalho — e a parte onde o orquestrador pode brilhar ou se enrolar.</p></div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">2</span></div>
+              <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Delega</h4><p class="text-neutral-300 text-sm">Cada sub-tarefa vai a um especialista do pool. Eles rodam (idealmente em paralelo), cada um lendo e escrevendo tokens — que você paga.</p></div>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">3</span></div>
+              <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Funde</h4><p class="text-neutral-300 text-sm">Um modelo recombina as respostas num resultado único. É a segunda pergunta ("como se combinam") resolvida internamente, sem você ver.</p></div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Decompor</div><div class="text-xs text-neutral-400">quebrar a tarefa</div></div>
+            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Delegar</div><div class="text-xs text-neutral-400">mandar ao pool</div></div>
+            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Fundir</div><div class="text-xs text-neutral-400">recombinar</div></div>
+            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">1 endpoint</div><div class="text-xs text-neutral-400">N chamadas internas</div></div>
+          </div>
+
+          <div class="flex justify-start mt-6">
+            <button type="button" data-inema-read-toggle aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors">
+              <span class="inema-ico-todo" aria-hidden="true">○</span><span class="inema-ico-done" aria-hidden="true">●</span><span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- ===== TÓPICO 5 ===== -->
+        <section id="topico-5" data-inema-topic="modulo-2-1#topico-5" class="mb-16 scroll-mt-24">
+          <div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
+            <div class="flex items-center space-x-4">
+              <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">5</span>
+              <h2 class="text-2xl font-bold">💲 Fugu vs Fugu Ultra + preço</h2>
+            </div>
+            <button type="button" data-inema-doubt-toggle aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
+          </div>
+
+          <div class="inema-prose">
+            <p data-inema-block="m2-1-t5-p1" class="text-neutral-300 mb-6 leading-relaxed">A linha tem dois produtos: o <strong class="text-blue-400">Fugu</strong> e o <strong class="text-blue-400">Fugu Ultra</strong> (o testado no field test). O preço do Fugu é <strong class="text-blue-400">US$ 5 de entrada / US$ 30 de saída</strong> por 1 milhão de tokens — e atenção: os <em>tokens de orquestração</em> (o que o time privado lê e escreve por dentro) também são billados. Lançamento: <strong>22 de junho de 2026</strong>.</p>
+          </div>
+
+          <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+            <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">📊</span> Preço lado a lado (por 1M tokens)</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm text-left">
+                <thead class="text-blue-400 border-b border-dark-600">
+                  <tr><th class="py-2 pr-4">Modelo</th><th class="py-2 pr-4">Entrada</th><th class="py-2 pr-4">Saída</th><th class="py-2">Observação</th></tr>
+                </thead>
+                <tbody class="text-neutral-300">
+                  <tr class="border-b border-dark-600"><td class="py-2 pr-4 font-semibold">Fugu</td><td class="py-2 pr-4">US$ 5</td><td class="py-2 pr-4">US$ 30</td><td class="py-2">tokens de orquestração billados</td></tr>
+                  <tr><td class="py-2 pr-4 font-semibold">Opus 4.8</td><td class="py-2 pr-4">US$ 5</td><td class="py-2 pr-4">US$ 25</td><td class="py-2">modelo único, sem time</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="text-neutral-300 text-sm mt-3">Mesma entrada, mas a saída do Fugu é mais cara — e ela ainda se multiplica pelo time. O preço de tabela já avisa que o orquestrador custa mais por token <em>e</em> consome mais tokens.</p>
+          </div>
+
+          <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+            <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> O detalhe que estoura a conta</h3>
+            <p class="text-neutral-300 text-sm">"Tokens de orquestração billados" é a frase mais cara do produto. Você não paga só pela resposta final: paga cada token que cada especialista do pool leu e escreveu para chegar até ela. Por isso a conta real (Trilha 2.2) ficou bem acima do que o preço de tabela sugere à primeira vista.</p>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Fugu × Ultra</div><div class="text-xs text-neutral-400">dois produtos</div></div>
+            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">US$ 5 / US$ 30</div><div class="text-xs text-neutral-400">in / out por 1M</div></div>
+            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Orchestration tokens</div><div class="text-xs text-neutral-400">o time é billado</div></div>
+            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">22 jun 2026</div><div class="text-xs text-neutral-400">lançamento</div></div>
+          </div>
+
+          <div class="flex justify-start mt-6">
+            <button type="button" data-inema-read-toggle aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors">
+              <span class="inema-ico-todo" aria-hidden="true">○</span><span class="inema-ico-done" aria-hidden="true">●</span><span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- ===== TÓPICO 6 ===== -->
+        <section id="topico-6" data-inema-topic="modulo-2-1#topico-6" class="mb-16 scroll-mt-24">
+          <div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
+            <div class="flex items-center space-x-4">
+              <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">6</span>
+              <h2 class="text-2xl font-bold">👻 O que o time nunca viu</h2>
+            </div>
+            <button type="button" data-inema-doubt-toggle aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
+          </div>
+
+          <div class="inema-prose">
+            <p data-inema-block="m2-1-t6-p1" class="text-neutral-300 mb-6 leading-relaxed">Para fechar a mecânica com a tensão certa, um spoiler honesto do veredito que você estuda no próximo módulo: nos 38 testes graded por código, <strong class="text-blue-400">o time escondido nunca achou uma resposta que um modelo forte sozinho não achasse</strong>. Nem uma vez. Você pagou — em tempo e dinheiro — por um time cujo trabalho extra não virou acerto extra.</p>
+          </div>
+
+          <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+            <h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> A armadilha</h3>
+            <p class="text-neutral-300 text-sm">A elegância da mecânica (decompor→delegar→fundir) seduz. Mas mecânica bonita não é o mesmo que resultado melhor. A pergunta que importa não é "como o time trabalha?", e sim "o time entregou algo que o solo não entregaria?". Aqui, a resposta foi não.</p>
+          </div>
+
+          <div class="bg-blue-900/30 rounded-xl border border-blue-500/30 p-6 mb-6">
+            <h3 class="text-lg font-semibold text-blue-400 mb-3 flex items-center"><span class="mr-2">🔭</span> O que vem a seguir</h3>
+            <p class="text-neutral-300 text-sm">No Módulo 2.2 você vê a prova com números exatos: 38 tarefas, 4 waves, 36 empates, 4.5× mais lento, 5× mais caro — e o ladder de decisão que diz, com critério, <em>quando</em> o orquestrador finalmente ganha seu lugar.</p>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Ganho marginal</div><div class="text-xs text-neutral-400">foi zero, em 38</div></div>
+            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Pagar o time</div><div class="text-xs text-neutral-400">sem acerto extra</div></div>
+            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Mecânica ≠ resultado</div><div class="text-xs text-neutral-400">bonito não basta</div></div>
+            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Promessa × prova</div><div class="text-xs text-neutral-400">a prova é a 2.2</div></div>
+          </div>
+
+          <!-- Checagem leve opcional -->
+          <div data-inema-check="modulo-2-1#q1" class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6">
+            <p class="font-medium mb-4">Recuperação rápida (opcional): qual frase descreve melhor o que o Fugu É?</p>
+            <div class="inema-check-options space-y-2">
+              <button type="button" data-inema-check-option="0" class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm">Um LLM novo com um cérebro mais inteligente que o Opus</button>
+              <button type="button" data-inema-check-option="1" class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm">Um orquestrador (gerente) que decompõe, delega a um pool e funde, entregue como 1 API</button>
+              <button type="button" data-inema-check-option="2" class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm">Um modelo grátis e instantâneo que substitui todos os outros</button>
+            </div>
+            <div data-inema-check-feedback class="mt-4 text-sm" role="status" aria-live="polite"></div>
+          </div>
+
+          <div class="flex justify-start mt-8">
+            <button type="button" data-inema-read-toggle aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors">
+              <span class="inema-ico-todo" aria-hidden="true">○</span><span class="inema-ico-done" aria-hidden="true">●</span><span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- ===== RESUMO ===== -->
+        <section class="mb-12">
+          <div class="bg-gradient-to-br from-blue-900/40 via-dark-800 to-dark-800 rounded-xl border border-blue-500/30 p-8">
+            <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumo do módulo</h2>
+            <div class="space-y-4 mb-8">
+              <div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Gerente, não gênio</strong><span class="text-neutral-400"> — o Fugu coordena outros modelos; sua força é gestão, não QI.</span></div></div>
+              <div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Conductor pequeno</strong><span class="text-neutral-400"> — decide resolver sozinho ou montar time; é o roteamento virado peso.</span></div></div>
+              <div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Pool secreto</strong><span class="text-neutral-400"> — modelos frontier fechados; "Opus no pool" é inferência, não fato.</span></div></div>
+              <div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Decompor→delegar→fundir</strong><span class="text-neutral-400"> — 1 chamada sua vira N chamadas internas, todas billadas.</span></div></div>
+              <div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Preço e prova</strong><span class="text-neutral-400"> — US$ 5/US$ 30, lançado 22 jun 2026; e o time não achou nada que o solo não achasse.</span></div></div>
+            </div>
+            <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+              <h3 class="font-semibold text-blue-400 mb-2">Próximo módulo:</h3>
+              <p class="text-neutral-300">2.2 — O veredito: 38 testes, e quando vale a pena</p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Voltar para a Trilha</a>
+              <a href="modulo-2-2.html" class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors">Próximo módulo →</a>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-dark-600 py-8 mt-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p>LLMs Orquestradas — Módulo 2.1 · <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      if (!topicItem) return;
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800') || document;
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => { if (exp !== explanation) exp.classList.remove('active'); });
+      explanation.classList.toggle('active');
+      button.setAttribute('aria-expanded', explanation.classList.contains('active') ? 'true' : 'false');
+    }
+    (function () {
+      const themeToggle = document.getElementById('theme-toggle');
+      const darkIcon = document.getElementById('theme-toggle-dark-icon');
+      const lightIcon = document.getElementById('theme-toggle-light-icon');
+      const html = document.documentElement;
+      function sync() { if (html.classList.contains('dark')) { lightIcon.classList.remove('hidden'); darkIcon.classList.add('hidden'); } else { darkIcon.classList.remove('hidden'); lightIcon.classList.add('hidden'); } }
+      sync();
+      themeToggle.addEventListener('click', () => {
+        const nowDark = !html.classList.contains('dark');
+        html.classList.toggle('dark', nowDark);
+        if (window.INEMA && INEMA.setPref) { INEMA.setPref('theme', nowDark ? 'inema-dark' : 'claro'); } else { localStorage.setItem('theme', nowDark ? 'dark' : 'light'); }
+        sync();
+      });
+    })();
+    function openModal(modalId) { const m = document.getElementById(modalId); if (m) { m.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
+    function closeModal() { document.querySelectorAll('.modal').forEach(m => m.classList.add('hidden')); document.body.style.overflow = 'auto'; }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+
+  <script src="../../assets/learn.js"></script>
+  <script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init(); }
+    window.addEventListener('DOMContentLoaded', function () {
+      if (window.INEMA && INEMA.registerCheck) {
+        INEMA.registerCheck('modulo-2-1#q1', {
+          answer: 1,
+          explain: {
+            0: 'Não — o Fugu não é "mais inteligente"; em raciocínio bruto não supera um frontier sozinho. Ele coordena outros.',
+            1: 'Isso. Orquestrador-como-modelo: conductor decide, pool executa, fusor junta — tudo atrás de 1 endpoint.',
+            2: 'Nada disso: não é grátis (US$ 5/US$ 30 + tokens do time), não é instantâneo (4.5× mais lento) e não substitui ninguém.'
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

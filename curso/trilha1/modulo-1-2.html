@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="dark">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="inema-course" content="llms-orquestradas">
-  <title>Módulo 1.2 · O espectro: da mão ao modelo-maestro | LLMs Orquestradas</title>
 
-  <script>
+<html class="dark" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="llms-orquestradas" name="inema-course"/>
+<title>Módulo 1.2 · O espectro: da mão ao modelo-maestro | LLMs Orquestradas</title>
+<script>
   (function () {
     try {
       var html = document.documentElement;
@@ -35,14 +35,12 @@
     } catch (err) { try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme='dark'; } catch(e){} }
   })();
   </script>
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
     tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
   </script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <script type="application/json" data-inema-manifest>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script data-inema-manifest="" type="application/json">
   {
     "course": "llms-orquestradas",
     "tracks": [
@@ -61,8 +59,7 @@
     ]
   }
   </script>
-
-  <style>
+<style>
     body { font-family: 'Inter', sans-serif; }
     .dark body { background-color: #111827; }
     .topic-explanation { display: none; }
@@ -124,568 +121,517 @@
       .wf-a:nth-child(4){animation-delay:.75s} .wf-a:nth-child(5){animation-delay:1s}
     }
   </style>
-
-  <link rel="stylesheet" href="../../assets/learn.css">
-</head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen">
-
-  <a href="#conteudo" class="skip sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-2 focus:left-2 focus:px-4 focus:py-2 focus:bg-dark-800 focus:rounded-lg focus:text-primary">Pular para o conteúdo</a>
-
-  <!-- ===== NAV (trilha 1 ativa) ===== -->
-  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-14">
-        <div class="flex items-center space-x-4">
-          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
-            <span class="text-2xl">🐟</span><span class="font-bold text-lg hidden sm:inline">LLMs Orquestradas</span>
-          </a>
-          <span class="text-neutral-600">|</span>
-          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
-        </div>
-        <div class="flex items-center space-x-1 sm:space-x-2">
-          <a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
-          <a href="../trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Fugu</span></a>
-          <a href="../trilha3/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Fusion</span></a>
-          <button type="button" data-inema-journey-open class="ml-1 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors">
-            <span aria-hidden="true">◷</span><span class="hidden sm:inline">Jornada</span><span class="inema-journey-badge hidden" data-inema-journey-badge data-count="0" aria-hidden="true"></span>
-          </button>
-          <div class="relative">
-            <button type="button" data-inema-appearance-toggle="[data-inema-appearance]" aria-expanded="false" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors">
-              <span aria-hidden="true">◑</span><span class="hidden sm:inline">Aparência</span>
-            </button>
-            <div data-inema-appearance class="inema-appearance-pop">
-              <div class="inema-segment" role="group" aria-label="Tema">
-                <button data-inema-set-theme="inema-dark">Escuro</button><button data-inema-set-theme="claro">Claro</button><button data-inema-set-theme="sepia">Sépia</button><button data-inema-set-theme="foco">Foco</button><button data-inema-set-theme="contraste">Alto contraste</button>
-              </div>
-              <div class="inema-segment" role="group" aria-label="Fonte">
-                <button data-inema-set-font="inter">Inter</button><button data-inema-set-font="system">Sistema</button><button data-inema-set-font="leitura">Leitura</button>
-              </div>
-              <div class="inema-segment" role="group" aria-label="Tamanho do texto">
-                <button data-inema-set-fontscale="100">A</button><button data-inema-set-fontscale="112">A+</button><button data-inema-set-fontscale="125">A++</button>
-              </div>
-              <div class="inema-segment" role="group" aria-label="Largura da linha">
-                <button data-inema-set-linewidth="60">Estreito</button><button data-inema-set-linewidth="68">Médio</button><button data-inema-set-linewidth="75">Largo</button>
-              </div>
-              <div class="inema-segment" role="group" aria-label="Entrelinha">
-                <button data-inema-set-leading="1.45">Compacto</button><button data-inema-set-leading="1.7">Confortável</button>
-              </div>
-              <div class="inema-accent-grid" role="group" aria-label="Cor de acento">
-                <button data-inema-set-accent="emerald" title="Esmeralda"></button><button data-inema-set-accent="blue" title="Azul"></button><button data-inema-set-accent="purple" title="Roxo"></button><button data-inema-set-accent="amber" title="Âmbar"></button><button data-inema-set-accent="teal" title="Teal"></button><button data-inema-set-accent="rose" title="Rosa"></button>
-              </div>
-            </div>
-          </div>
-          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" aria-label="Alternar tema claro/escuro">
-            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
-            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
-          </button>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Breadcrumb -->
-  <nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4" aria-label="Trilha de navegação">
-    <div class="flex items-center space-x-2 text-sm text-neutral-400">
-      <a href="../../index.html" class="hover:text-emerald-400">Início</a><span>/</span>
-      <a href="index.html" class="hover:text-emerald-400">Trilha 1</a><span>/</span>
-      <span class="text-emerald-400">Módulo 1.2</span>
-    </div>
-  </nav>
-
-  <!-- Header do módulo -->
-  <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.2</span>
-      <h1 class="text-3xl sm:text-4xl font-bold mb-4">🎚️ O espectro: da mão ao modelo-maestro</h1>
-      <p class="text-lg text-neutral-400 max-w-3xl">Orquestrar não é tudo ou nada: é uma régua. De um lado, você reparte na mão. Do outro, um modelo treinado decide sozinho. Neste módulo você aprende a ler essa régua — quem decide, em cada ponto — e a escolher o ponto certo pesando controle, esforço e custo.</p>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-3xl">
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">~30</div><div class="text-xs text-neutral-400">Minutos</div></div>
-        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Básico</div><div class="text-xs text-neutral-400">Nível</div></div>
-        <div data-inema-meter="modulo:1-2" class="inema-meter bg-dark-800/50 rounded-lg p-3 border border-dark-600" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso do módulo 1.2">
-          <div class="text-xl font-bold text-emerald-400" data-inema-meter-pct>0%</div><div class="text-xs text-neutral-400" data-inema-meter-frac>0 de 6</div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main id="conteudo" data-inema-track="1" data-inema-module="1-2" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <div class="lg:grid lg:grid-cols-[210px_1fr] lg:gap-10">
-
-      <!-- TOC sticky + scrollspy -->
-      <nav data-inema-toc aria-label="Índice da página" class="hidden lg:block sticky top-24 self-start">
-        <p class="text-sm text-neutral-400 mb-3">Seção <span data-inema-section-counter>1 de 6</span></p>
-        <ol class="space-y-1.5 text-sm">
-          <li><a href="#topico-1" class="inema-toc-link text-neutral-400 hover:text-emerald-400">1. O eixo de quem decide</a></li>
-          <li><a href="#topico-2" class="inema-toc-link text-neutral-400 hover:text-emerald-400">2. Ponta esquerda: na mão</a></li>
-          <li><a href="#topico-3" class="inema-toc-link text-neutral-400 hover:text-emerald-400">3. Meio: sub-agents</a></li>
-          <li><a href="#topico-4" class="inema-toc-link text-neutral-400 hover:text-emerald-400">4. Ponta direita: o Fugu</a></li>
-          <li><a href="#topico-5" class="inema-toc-link text-neutral-400 hover:text-emerald-400">5. O conductor que roteia</a></li>
-          <li><a href="#topico-6" class="inema-toc-link text-neutral-400 hover:text-emerald-400">6. Trade-offs do espectro</a></li>
-        </ol>
-      </nav>
-
-      <div>
-
-        <!-- ===== TÓPICO 1 ===== -->
-        <section id="topico-1" data-inema-topic="modulo-1-2#topico-1" class="mb-16 scroll-mt-24">
-          <div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
-            <div class="flex items-center space-x-4">
-              <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
-              <h2 class="text-2xl font-bold">📏 O eixo de quem decide</h2>
-            </div>
-            <button type="button" data-inema-doubt-toggle aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
-          </div>
-
-          <div class="inema-prose">
-            <p data-inema-block="m1-2-t1-p1" class="text-neutral-300 mb-6 leading-relaxed">No módulo anterior você viu as duas perguntas: <strong class="text-emerald-400">quem faz cada parte</strong> e <strong class="text-emerald-400">como as respostas se combinam</strong>. Agora vamos olhar para um eixo só: <strong>quem responde a primeira pergunta</strong>. Não <em>se</em> você orquestra, mas <em>quanto da decisão é sua</em> e quanto é da máquina.</p>
-            <p data-inema-block="m1-2-t1-p2" class="text-neutral-300 mb-6 leading-relaxed">Pense numa régua horizontal. Na ponta <strong>esquerda</strong>, você decide tudo na mão — abre cada modelo, copia, cola, junta. Na ponta <strong>direita</strong>, um modelo treinado para coordenar (um "maestro") decide sozinho quem faz o quê. No meio mora todo o resto. Esse é o <strong class="text-emerald-400">espectro de autonomia</strong>: a única coisa que muda da esquerda para a direita é <em>quem segura o volante</em>.</p>
-          </div>
-
-          <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-            <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">🆕</span> Novo aqui? Três termos</h3>
-            <ul class="space-y-2 text-neutral-300 text-sm">
-              <li><strong>Autonomia:</strong> quanto a máquina decide sem você. Pouca autonomia = você no controle; muita = ela escolhe sozinha.</li>
-              <li><strong>Roteamento (routing):</strong> a decisão de "quem faz cada parte". Pode ser sua (na mão) ou de um modelo.</li>
-              <li><strong>Maestro / conductor:</strong> o componente que lê o pedido e reparte. Na esquerda do espectro, o maestro é <em>você</em>; na direita, é um modelo treinado.</li>
-            </ul>
-          </div>
-
-          <div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
-            <svg viewBox="0 0 1000 230" class="w-full h-auto" role="img" aria-label="Espectro horizontal de autonomia: da esquerda, você na mão, para a direita, um modelo-maestro que decide sozinho, com sub-agents e workflows no meio e o Fugu na ponta direita em destaque">
-              <defs>
-                <linearGradient id="m12t1-grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#34d399"/><stop offset="0.55" stop-color="#10b981"/><stop offset="1" stop-color="#38bdf8"/></linearGradient>
-                <filter id="m12t1-glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="1.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-                <pattern id="m12t1-grid" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="1.3" cy="1.3" r="1.3" fill="#10b981" opacity="0.10"/></pattern>
-                <marker id="m12t1-ah" markerWidth="10" markerHeight="10" refX="7" refY="5" orient="auto"><path d="M0,0 L9,5 L0,10 L2.6,5 Z" fill="#38bdf8"/></marker>
-              </defs>
-              <rect x="0" y="0" width="1000" height="230" fill="url(#m12t1-grid)"/>
-              <!-- a régua -->
-              <line x1="70" y1="118" x2="930" y2="118" stroke="url(#m12t1-grad)" stroke-width="5" stroke-linecap="round" marker-end="url(#m12t1-ah)"/>
-              <!-- rótulos das pontas -->
-              <text x="70" y="60" text-anchor="start" fill="#34d399" font-family="Inter,sans-serif" font-weight="700" font-size="17">◀ Você no controle</text>
-              <text x="70" y="80" text-anchor="start" fill="#9decc4" font-family="Inter,sans-serif" font-size="12">você decide quem faz o quê</text>
-              <text x="930" y="60" text-anchor="end" fill="#38bdf8" font-family="Inter,sans-serif" font-weight="700" font-size="17">A máquina decide ▶</text>
-              <text x="930" y="80" text-anchor="end" fill="#bfe6ff" font-family="Inter,sans-serif" font-size="12">um modelo reparte sozinho</text>
-              <!-- pontos do espectro -->
-              <g font-family="Inter,sans-serif">
-                <g><circle cx="160" cy="118" r="9" fill="#0e2018" stroke="#34d399" stroke-width="2.5"/><text x="160" y="162" text-anchor="middle" fill="#34d399" font-size="12.5" font-weight="600">Codex + Claude</text><text x="160" y="180" text-anchor="middle" fill="#9decc4" font-size="11">na mão</text></g>
-                <g><circle cx="400" cy="118" r="9" fill="#0e1b26" stroke="#38bdf8" stroke-width="2.5"/><text x="400" y="162" text-anchor="middle" fill="#7fd3ff" font-size="12.5" font-weight="600">sub-agents</text><text x="400" y="180" text-anchor="middle" fill="#bfe6ff" font-size="11">você ainda manda</text></g>
-                <g><circle cx="620" cy="118" r="9" fill="#0e1b26" stroke="#38bdf8" stroke-width="2.5"/><text x="620" y="162" text-anchor="middle" fill="#7fd3ff" font-size="12.5" font-weight="600">workflows</text><text x="620" y="180" text-anchor="middle" fill="#bfe6ff" font-size="11">regra automatiza</text></g>
-                <g filter="url(#m12t1-glow)"><circle cx="858" cy="118" r="13" fill="#1f1604" stroke="url(#m12t1-grad)" stroke-width="3"/><text x="858" y="162" text-anchor="middle" fill="#34d399" font-size="13.5" font-weight="700">Fugu 🐡</text><text x="858" y="180" text-anchor="middle" fill="#9decc4" font-size="11">modelo-maestro</text></g>
-              </g>
-            </svg>
-            <p class="text-xs text-neutral-400 mt-2 text-center">Leia da esquerda (você na mão) para a direita (modelo decide). Cada tópico deste módulo é um ponto desta régua. O ponto que brilha — Fugu — é o destino da Trilha 2.</p>
-          </div>
-
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Espectro</div><div class="text-xs text-neutral-400">uma régua, não 2 caixas</div></div>
-            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Eixo</div><div class="text-xs text-neutral-400">quem decide o roteamento</div></div>
-            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Autonomia</div><div class="text-xs text-neutral-400">quanto a máquina decide</div></div>
-            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Volante</div><div class="text-xs text-neutral-400">você ou o modelo</div></div>
-          </div>
-
-          <div class="flex justify-start mt-6">
-            <button type="button" data-inema-read-toggle aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors">
-              <span class="inema-ico-todo" aria-hidden="true">○</span><span class="inema-ico-done" aria-hidden="true">●</span>
-              <span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
-            </button>
-          </div>
-        </section>
-
-        <!-- ===== TÓPICO 2 ===== -->
-        <section id="topico-2" data-inema-topic="modulo-1-2#topico-2" class="mb-16 scroll-mt-24">
-          <div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
-            <div class="flex items-center space-x-4">
-              <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
-              <h2 class="text-2xl font-bold">✋ Ponta esquerda: você fia na mão</h2>
-            </div>
-            <button type="button" data-inema-doubt-toggle aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
-          </div>
-
-          <div class="inema-prose">
-            <p data-inema-block="m1-2-t2-p1" class="text-neutral-300 mb-6 leading-relaxed">Na ponta esquerda, <strong class="text-emerald-400">o maestro é você</strong>. Você pega uma tarefa, decide na cabeça que o <strong>Codex</strong> (o agente de código da OpenAI, que roda no terminal) é bom para escrever o esqueleto, e que o <strong>Claude</strong> é bom para revisar. Manda no primeiro, copia a saída, cola no segundo, lê os dois, e funde tudo você mesmo num resultado final. Roteamento manual, fusão manual.</p>
-            <p data-inema-block="m1-2-t2-p2" class="text-neutral-300 mb-6 leading-relaxed">Isso <strong>já é orquestração</strong> — só que com você como o computador no meio. É a forma mais antiga e mais comum: a maioria das pessoas que usa duas IAs ao mesmo tempo está exatamente aqui, e nem chama de "orquestrar".</p>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-              <h4 class="font-bold text-emerald-400 mb-4">✓ O que você ganha</h4>
-              <ul class="space-y-3 text-neutral-300 text-sm">
-                <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Controle total: você vê cada saída antes de usar</span></li>
-                <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Custo claro: paga só o que mandar, modelo a modelo</span></li>
-                <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Zero setup: nenhuma plataforma nova para aprender</span></li>
-              </ul>
-            </div>
-            <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-              <h4 class="font-bold text-red-400 mb-4">✗ O que custa</h4>
-              <ul class="space-y-3 text-neutral-300 text-sm">
-                <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Seu tempo: você é o copia-e-cola entre modelos</span></li>
-                <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Não escala: 2 modelos ok, 8 vira trabalho braçal</span></li>
-                <li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Sem paralelismo real: você roda um de cada vez</span></li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-            <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Dica: isto não é "amador"</h3>
-            <p class="text-neutral-300 text-sm">Fiar na mão tem fama de improviso, mas é a forma com <strong>mais controle</strong> de todas. Para uma tarefa única e importante, abrir dois modelos e fundir você mesmo costuma vencer qualquer orquestrador automático — porque <em>você</em> é o melhor juiz do que está em jogo. O problema não é a qualidade; é a repetição.</p>
-          </div>
-
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Codex</div><div class="text-xs text-neutral-400">agente de código da OpenAI</div></div>
-            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Copia-e-cola</div><div class="text-xs text-neutral-400">você é o "fusor"</div></div>
-            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Roteamento manual</div><div class="text-xs text-neutral-400">você escolhe quem</div></div>
-            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Controle máximo</div><div class="text-xs text-neutral-400">o preço é seu tempo</div></div>
-          </div>
-
-          <div class="flex justify-start mt-6">
-            <button type="button" data-inema-read-toggle aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors">
-              <span class="inema-ico-todo" aria-hidden="true">○</span><span class="inema-ico-done" aria-hidden="true">●</span><span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
-            </button>
-          </div>
-        </section>
-
-        <!-- ===== TÓPICO 3 ===== -->
-        <section id="topico-3" data-inema-topic="modulo-1-2#topico-3" class="mb-16 scroll-mt-24">
-          <div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
-            <div class="flex items-center space-x-4">
-              <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
-              <h2 class="text-2xl font-bold">🧑‍🤝‍🧑 O meio: sub-agents e workflows</h2>
-            </div>
-            <button type="button" data-inema-doubt-toggle aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
-          </div>
-
-          <div class="inema-prose">
-            <p data-inema-block="m1-2-t3-p1" class="text-neutral-300 mb-6 leading-relaxed">Dê um passo para a direita e você delega o copia-e-cola, mas mantém o comando. Com <strong class="text-emerald-400">sub-agents</strong> (workers que o Claude Code abre, cada um podendo rodar um modelo diferente — haiku, sonnet, opus) você diz "abra 3 agentes em paralelo, cada um por um ângulo, e funda no fim". A ferramenta executa o fan-out e a fusão; <strong>você ainda definiu o plano</strong>.</p>
-            <p data-inema-block="m1-2-t3-p2" class="text-neutral-300 mb-6 leading-relaxed">Um pouco mais à direita ficam os <strong class="text-emerald-400">workflows</strong>: uma regra fixa que você escreveu uma vez — "sempre rode A, depois B, depois junte" — e que dispara sozinha. A decisão ainda foi sua; ela só ficou <em>congelada</em> numa receita. Tudo isso geralmente roda <strong>dentro de um provider só</strong> (intra-provider): mesma família de modelos, mesma conta.</p>
-          </div>
-
-          <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-            <h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Copy-run: orquestre no meio do espectro</h3>
-            <p class="text-neutral-300 text-sm mb-3"><strong>Objetivo:</strong> sentir o ponto "sub-agents" — você define o plano, a máquina faz o fan-out + fusão. Cole este prompt no Claude Code:</p>
-            <pre class="font-mono text-xs sm:text-sm bg-dark-900 border border-dark-600 rounded-lg p-4 overflow-x-auto text-neutral-200 whitespace-pre-wrap">Abra 3 sub-agents em PARALELO sobre &lt;assunto/arquivo&gt;:
+<link href="../../assets/learn.css" rel="stylesheet"/>
+<link href="https://inematds.github.io/sakanafugu/curso/trilha1/modulo-1-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/sakanafugu/en/curso/trilha1/modulo-1-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/sakanafugu/es/curso/trilha1/modulo-1-2.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-1-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha1/modulo-1-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha1/modulo-1-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="skip sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-2 focus:left-2 focus:px-4 focus:py-2 focus:bg-dark-800 focus:rounded-lg focus:text-primary" href="#conteudo">Pular para o conteúdo</a>
+<!-- ===== NAV (trilha 1 ativa) ===== -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🐟</span><span class="font-bold text-lg hidden sm:inline">LLMs Orquestradas</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Fugu</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Fusion</span></a>
+<button class="ml-1 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-inema-journey-open="" type="button">
+<span aria-hidden="true">◷</span><span class="hidden sm:inline">Jornada</span><span aria-hidden="true" class="inema-journey-badge hidden" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<div class="relative">
+<button aria-expanded="false" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-inema-appearance-toggle="[data-inema-appearance]" type="button">
+<span aria-hidden="true">◑</span><span class="hidden sm:inline">Aparência</span>
+</button>
+<div class="inema-appearance-pop" data-inema-appearance="">
+<div aria-label="Tema" class="inema-segment" role="group">
+<button data-inema-set-theme="inema-dark">Escuro</button><button data-inema-set-theme="claro">Claro</button><button data-inema-set-theme="sepia">Sépia</button><button data-inema-set-theme="foco">Foco</button><button data-inema-set-theme="contraste">Alto contraste</button>
+</div>
+<div aria-label="Fonte" class="inema-segment" role="group">
+<button data-inema-set-font="inter">Inter</button><button data-inema-set-font="system">Sistema</button><button data-inema-set-font="leitura">Leitura</button>
+</div>
+<div aria-label="Tamanho do texto" class="inema-segment" role="group">
+<button data-inema-set-fontscale="100">A</button><button data-inema-set-fontscale="112">A+</button><button data-inema-set-fontscale="125">A++</button>
+</div>
+<div aria-label="Largura da linha" class="inema-segment" role="group">
+<button data-inema-set-linewidth="60">Estreito</button><button data-inema-set-linewidth="68">Médio</button><button data-inema-set-linewidth="75">Largo</button>
+</div>
+<div aria-label="Entrelinha" class="inema-segment" role="group">
+<button data-inema-set-leading="1.45">Compacto</button><button data-inema-set-leading="1.7">Confortável</button>
+</div>
+<div aria-label="Cor de acento" class="inema-accent-grid" role="group">
+<button data-inema-set-accent="emerald" title="Esmeralda"></button><button data-inema-set-accent="blue" title="Azul"></button><button data-inema-set-accent="purple" title="Roxo"></button><button data-inema-set-accent="amber" title="Âmbar"></button><button data-inema-set-accent="teal" title="Teal"></button><button data-inema-set-accent="rose" title="Rosa"></button>
+</div>
+</div>
+</div>
+<button aria-label="Alternar tema claro/escuro" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<!-- Breadcrumb -->
+<nav aria-label="Trilha de navegação" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-emerald-400" href="../../index.html">Início</a><span>/</span>
+<a class="hover:text-emerald-400" href="index.html">Trilha 1</a><span>/</span>
+<span class="text-emerald-400">Módulo 1.2</span>
+</div>
+</nav>
+<!-- Header do módulo -->
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.2</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🎚️ O espectro: da mão ao modelo-maestro</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Orquestrar não é tudo ou nada: é uma régua. De um lado, você reparte na mão. Do outro, um modelo treinado decide sozinho. Neste módulo você aprende a ler essa régua — quem decide, em cada ponto — e a escolher o ponto certo pesando controle, esforço e custo.</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-3xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">~30</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Básico</div><div class="text-xs text-neutral-400">Nível</div></div>
+<div aria-label="Progresso do módulo 1.2" aria-valuemax="100" aria-valuemin="0" class="inema-meter bg-dark-800/50 rounded-lg p-3 border border-dark-600" data-inema-meter="modulo:1-2" role="progressbar">
+<div class="text-xl font-bold text-emerald-400" data-inema-meter-pct="">0%</div><div class="text-xs text-neutral-400" data-inema-meter-frac="">0 de 6</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12" data-inema-module="1-2" data-inema-track="1" id="conteudo">
+<div class="lg:grid lg:grid-cols-[210px_1fr] lg:gap-10">
+<!-- TOC sticky + scrollspy -->
+<nav aria-label="Índice da página" class="hidden lg:block sticky top-24 self-start" data-inema-toc="">
+<p class="text-sm text-neutral-400 mb-3">Seção <span data-inema-section-counter="">1 de 6</span></p>
+<ol class="space-y-1.5 text-sm">
+<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400" href="#topico-1">1. O eixo de quem decide</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400" href="#topico-2">2. Ponta esquerda: na mão</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400" href="#topico-3">3. Meio: sub-agents</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400" href="#topico-4">4. Ponta direita: o Fugu</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400" href="#topico-5">5. O conductor que roteia</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400" href="#topico-6">6. Trade-offs do espectro</a></li>
+</ol>
+</nav>
+<div>
+<!-- ===== TÓPICO 1 ===== -->
+<section class="mb-16 scroll-mt-24" data-inema-topic="modulo-1-2#topico-1" id="topico-1">
+<div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">📏 O eixo de quem decide</h2>
+</div>
+<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
+</div>
+<div class="inema-prose">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t1-p1">No módulo anterior você viu as duas perguntas: <strong class="text-emerald-400">quem faz cada parte</strong> e <strong class="text-emerald-400">como as respostas se combinam</strong>. Agora vamos olhar para um eixo só: <strong>quem responde a primeira pergunta</strong>. Não <em>se</em> você orquestra, mas <em>quanto da decisão é sua</em> e quanto é da máquina.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t1-p2">Pense numa régua horizontal. Na ponta <strong>esquerda</strong>, você decide tudo na mão — abre cada modelo, copia, cola, junta. Na ponta <strong>direita</strong>, um modelo treinado para coordenar (um "maestro") decide sozinho quem faz o quê. No meio mora todo o resto. Esse é o <strong class="text-emerald-400">espectro de autonomia</strong>: a única coisa que muda da esquerda para a direita é <em>quem segura o volante</em>.</p>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">🆕</span> Novo aqui? Três termos</h3>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li><strong>Autonomia:</strong> quanto a máquina decide sem você. Pouca autonomia = você no controle; muita = ela escolhe sozinha.</li>
+<li><strong>Roteamento (routing):</strong> a decisão de "quem faz cada parte". Pode ser sua (na mão) ou de um modelo.</li>
+<li><strong>Maestro / conductor:</strong> o componente que lê o pedido e reparte. Na esquerda do espectro, o maestro é <em>você</em>; na direita, é um modelo treinado.</li>
+</ul>
+</div>
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Espectro horizontal de autonomia: da esquerda, você na mão, para a direita, um modelo-maestro que decide sozinho, com sub-agents e workflows no meio e o Fugu na ponta direita em destaque" class="w-full h-auto" role="img" viewbox="0 0 1000 230">
+<defs>
+<lineargradient id="m12t1-grad" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#34d399"></stop><stop offset="0.55" stop-color="#10b981"></stop><stop offset="1" stop-color="#38bdf8"></stop></lineargradient>
+<filter height="220%" id="m12t1-glow" width="220%" x="-60%" y="-60%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m12t1-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#10b981" opacity="0.10" r="1.3"></circle></pattern>
+<marker id="m12t1-ah" markerheight="10" markerwidth="10" orient="auto" refx="7" refy="5"><path d="M0,0 L9,5 L0,10 L2.6,5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#m12t1-grid)" height="230" width="1000" x="0" y="0"></rect>
+<!-- a régua -->
+<line marker-end="url(#m12t1-ah)" stroke="url(#m12t1-grad)" stroke-linecap="round" stroke-width="5" x1="70" x2="930" y1="118" y2="118"></line>
+<!-- rótulos das pontas -->
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="17" font-weight="700" text-anchor="start" x="70" y="60">◀ Você no controle</text>
+<text fill="#9decc4" font-family="Inter,sans-serif" font-size="12" text-anchor="start" x="70" y="80">você decide quem faz o quê</text>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="17" font-weight="700" text-anchor="end" x="930" y="60">A máquina decide ▶</text>
+<text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="12" text-anchor="end" x="930" y="80">um modelo reparte sozinho</text>
+<!-- pontos do espectro -->
+<g font-family="Inter,sans-serif">
+<g><circle cx="160" cy="118" fill="#0e2018" r="9" stroke="#34d399" stroke-width="2.5"></circle><text fill="#34d399" font-size="12.5" font-weight="600" text-anchor="middle" x="160" y="162">Codex + Claude</text><text fill="#9decc4" font-size="11" text-anchor="middle" x="160" y="180">na mão</text></g>
+<g><circle cx="400" cy="118" fill="#0e1b26" r="9" stroke="#38bdf8" stroke-width="2.5"></circle><text fill="#7fd3ff" font-size="12.5" font-weight="600" text-anchor="middle" x="400" y="162">sub-agents</text><text fill="#bfe6ff" font-size="11" text-anchor="middle" x="400" y="180">você ainda manda</text></g>
+<g><circle cx="620" cy="118" fill="#0e1b26" r="9" stroke="#38bdf8" stroke-width="2.5"></circle><text fill="#7fd3ff" font-size="12.5" font-weight="600" text-anchor="middle" x="620" y="162">workflows</text><text fill="#bfe6ff" font-size="11" text-anchor="middle" x="620" y="180">regra automatiza</text></g>
+<g filter="url(#m12t1-glow)"><circle cx="858" cy="118" fill="#1f1604" r="13" stroke="url(#m12t1-grad)" stroke-width="3"></circle><text fill="#34d399" font-size="13.5" font-weight="700" text-anchor="middle" x="858" y="162">Fugu 🐡</text><text fill="#9decc4" font-size="11" text-anchor="middle" x="858" y="180">modelo-maestro</text></g>
+</g>
+</svg>
+<p class="text-xs text-neutral-400 mt-2 text-center">Leia da esquerda (você na mão) para a direita (modelo decide). Cada tópico deste módulo é um ponto desta régua. O ponto que brilha — Fugu — é o destino da Trilha 2.</p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Espectro</div><div class="text-xs text-neutral-400">uma régua, não 2 caixas</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Eixo</div><div class="text-xs text-neutral-400">quem decide o roteamento</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Autonomia</div><div class="text-xs text-neutral-400">quanto a máquina decide</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Volante</div><div class="text-xs text-neutral-400">você ou o modelo</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<!-- ===== TÓPICO 2 ===== -->
+<section class="mb-16 scroll-mt-24" data-inema-topic="modulo-1-2#topico-2" id="topico-2">
+<div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">✋ Ponta esquerda: você fia na mão</h2>
+</div>
+<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
+</div>
+<div class="inema-prose">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t2-p1">Na ponta esquerda, <strong class="text-emerald-400">o maestro é você</strong>. Você pega uma tarefa, decide na cabeça que o <strong>Codex</strong> (o agente de código da OpenAI, que roda no terminal) é bom para escrever o esqueleto, e que o <strong>Claude</strong> é bom para revisar. Manda no primeiro, copia a saída, cola no segundo, lê os dois, e funde tudo você mesmo num resultado final. Roteamento manual, fusão manual.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t2-p2">Isso <strong>já é orquestração</strong> — só que com você como o computador no meio. É a forma mais antiga e mais comum: a maioria das pessoas que usa duas IAs ao mesmo tempo está exatamente aqui, e nem chama de "orquestrar".</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ O que você ganha</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Controle total: você vê cada saída antes de usar</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Custo claro: paga só o que mandar, modelo a modelo</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Zero setup: nenhuma plataforma nova para aprender</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ O que custa</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Seu tempo: você é o copia-e-cola entre modelos</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Não escala: 2 modelos ok, 8 vira trabalho braçal</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Sem paralelismo real: você roda um de cada vez</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Dica: isto não é "amador"</h3>
+<p class="text-neutral-300 text-sm">Fiar na mão tem fama de improviso, mas é a forma com <strong>mais controle</strong> de todas. Para uma tarefa única e importante, abrir dois modelos e fundir você mesmo costuma vencer qualquer orquestrador automático — porque <em>você</em> é o melhor juiz do que está em jogo. O problema não é a qualidade; é a repetição.</p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Codex</div><div class="text-xs text-neutral-400">agente de código da OpenAI</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Copia-e-cola</div><div class="text-xs text-neutral-400">você é o "fusor"</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Roteamento manual</div><div class="text-xs text-neutral-400">você escolhe quem</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Controle máximo</div><div class="text-xs text-neutral-400">o preço é seu tempo</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span><span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<!-- ===== TÓPICO 3 ===== -->
+<section class="mb-16 scroll-mt-24" data-inema-topic="modulo-1-2#topico-3" id="topico-3">
+<div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🧑‍🤝‍🧑 O meio: sub-agents e workflows</h2>
+</div>
+<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
+</div>
+<div class="inema-prose">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t3-p1">Dê um passo para a direita e você delega o copia-e-cola, mas mantém o comando. Com <strong class="text-emerald-400">sub-agents</strong> (workers que o Claude Code abre, cada um podendo rodar um modelo diferente — haiku, sonnet, opus) você diz "abra 3 agentes em paralelo, cada um por um ângulo, e funda no fim". A ferramenta executa o fan-out e a fusão; <strong>você ainda definiu o plano</strong>.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t3-p2">Um pouco mais à direita ficam os <strong class="text-emerald-400">workflows</strong>: uma regra fixa que você escreveu uma vez — "sempre rode A, depois B, depois junte" — e que dispara sozinha. A decisão ainda foi sua; ela só ficou <em>congelada</em> numa receita. Tudo isso geralmente roda <strong>dentro de um provider só</strong> (intra-provider): mesma família de modelos, mesma conta.</p>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Copy-run: orquestre no meio do espectro</h3>
+<p class="text-neutral-300 text-sm mb-3"><strong>Objetivo:</strong> sentir o ponto "sub-agents" — você define o plano, a máquina faz o fan-out + fusão. Cole este prompt no Claude Code:</p>
+<pre class="font-mono text-xs sm:text-sm bg-dark-900 border border-dark-600 rounded-lg p-4 overflow-x-auto text-neutral-200 whitespace-pre-wrap">Abra 3 sub-agents em PARALELO sobre &lt;assunto/arquivo&gt;:
   agente A → levanta os PRÓS
   agente B → levanta os CONTRAS
   agente C → levanta os RISCOS escondidos
 Depois um 4º agente FUNDE os três num parecer único,
 marcando onde eles concordam e onde se contradizem.</pre>
-            <p class="text-neutral-300 text-sm mt-3"><strong>Como verificar:</strong> você verá 3 agentes rodando ao mesmo tempo (o fan-out) e, no fim, um parecer consolidado (a fusão) — sem você ter copiado nada na mão. Troque <code class="text-primary">&lt;assunto/arquivo&gt;</code> por algo real seu. Note: <em>você</em> desenhou o plano; a máquina só o executou.</p>
-          </div>
-
-          <div class="space-y-6 mb-6">
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div>
-              <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Sub-agents (você manda)</h4><p class="text-neutral-300 text-sm">Você dá o plano a cada execução; a ferramenta abre os workers e funde. Flexível, mas você decide de novo toda vez.</p></div>
-            </div>
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div>
-              <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Workflow (regra fixa)</h4><p class="text-neutral-300 text-sm">Você escreve a receita uma vez e ela repete sozinha. Mais autonomia, menos flexibilidade — a decisão ficou congelada.</p></div>
-            </div>
-            <div class="flex items-start space-x-4">
-              <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div>
-              <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Intra-provider</h4><p class="text-neutral-300 text-sm">Quase sempre tudo numa família de modelos / numa conta só. Simples de cobrar e operar, mas não cruza vendors.</p></div>
-            </div>
-          </div>
-
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Sub-agent</div><div class="text-xs text-neutral-400">worker delegado</div></div>
-            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Workflow</div><div class="text-xs text-neutral-400">receita congelada</div></div>
-            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Fan-out</div><div class="text-xs text-neutral-400">vários em paralelo</div></div>
-            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Intra-provider</div><div class="text-xs text-neutral-400">um vendor só</div></div>
-          </div>
-
-          <div class="flex justify-start mt-6">
-            <button type="button" data-inema-read-toggle aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors">
-              <span class="inema-ico-todo" aria-hidden="true">○</span><span class="inema-ico-done" aria-hidden="true">●</span><span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
-            </button>
-          </div>
-        </section>
-
-        <!-- ===== TÓPICO 4 ===== -->
-        <section id="topico-4" data-inema-topic="modulo-1-2#topico-4" class="mb-16 scroll-mt-24">
-          <div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
-            <div class="flex items-center space-x-4">
-              <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
-              <h2 class="text-2xl font-bold">🐡 Ponta direita: dentro de um modelo</h2>
-            </div>
-            <button type="button" data-inema-doubt-toggle aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
-          </div>
-
-          <div class="inema-prose">
-            <p data-inema-block="m1-2-t4-p1" class="text-neutral-300 mb-6 leading-relaxed">Na ponta direita, a decisão sai das suas mãos por completo. Um <strong class="text-emerald-400">modelo treinado para coordenar</strong> recebe seu pedido e, sozinho, decide se resolve na hora ou se monta um time, quem entra no time, e como funde tudo. Você manda <strong>um prompt</strong> e recebe <strong>uma resposta</strong> — a orquestra inteira roda escondida lá dentro.</p>
-            <p data-inema-block="m1-2-t4-p2" class="text-neutral-300 mb-6 leading-relaxed">É exatamente o que o <strong class="text-emerald-400">Fugu</strong> faz (você vai estudá-lo a fundo na Trilha 2). Por fora parece "só mais um modelo": <strong>1 endpoint</strong>, 1 API key. Por dentro é um maestro que reparte para um pool de modelos frontier que você nem vê. A autonomia é máxima — e, como toda automação, ela troca controle por conveniência.</p>
-          </div>
-
-          <div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
-            <svg viewBox="0 0 1000 210" class="w-full h-auto" role="img" aria-label="No modelo-maestro, um único endpoint esconde um maestro que reparte para especialistas e funde, devolvendo uma resposta só">
-              <defs>
-                <linearGradient id="m12t4-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#34d399"/><stop offset="1" stop-color="#10b981"/></linearGradient>
-                <filter id="m12t4-glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-                <pattern id="m12t4-grid" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="1.3" cy="1.3" r="1.3" fill="#10b981" opacity="0.10"/></pattern>
-                <marker id="m12t4-ah" markerWidth="9" markerHeight="9" refX="6.5" refY="4.5" orient="auto"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"/></marker>
-              </defs>
-              <rect x="0" y="0" width="1000" height="210" fill="url(#m12t4-grid)"/>
-              <text x="60" y="50" text-anchor="start" fill="#9decc4" font-family="Inter,sans-serif" font-size="12">1 prompt entra →</text>
-              <text x="940" y="50" text-anchor="end" fill="#9decc4" font-family="Inter,sans-serif" font-size="12">← 1 resposta sai</text>
-              <!-- caixa "modelo" que esconde tudo -->
-              <rect x="120" y="64" width="760" height="118" rx="20" fill="#0e2018" stroke="#34d399" stroke-width="2" stroke-dasharray="7 6"/>
-              <text x="500" y="86" text-anchor="middle" fill="#34d399" font-family="Inter,sans-serif" font-size="12" font-weight="600">o que parece "1 modelo" por fora</text>
-              <!-- maestro interno em destaque -->
-              <g filter="url(#m12t4-glow)"><rect x="150" y="100" width="140" height="58" rx="12" fill="#1f1604" stroke="url(#m12t4-grad)" stroke-width="2.5"/></g>
-              <text x="220" y="126" text-anchor="middle" fill="#34d399" font-family="Inter,sans-serif" font-weight="700" font-size="15">maestro</text>
-              <text x="220" y="144" text-anchor="middle" fill="#9decc4" font-family="Inter,sans-serif" font-size="11">decide sozinho</text>
-              <!-- especialistas escondidos -->
-              <g font-family="Inter,sans-serif" font-size="11.5" font-weight="600">
-                <g class="wf-a"><rect x="420" y="92" width="150" height="26" rx="8" fill="#0e1b26" stroke="#38bdf8" stroke-width="1.8"/><text x="495" y="109" text-anchor="middle" fill="#bfe6ff">frontier oculto</text></g>
-                <g class="wf-a"><rect x="420" y="124" width="150" height="26" rx="8" fill="#0e1b26" stroke="#38bdf8" stroke-width="1.8"/><text x="495" y="141" text-anchor="middle" fill="#bfe6ff">frontier oculto</text></g>
-                <g class="wf-a"><rect x="420" y="156" width="150" height="20" rx="8" fill="#0e1b26" stroke="#38bdf8" stroke-width="1.8"/><text x="495" y="170" text-anchor="middle" fill="#bfe6ff">…</text></g>
-              </g>
-              <line x1="290" y1="129" x2="416" y2="105" stroke="#34d399" stroke-width="1.6" opacity="0.5"/>
-              <line x1="290" y1="129" x2="416" y2="137" stroke="#34d399" stroke-width="1.6" opacity="0.5"/>
-              <!-- fusor interno -->
-              <g filter="url(#m12t4-glow)"><rect x="700" y="100" width="140" height="58" rx="12" fill="#1f1604" stroke="url(#m12t4-grad)" stroke-width="2.5"/></g>
-              <text x="770" y="126" text-anchor="middle" fill="#34d399" font-family="Inter,sans-serif" font-weight="700" font-size="15">fusor</text>
-              <text x="770" y="144" text-anchor="middle" fill="#9decc4" font-family="Inter,sans-serif" font-size="11">funde 1 saída</text>
-              <line x1="574" y1="105" x2="700" y2="129" stroke="#38bdf8" stroke-width="1.6" opacity="0.5" marker-end="url(#m12t4-ah)"/>
-              <line x1="574" y1="137" x2="700" y2="129" stroke="#38bdf8" stroke-width="1.6" opacity="0.5" marker-end="url(#m12t4-ah)"/>
-            </svg>
-            <p class="text-xs text-neutral-400 mt-2 text-center">A caixa tracejada é o "modelo" que você vê. Tudo dentro — maestro, especialistas frontier, fusor — roda sem você. Conveniência máxima, controle mínimo.</p>
-          </div>
-
-          <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-            <h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">📊</span> O que a ponta direita esconde</h3>
-            <p class="text-neutral-300 text-sm mb-3">A mesma abstração de "1 API" do módulo 1.1 reaparece aqui, agora como ponto extremo do espectro:</p>
-            <ul class="space-y-2 text-neutral-300 text-sm">
-              <li><strong>Você não vê</strong> quantos modelos rodaram nem quais.</li>
-              <li><strong>Você paga</strong> os tokens do time inteiro, não só da resposta.</li>
-              <li><strong>Você confia</strong> no roteamento dele — sem chance de corrigir no meio.</li>
-            </ul>
-          </div>
-
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Modelo-maestro</div><div class="text-xs text-neutral-400">treinado p/ coordenar</div></div>
-            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">1 endpoint</div><div class="text-xs text-neutral-400">esconde a orquestra</div></div>
-            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Autonomia máxima</div><div class="text-xs text-neutral-400">ele decide tudo</div></div>
-            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Fugu</div><div class="text-xs text-neutral-400">o exemplo da Trilha 2</div></div>
-          </div>
-
-          <div class="flex justify-start mt-6">
-            <button type="button" data-inema-read-toggle aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors">
-              <span class="inema-ico-todo" aria-hidden="true">○</span><span class="inema-ico-done" aria-hidden="true">●</span><span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
-            </button>
-          </div>
-        </section>
-
-        <!-- ===== TÓPICO 5 ===== -->
-        <section id="topico-5" data-inema-topic="modulo-1-2#topico-5" class="mb-16 scroll-mt-24">
-          <div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
-            <div class="flex items-center space-x-4">
-              <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
-              <h2 class="text-2xl font-bold">🚦 O conductor que decide o caminho</h2>
-            </div>
-            <button type="button" data-inema-doubt-toggle aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
-          </div>
-
-          <div class="inema-prose">
-            <p data-inema-block="m1-2-t5-p1" class="text-neutral-300 mb-6 leading-relaxed">O que muda da esquerda para a direita do espectro tem um nome: <strong class="text-emerald-400">roteamento</strong> — a decisão de "quem faz cada parte". E quem toma essa decisão é o <strong class="text-emerald-400">conductor</strong> (o "regente"). A pergunta-chave de qualquer sistema multi-LLM é simples: <em>quem é o conductor aqui?</em></p>
-            <p data-inema-block="m1-2-t5-p2" class="text-neutral-300 mb-6 leading-relaxed">Na mão, o conductor é você. Num workflow, é a regra que você escreveu. No Fugu, é um modelo pequeno e barato, treinado só para isso — ele lê o pedido e decide <strong>resolver sozinho</strong> (se é fácil) ou <strong>montar um time</strong> (se é difícil). Esse "decidir se vale a pena chamar o time" é o coração de um bom orquestrador: chamar o time toda vez seria caro e lento à toa.</p>
-          </div>
-
-          <div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
-            <svg viewBox="0 0 1000 200" class="w-full h-auto" role="img" aria-label="O conductor recebe o pedido e bifurca: tarefa fácil, resolve sozinho; tarefa difícil, monta um time e funde">
-              <defs>
-                <linearGradient id="m12t5-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#34d399"/><stop offset="1" stop-color="#10b981"/></linearGradient>
-                <filter id="m12t5-glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-                <pattern id="m12t5-grid" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="1.3" cy="1.3" r="1.3" fill="#10b981" opacity="0.10"/></pattern>
-                <marker id="m12t5-ah" markerWidth="9" markerHeight="9" refX="6.5" refY="4.5" orient="auto"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#34d399"/></marker>
-                <marker id="m12t5-ahc" markerWidth="9" markerHeight="9" refX="6.5" refY="4.5" orient="auto"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"/></marker>
-              </defs>
-              <rect x="0" y="0" width="1000" height="200" fill="url(#m12t5-grid)"/>
-              <g filter="url(#m12t5-glow)"><rect x="44" y="74" width="170" height="56" rx="14" fill="#1f1604" stroke="url(#m12t5-grad)" stroke-width="2.5"/></g>
-              <text x="129" y="98" text-anchor="middle" fill="#34d399" font-family="Inter,sans-serif" font-weight="700" font-size="16">conductor</text>
-              <text x="129" y="117" text-anchor="middle" fill="#9decc4" font-family="Inter,sans-serif" font-size="11">lê e decide</text>
-              <!-- bifurcação fácil -->
-              <path d="M214,92 C320,68 360,52 470,52" fill="none" stroke="#34d399" stroke-width="1.8" opacity="0.6" marker-end="url(#m12t5-ah)"/>
-              <text x="338" y="44" text-anchor="middle" fill="#34d399" font-family="Inter,sans-serif" font-size="11.5">tarefa fácil</text>
-              <rect x="470" y="36" width="190" height="34" rx="10" fill="#0e2018" stroke="#34d399" stroke-width="1.8"/>
-              <text x="565" y="58" text-anchor="middle" fill="#9decc4" font-family="Inter,sans-serif" font-size="12.5" font-weight="600">resolve sozinho</text>
-              <!-- bifurcação difícil -->
-              <path d="M214,116 C320,140 360,150 470,150" fill="none" stroke="#38bdf8" stroke-width="1.8" opacity="0.6" marker-end="url(#m12t5-ahc)"/>
-              <text x="338" y="172" text-anchor="middle" fill="#38bdf8" font-family="Inter,sans-serif" font-size="11.5">tarefa difícil</text>
-              <g font-family="Inter,sans-serif" font-size="11.5" font-weight="600">
-                <g class="wf-a"><rect x="470" y="104" width="120" height="26" rx="8" fill="#0e1b26" stroke="#38bdf8" stroke-width="1.8"/><text x="530" y="121" text-anchor="middle" fill="#bfe6ff">especialista</text></g>
-                <g class="wf-a"><rect x="470" y="136" width="120" height="26" rx="8" fill="#0e1b26" stroke="#38bdf8" stroke-width="1.8"/><text x="530" y="153" text-anchor="middle" fill="#bfe6ff">especialista</text></g>
-                <g class="wf-a"><rect x="470" y="168" width="120" height="22" rx="8" fill="#0e1b26" stroke="#38bdf8" stroke-width="1.8"/><text x="530" y="184" text-anchor="middle" fill="#bfe6ff">…</text></g>
-              </g>
-              <g filter="url(#m12t5-glow)"><rect x="700" y="108" width="150" height="56" rx="14" fill="#1f1604" stroke="url(#m12t5-grad)" stroke-width="2.5"/></g>
-              <text x="775" y="132" text-anchor="middle" fill="#34d399" font-family="Inter,sans-serif" font-weight="700" font-size="15">fusor</text>
-              <text x="775" y="150" text-anchor="middle" fill="#9decc4" font-family="Inter,sans-serif" font-size="11">junta o time</text>
-              <path d="M590,117 C650,128 660,136 700,136" fill="none" stroke="#38bdf8" stroke-width="1.6" opacity="0.5" marker-end="url(#m12t5-ahc)"/>
-              <path d="M590,149 C650,140 660,138 700,136" fill="none" stroke="#38bdf8" stroke-width="1.6" opacity="0.5" marker-end="url(#m12t5-ahc)"/>
-            </svg>
-            <p class="text-xs text-neutral-400 mt-2 text-center">O conductor bifurca: fácil → resolve sozinho (rápido, barato); difícil → monta o time e funde. Saber <em>não</em> chamar o time é metade da inteligência.</p>
-          </div>
-
-          <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
-            <h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🎯</span> Quem é o conductor, em cada ponto</h3>
-            <ul class="space-y-3 text-neutral-300">
-              <li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1 font-bold">←</span><span><strong>Na mão:</strong> o conductor é você. Decide tudo, toda vez.</span></li>
-              <li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1 font-bold">•</span><span><strong>Workflow:</strong> o conductor é a regra fixa que você escreveu.</span></li>
-              <li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1 font-bold">→</span><span><strong>Fugu:</strong> o conductor é um modelo pequeno treinado para rotear.</span></li>
-            </ul>
-          </div>
-
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Conductor</div><div class="text-xs text-neutral-400">quem roteia</div></div>
-            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Roteamento</div><div class="text-xs text-neutral-400">"quem faz cada parte"</div></div>
-            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Solo vs time</div><div class="text-xs text-neutral-400">a bifurcação-chave</div></div>
-            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Saber não chamar</div><div class="text-xs text-neutral-400">economia do bom routing</div></div>
-          </div>
-
-          <div class="flex justify-start mt-6">
-            <button type="button" data-inema-read-toggle aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors">
-              <span class="inema-ico-todo" aria-hidden="true">○</span><span class="inema-ico-done" aria-hidden="true">●</span><span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
-            </button>
-          </div>
-        </section>
-
-        <!-- ===== TÓPICO 6 ===== -->
-        <section id="topico-6" data-inema-topic="modulo-1-2#topico-6" class="mb-16 scroll-mt-24">
-          <div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
-            <div class="flex items-center space-x-4">
-              <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
-              <h2 class="text-2xl font-bold">⚖️ Trade-offs: controle × esforço × custo</h2>
-            </div>
-            <button type="button" data-inema-doubt-toggle aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
-          </div>
-
-          <div class="inema-prose">
-            <p data-inema-block="m1-2-t6-p1" class="text-neutral-300 mb-6 leading-relaxed">Não existe ponto "melhor" no espectro — existe o ponto certo <strong>para a sua tarefa</strong>. Andar para a direita troca <strong class="text-emerald-400">controle e esforço seu</strong> por <strong class="text-emerald-400">conveniência</strong>, mas geralmente sobe o <strong class="text-emerald-400">custo</strong> (mais modelos rodando) e a latência. Andar para a esquerda devolve controle e barateia, ao preço do seu tempo.</p>
-            <p data-inema-block="m1-2-t6-p2" class="text-neutral-300 mb-6 leading-relaxed">A regra prática: <strong>tarefa única e crítica</strong> → fique à esquerda (você no comando). <strong>Tarefa repetitiva e bem-definida</strong> → vá ao meio (workflow). <strong>Volume e variedade, sem querer pensar no roteamento</strong> → considere a direita (modelo-maestro) — sabendo que vai pagar mais por isso. A Trilha 2 mostra, com 38 testes reais, quando esse "pagar mais" se justifica (e quando não).</p>
-          </div>
-
-          <div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
-            <svg viewBox="0 0 1000 220" class="w-full h-auto" role="img" aria-label="Grade de trade-offs: da esquerda para a direita, o controle cai, o esforço seu cai, mas o custo sobe">
-              <defs>
-                <linearGradient id="m12t6-grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#34d399"/><stop offset="1" stop-color="#38bdf8"/></linearGradient>
-                <filter id="m12t6-glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-                <pattern id="m12t6-grid" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="1.3" cy="1.3" r="1.3" fill="#10b981" opacity="0.10"/></pattern>
-              </defs>
-              <rect x="0" y="0" width="1000" height="220" fill="url(#m12t6-grid)"/>
-              <text x="120" y="34" text-anchor="start" fill="#34d399" font-family="Inter,sans-serif" font-size="13" font-weight="700">◀ Na mão</text>
-              <text x="880" y="34" text-anchor="end" fill="#38bdf8" font-family="Inter,sans-serif" font-size="13" font-weight="700">Modelo-maestro ▶</text>
-              <!-- linha controle (desce) -->
-              <text x="20" y="78" fill="#9decc4" font-family="Inter,sans-serif" font-size="12">Controle</text>
-              <path d="M120,64 L500,96 L880,128" fill="none" stroke="#34d399" stroke-width="2.5" opacity="0.85"/>
-              <circle cx="120" cy="64" r="4" fill="#34d399"/><circle cx="880" cy="128" r="4" fill="#34d399"/>
-              <!-- linha esforço seu (desce) -->
-              <text x="20" y="128" fill="#9decc4" font-family="Inter,sans-serif" font-size="12">Seu esforço</text>
-              <path d="M120,112 L500,138 L880,164" fill="none" stroke="#7fd3ff" stroke-width="2.5" opacity="0.85" stroke-dasharray="6 5"/>
-              <circle cx="120" cy="112" r="4" fill="#7fd3ff"/><circle cx="880" cy="164" r="4" fill="#7fd3ff"/>
-              <!-- linha custo (sobe) -->
-              <text x="20" y="190" fill="#fca5a5" font-family="Inter,sans-serif" font-size="12">Custo $$</text>
-              <path d="M120,194 L500,150 L880,72" fill="none" stroke="#f87171" stroke-width="2.5" opacity="0.85"/>
-              <circle cx="120" cy="194" r="4" fill="#f87171"/><circle cx="880" cy="72" r="4" fill="#f87171"/>
-              <g filter="url(#m12t6-glow)"><circle cx="880" cy="72" r="6.5" fill="#1f1604" stroke="url(#m12t6-grad)" stroke-width="2.5"/></g>
-            </svg>
-            <p class="text-xs text-neutral-400 mt-2 text-center">Indo para a direita: controle ↓ e seu esforço ↓, mas o custo ↑. Não há ponto vencedor — há o ponto certo para o que está em jogo.</p>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-              <h4 class="font-bold text-emerald-400 mb-4">✓ Fique à esquerda quando…</h4>
-              <ul class="space-y-3 text-neutral-300 text-sm">
-                <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>A tarefa é única, crítica, alto risco</span></li>
-                <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Você quer ver e corrigir cada passo</span></li>
-                <li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Cada dólar e cada token importam</span></li>
-              </ul>
-            </div>
-            <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
-              <h4 class="font-bold text-blue-400 mb-4">→ Vá à direita quando…</h4>
-              <ul class="space-y-3 text-neutral-300 text-sm">
-                <li class="flex items-start space-x-2"><span class="text-blue-400">→</span><span>O volume é alto e as tarefas variam muito</span></li>
-                <li class="flex items-start space-x-2"><span class="text-blue-400">→</span><span>Você não quer pensar no roteamento</span></li>
-                <li class="flex items-start space-x-2"><span class="text-blue-400">→</span><span>Conveniência vale mais que o custo extra</span></li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
-            <h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> A armadilha do espectro</h3>
-            <p class="text-neutral-300 text-sm">"Mais automático = mais avançado = melhor" é falso. A direita do espectro não é um troféu; é uma <strong>troca</strong>. Você abre mão de controle e paga mais para não pensar no roteamento. Às vezes vale; às vezes a mão simples vence. O objetivo deste curso é te dar olho para escolher — não para empurrar todo mundo para a direita.</p>
-          </div>
-
-          <!-- Linha do tempo: como cheguei aqui no espectro -->
-          <div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
-            <h3 class="text-lg font-semibold text-emerald-400 mb-5 flex items-center"><span class="mr-2">🧭</span> A régua, do começo ao fim</h3>
-            <ol class="relative border-l border-emerald-500/30 ml-3 space-y-6">
-              <li class="ml-6"><span class="absolute -left-2.5 w-5 h-5 rounded-full bg-emerald-500/20 border border-emerald-500/40"></span><h4 class="font-semibold text-white text-sm">Na mão (Codex + Claude)</h4><p class="text-neutral-400 text-sm">Você é o conductor e o fusor. Controle máximo, esforço máximo.</p></li>
-              <li class="ml-6"><span class="absolute -left-2.5 w-5 h-5 rounded-full bg-emerald-500/20 border border-emerald-500/40"></span><h4 class="font-semibold text-white text-sm">Sub-agents</h4><p class="text-neutral-400 text-sm">Você dá o plano; a máquina faz o fan-out + fusão.</p></li>
-              <li class="ml-6"><span class="absolute -left-2.5 w-5 h-5 rounded-full bg-emerald-500/20 border border-emerald-500/40"></span><h4 class="font-semibold text-white text-sm">Workflow</h4><p class="text-neutral-400 text-sm">A regra que você escreveu uma vez dispara sozinha.</p></li>
-              <li class="ml-6"><span class="absolute -left-2.5 w-5 h-5 rounded-full bg-emerald-500/20 border border-emerald-500/40"></span><h4 class="font-semibold text-white text-sm">Modelo-maestro (Fugu)</h4><p class="text-neutral-400 text-sm">Um modelo roteia e funde sozinho. Conveniência máxima, custo máximo.</p></li>
-            </ol>
-          </div>
-
-          <!-- Checagem leve opcional -->
-          <div data-inema-check="modulo-1-2#q1" class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6">
-            <p class="font-medium mb-4">Recuperação rápida (opcional): andar para a direita do espectro de autonomia troca, sobretudo, o quê?</p>
-            <div class="inema-check-options space-y-2">
-              <button type="button" data-inema-check-option="0" class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm">Mais qualidade garantida em troca de menos velocidade</button>
-              <button type="button" data-inema-check-option="1" class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm">Mais controle e custo em troca de menos conveniência</button>
-              <button type="button" data-inema-check-option="2" class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm">Menos controle e esforço seu em troca de mais conveniência (e geralmente mais custo)</button>
-            </div>
-            <div data-inema-check-feedback class="mt-4 text-sm" role="status" aria-live="polite"></div>
-          </div>
-
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6 mt-8">
-            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Trade-off</div><div class="text-xs text-neutral-400">troca, não upgrade</div></div>
-            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Controle ↓</div><div class="text-xs text-neutral-400">indo p/ a direita</div></div>
-            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Custo ↑</div><div class="text-xs text-neutral-400">mais modelos rodando</div></div>
-            <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Ponto certo</div><div class="text-xs text-neutral-400">depende da tarefa</div></div>
-          </div>
-
-          <div class="flex justify-start mt-8">
-            <button type="button" data-inema-read-toggle aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors">
-              <span class="inema-ico-todo" aria-hidden="true">○</span><span class="inema-ico-done" aria-hidden="true">●</span><span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
-            </button>
-          </div>
-        </section>
-
-        <!-- ===== RESUMO ===== -->
-        <section class="mb-12">
-          <div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
-            <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumo do módulo</h2>
-            <div class="space-y-4 mb-8">
-              <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">É um espectro, não 2 caixas</strong><span class="text-neutral-400"> — orquestrar é uma régua de autonomia, da sua mão ao modelo-maestro.</span></div></div>
-              <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Esquerda: na mão</strong><span class="text-neutral-400"> — Codex + Claude, você roteia e funde. Controle máximo, seu tempo é o custo.</span></div></div>
-              <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Meio: sub-agents e workflows</strong><span class="text-neutral-400"> — você delega a execução mas mantém o plano (intra-provider).</span></div></div>
-              <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Direita: o modelo decide</strong><span class="text-neutral-400"> — Fugu como 1 endpoint que esconde a orquestra. Autonomia máxima.</span></div></div>
-              <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">O conductor é a chave</strong><span class="text-neutral-400"> — quem roteia muda em cada ponto; saber não chamar o time é metade da inteligência.</span></div></div>
-              <div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">É troca, não upgrade</strong><span class="text-neutral-400"> — direita custa controle e dinheiro por conveniência; o ponto certo depende da tarefa.</span></div></div>
-            </div>
-            <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
-              <h3 class="font-semibold text-emerald-400 mb-2">Próximo módulo:</h3>
-              <p class="text-neutral-300">Trilha 2 — Fugu Ultra: o modelo-maestro na ponta direita, com 38 testes reais para descobrir quando ele vale a pena.</p>
-            </div>
-            <div class="flex flex-col sm:flex-row gap-4">
-              <a href="index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Voltar para a Trilha</a>
-              <a href="../trilha2/index.html" class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">Próxima trilha →</a>
-            </div>
-          </div>
-        </section>
-
-      </div>
-    </div>
-  </main>
-
-  <footer class="border-t border-dark-600 py-8 mt-8">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-      <p>LLMs Orquestradas — Módulo 1.2 · <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300">INEMA.CLUB</a></p>
-    </div>
-  </footer>
-
-  <script>
+<p class="text-neutral-300 text-sm mt-3"><strong>Como verificar:</strong> você verá 3 agentes rodando ao mesmo tempo (o fan-out) e, no fim, um parecer consolidado (a fusão) — sem você ter copiado nada na mão. Troque <code class="text-primary">&lt;assunto/arquivo&gt;</code> por algo real seu. Note: <em>você</em> desenhou o plano; a máquina só o executou.</p>
+</div>
+<div class="space-y-6 mb-6">
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Sub-agents (você manda)</h4><p class="text-neutral-300 text-sm">Você dá o plano a cada execução; a ferramenta abre os workers e funde. Flexível, mas você decide de novo toda vez.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Workflow (regra fixa)</h4><p class="text-neutral-300 text-sm">Você escreve a receita uma vez e ela repete sozinha. Mais autonomia, menos flexibilidade — a decisão ficou congelada.</p></div>
+</div>
+<div class="flex items-start space-x-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Intra-provider</h4><p class="text-neutral-300 text-sm">Quase sempre tudo numa família de modelos / numa conta só. Simples de cobrar e operar, mas não cruza vendors.</p></div>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Sub-agent</div><div class="text-xs text-neutral-400">worker delegado</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Workflow</div><div class="text-xs text-neutral-400">receita congelada</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Fan-out</div><div class="text-xs text-neutral-400">vários em paralelo</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Intra-provider</div><div class="text-xs text-neutral-400">um vendor só</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span><span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<!-- ===== TÓPICO 4 ===== -->
+<section class="mb-16 scroll-mt-24" data-inema-topic="modulo-1-2#topico-4" id="topico-4">
+<div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">🐡 Ponta direita: dentro de um modelo</h2>
+</div>
+<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
+</div>
+<div class="inema-prose">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t4-p1">Na ponta direita, a decisão sai das suas mãos por completo. Um <strong class="text-emerald-400">modelo treinado para coordenar</strong> recebe seu pedido e, sozinho, decide se resolve na hora ou se monta um time, quem entra no time, e como funde tudo. Você manda <strong>um prompt</strong> e recebe <strong>uma resposta</strong> — a orquestra inteira roda escondida lá dentro.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t4-p2">É exatamente o que o <strong class="text-emerald-400">Fugu</strong> faz (você vai estudá-lo a fundo na Trilha 2). Por fora parece "só mais um modelo": <strong>1 endpoint</strong>, 1 API key. Por dentro é um maestro que reparte para um pool de modelos frontier que você nem vê. A autonomia é máxima — e, como toda automação, ela troca controle por conveniência.</p>
+</div>
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="No modelo-maestro, um único endpoint esconde um maestro que reparte para especialistas e funde, devolvendo uma resposta só" class="w-full h-auto" role="img" viewbox="0 0 1000 210">
+<defs>
+<lineargradient id="m12t4-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#34d399"></stop><stop offset="1" stop-color="#10b981"></stop></lineargradient>
+<filter height="200%" id="m12t4-glow" width="200%" x="-50%" y="-50%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m12t4-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#10b981" opacity="0.10" r="1.3"></circle></pattern>
+<marker id="m12t4-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#m12t4-grid)" height="210" width="1000" x="0" y="0"></rect>
+<text fill="#9decc4" font-family="Inter,sans-serif" font-size="12" text-anchor="start" x="60" y="50">1 prompt entra →</text>
+<text fill="#9decc4" font-family="Inter,sans-serif" font-size="12" text-anchor="end" x="940" y="50">← 1 resposta sai</text>
+<!-- caixa "modelo" que esconde tudo -->
+<rect fill="#0e2018" height="118" rx="20" stroke="#34d399" stroke-dasharray="7 6" stroke-width="2" width="760" x="120" y="64"></rect>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="500" y="86">o que parece "1 modelo" por fora</text>
+<!-- maestro interno em destaque -->
+<g filter="url(#m12t4-glow)"><rect fill="#1f1604" height="58" rx="12" stroke="url(#m12t4-grad)" stroke-width="2.5" width="140" x="150" y="100"></rect></g>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="15" font-weight="700" text-anchor="middle" x="220" y="126">maestro</text>
+<text fill="#9decc4" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="220" y="144">decide sozinho</text>
+<!-- especialistas escondidos -->
+<g font-family="Inter,sans-serif" font-size="11.5" font-weight="600">
+<g class="wf-a"><rect fill="#0e1b26" height="26" rx="8" stroke="#38bdf8" stroke-width="1.8" width="150" x="420" y="92"></rect><text fill="#bfe6ff" text-anchor="middle" x="495" y="109">frontier oculto</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="26" rx="8" stroke="#38bdf8" stroke-width="1.8" width="150" x="420" y="124"></rect><text fill="#bfe6ff" text-anchor="middle" x="495" y="141">frontier oculto</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="20" rx="8" stroke="#38bdf8" stroke-width="1.8" width="150" x="420" y="156"></rect><text fill="#bfe6ff" text-anchor="middle" x="495" y="170">…</text></g>
+</g>
+<line opacity="0.5" stroke="#34d399" stroke-width="1.6" x1="290" x2="416" y1="129" y2="105"></line>
+<line opacity="0.5" stroke="#34d399" stroke-width="1.6" x1="290" x2="416" y1="129" y2="137"></line>
+<!-- fusor interno -->
+<g filter="url(#m12t4-glow)"><rect fill="#1f1604" height="58" rx="12" stroke="url(#m12t4-grad)" stroke-width="2.5" width="140" x="700" y="100"></rect></g>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="15" font-weight="700" text-anchor="middle" x="770" y="126">fusor</text>
+<text fill="#9decc4" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="770" y="144">funde 1 saída</text>
+<line marker-end="url(#m12t4-ah)" opacity="0.5" stroke="#38bdf8" stroke-width="1.6" x1="574" x2="700" y1="105" y2="129"></line>
+<line marker-end="url(#m12t4-ah)" opacity="0.5" stroke="#38bdf8" stroke-width="1.6" x1="574" x2="700" y1="137" y2="129"></line>
+</svg>
+<p class="text-xs text-neutral-400 mt-2 text-center">A caixa tracejada é o "modelo" que você vê. Tudo dentro — maestro, especialistas frontier, fusor — roda sem você. Conveniência máxima, controle mínimo.</p>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">📊</span> O que a ponta direita esconde</h3>
+<p class="text-neutral-300 text-sm mb-3">A mesma abstração de "1 API" do módulo 1.1 reaparece aqui, agora como ponto extremo do espectro:</p>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li><strong>Você não vê</strong> quantos modelos rodaram nem quais.</li>
+<li><strong>Você paga</strong> os tokens do time inteiro, não só da resposta.</li>
+<li><strong>Você confia</strong> no roteamento dele — sem chance de corrigir no meio.</li>
+</ul>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Modelo-maestro</div><div class="text-xs text-neutral-400">treinado p/ coordenar</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">1 endpoint</div><div class="text-xs text-neutral-400">esconde a orquestra</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Autonomia máxima</div><div class="text-xs text-neutral-400">ele decide tudo</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Fugu</div><div class="text-xs text-neutral-400">o exemplo da Trilha 2</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span><span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<!-- ===== TÓPICO 5 ===== -->
+<section class="mb-16 scroll-mt-24" data-inema-topic="modulo-1-2#topico-5" id="topico-5">
+<div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">🚦 O conductor que decide o caminho</h2>
+</div>
+<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
+</div>
+<div class="inema-prose">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t5-p1">O que muda da esquerda para a direita do espectro tem um nome: <strong class="text-emerald-400">roteamento</strong> — a decisão de "quem faz cada parte". E quem toma essa decisão é o <strong class="text-emerald-400">conductor</strong> (o "regente"). A pergunta-chave de qualquer sistema multi-LLM é simples: <em>quem é o conductor aqui?</em></p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t5-p2">Na mão, o conductor é você. Num workflow, é a regra que você escreveu. No Fugu, é um modelo pequeno e barato, treinado só para isso — ele lê o pedido e decide <strong>resolver sozinho</strong> (se é fácil) ou <strong>montar um time</strong> (se é difícil). Esse "decidir se vale a pena chamar o time" é o coração de um bom orquestrador: chamar o time toda vez seria caro e lento à toa.</p>
+</div>
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="O conductor recebe o pedido e bifurca: tarefa fácil, resolve sozinho; tarefa difícil, monta um time e funde" class="w-full h-auto" role="img" viewbox="0 0 1000 200">
+<defs>
+<lineargradient id="m12t5-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#34d399"></stop><stop offset="1" stop-color="#10b981"></stop></lineargradient>
+<filter height="200%" id="m12t5-glow" width="200%" x="-50%" y="-50%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m12t5-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#10b981" opacity="0.10" r="1.3"></circle></pattern>
+<marker id="m12t5-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#34d399"></path></marker>
+<marker id="m12t5-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#m12t5-grid)" height="200" width="1000" x="0" y="0"></rect>
+<g filter="url(#m12t5-glow)"><rect fill="#1f1604" height="56" rx="14" stroke="url(#m12t5-grad)" stroke-width="2.5" width="170" x="44" y="74"></rect></g>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="16" font-weight="700" text-anchor="middle" x="129" y="98">conductor</text>
+<text fill="#9decc4" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="129" y="117">lê e decide</text>
+<!-- bifurcação fácil -->
+<path d="M214,92 C320,68 360,52 470,52" fill="none" marker-end="url(#m12t5-ah)" opacity="0.6" stroke="#34d399" stroke-width="1.8"></path>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="338" y="44">tarefa fácil</text>
+<rect fill="#0e2018" height="34" rx="10" stroke="#34d399" stroke-width="1.8" width="190" x="470" y="36"></rect>
+<text fill="#9decc4" font-family="Inter,sans-serif" font-size="12.5" font-weight="600" text-anchor="middle" x="565" y="58">resolve sozinho</text>
+<!-- bifurcação difícil -->
+<path d="M214,116 C320,140 360,150 470,150" fill="none" marker-end="url(#m12t5-ahc)" opacity="0.6" stroke="#38bdf8" stroke-width="1.8"></path>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="338" y="172">tarefa difícil</text>
+<g font-family="Inter,sans-serif" font-size="11.5" font-weight="600">
+<g class="wf-a"><rect fill="#0e1b26" height="26" rx="8" stroke="#38bdf8" stroke-width="1.8" width="120" x="470" y="104"></rect><text fill="#bfe6ff" text-anchor="middle" x="530" y="121">especialista</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="26" rx="8" stroke="#38bdf8" stroke-width="1.8" width="120" x="470" y="136"></rect><text fill="#bfe6ff" text-anchor="middle" x="530" y="153">especialista</text></g>
+<g class="wf-a"><rect fill="#0e1b26" height="22" rx="8" stroke="#38bdf8" stroke-width="1.8" width="120" x="470" y="168"></rect><text fill="#bfe6ff" text-anchor="middle" x="530" y="184">…</text></g>
+</g>
+<g filter="url(#m12t5-glow)"><rect fill="#1f1604" height="56" rx="14" stroke="url(#m12t5-grad)" stroke-width="2.5" width="150" x="700" y="108"></rect></g>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="15" font-weight="700" text-anchor="middle" x="775" y="132">fusor</text>
+<text fill="#9decc4" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="775" y="150">junta o time</text>
+<path d="M590,117 C650,128 660,136 700,136" fill="none" marker-end="url(#m12t5-ahc)" opacity="0.5" stroke="#38bdf8" stroke-width="1.6"></path>
+<path d="M590,149 C650,140 660,138 700,136" fill="none" marker-end="url(#m12t5-ahc)" opacity="0.5" stroke="#38bdf8" stroke-width="1.6"></path>
+</svg>
+<p class="text-xs text-neutral-400 mt-2 text-center">O conductor bifurca: fácil → resolve sozinho (rápido, barato); difícil → monta o time e funde. Saber <em>não</em> chamar o time é metade da inteligência.</p>
+</div>
+<div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🎯</span> Quem é o conductor, em cada ponto</h3>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1 font-bold">←</span><span><strong>Na mão:</strong> o conductor é você. Decide tudo, toda vez.</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1 font-bold">•</span><span><strong>Workflow:</strong> o conductor é a regra fixa que você escreveu.</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1 font-bold">→</span><span><strong>Fugu:</strong> o conductor é um modelo pequeno treinado para rotear.</span></li>
+</ul>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Conductor</div><div class="text-xs text-neutral-400">quem roteia</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Roteamento</div><div class="text-xs text-neutral-400">"quem faz cada parte"</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Solo vs time</div><div class="text-xs text-neutral-400">a bifurcação-chave</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Saber não chamar</div><div class="text-xs text-neutral-400">economia do bom routing</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span><span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<!-- ===== TÓPICO 6 ===== -->
+<section class="mb-16 scroll-mt-24" data-inema-topic="modulo-1-2#topico-6" id="topico-6">
+<div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">⚖️ Trade-offs: controle × esforço × custo</h2>
+</div>
+<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
+</div>
+<div class="inema-prose">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t6-p1">Não existe ponto "melhor" no espectro — existe o ponto certo <strong>para a sua tarefa</strong>. Andar para a direita troca <strong class="text-emerald-400">controle e esforço seu</strong> por <strong class="text-emerald-400">conveniência</strong>, mas geralmente sobe o <strong class="text-emerald-400">custo</strong> (mais modelos rodando) e a latência. Andar para a esquerda devolve controle e barateia, ao preço do seu tempo.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-2-t6-p2">A regra prática: <strong>tarefa única e crítica</strong> → fique à esquerda (você no comando). <strong>Tarefa repetitiva e bem-definida</strong> → vá ao meio (workflow). <strong>Volume e variedade, sem querer pensar no roteamento</strong> → considere a direita (modelo-maestro) — sabendo que vai pagar mais por isso. A Trilha 2 mostra, com 38 testes reais, quando esse "pagar mais" se justifica (e quando não).</p>
+</div>
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Grade de trade-offs: da esquerda para a direita, o controle cai, o esforço seu cai, mas o custo sobe" class="w-full h-auto" role="img" viewbox="0 0 1000 220">
+<defs>
+<lineargradient id="m12t6-grad" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#34d399"></stop><stop offset="1" stop-color="#38bdf8"></stop></lineargradient>
+<filter height="200%" id="m12t6-glow" width="200%" x="-50%" y="-50%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m12t6-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#10b981" opacity="0.10" r="1.3"></circle></pattern>
+</defs>
+<rect fill="url(#m12t6-grid)" height="220" width="1000" x="0" y="0"></rect>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="13" font-weight="700" text-anchor="start" x="120" y="34">◀ Na mão</text>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="13" font-weight="700" text-anchor="end" x="880" y="34">Modelo-maestro ▶</text>
+<!-- linha controle (desce) -->
+<text fill="#9decc4" font-family="Inter,sans-serif" font-size="12" x="20" y="78">Controle</text>
+<path d="M120,64 L500,96 L880,128" fill="none" opacity="0.85" stroke="#34d399" stroke-width="2.5"></path>
+<circle cx="120" cy="64" fill="#34d399" r="4"></circle><circle cx="880" cy="128" fill="#34d399" r="4"></circle>
+<!-- linha esforço seu (desce) -->
+<text fill="#9decc4" font-family="Inter,sans-serif" font-size="12" x="20" y="128">Seu esforço</text>
+<path d="M120,112 L500,138 L880,164" fill="none" opacity="0.85" stroke="#7fd3ff" stroke-dasharray="6 5" stroke-width="2.5"></path>
+<circle cx="120" cy="112" fill="#7fd3ff" r="4"></circle><circle cx="880" cy="164" fill="#7fd3ff" r="4"></circle>
+<!-- linha custo (sobe) -->
+<text fill="#fca5a5" font-family="Inter,sans-serif" font-size="12" x="20" y="190">Custo $$</text>
+<path d="M120,194 L500,150 L880,72" fill="none" opacity="0.85" stroke="#f87171" stroke-width="2.5"></path>
+<circle cx="120" cy="194" fill="#f87171" r="4"></circle><circle cx="880" cy="72" fill="#f87171" r="4"></circle>
+<g filter="url(#m12t6-glow)"><circle cx="880" cy="72" fill="#1f1604" r="6.5" stroke="url(#m12t6-grad)" stroke-width="2.5"></circle></g>
+</svg>
+<p class="text-xs text-neutral-400 mt-2 text-center">Indo para a direita: controle ↓ e seu esforço ↓, mas o custo ↑. Não há ponto vencedor — há o ponto certo para o que está em jogo.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Fique à esquerda quando…</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>A tarefa é única, crítica, alto risco</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Você quer ver e corrigir cada passo</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Cada dólar e cada token importam</span></li>
+</ul>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
+<h4 class="font-bold text-blue-400 mb-4">→ Vá à direita quando…</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-blue-400">→</span><span>O volume é alto e as tarefas variam muito</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">→</span><span>Você não quer pensar no roteamento</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">→</span><span>Conveniência vale mais que o custo extra</span></li>
+</ul>
+</div>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> A armadilha do espectro</h3>
+<p class="text-neutral-300 text-sm">"Mais automático = mais avançado = melhor" é falso. A direita do espectro não é um troféu; é uma <strong>troca</strong>. Você abre mão de controle e paga mais para não pensar no roteamento. Às vezes vale; às vezes a mão simples vence. O objetivo deste curso é te dar olho para escolher — não para empurrar todo mundo para a direita.</p>
+</div>
+<!-- Linha do tempo: como cheguei aqui no espectro -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6">
+<h3 class="text-lg font-semibold text-emerald-400 mb-5 flex items-center"><span class="mr-2">🧭</span> A régua, do começo ao fim</h3>
+<ol class="relative border-l border-emerald-500/30 ml-3 space-y-6">
+<li class="ml-6"><span class="absolute -left-2.5 w-5 h-5 rounded-full bg-emerald-500/20 border border-emerald-500/40"></span><h4 class="font-semibold text-white text-sm">Na mão (Codex + Claude)</h4><p class="text-neutral-400 text-sm">Você é o conductor e o fusor. Controle máximo, esforço máximo.</p></li>
+<li class="ml-6"><span class="absolute -left-2.5 w-5 h-5 rounded-full bg-emerald-500/20 border border-emerald-500/40"></span><h4 class="font-semibold text-white text-sm">Sub-agents</h4><p class="text-neutral-400 text-sm">Você dá o plano; a máquina faz o fan-out + fusão.</p></li>
+<li class="ml-6"><span class="absolute -left-2.5 w-5 h-5 rounded-full bg-emerald-500/20 border border-emerald-500/40"></span><h4 class="font-semibold text-white text-sm">Workflow</h4><p class="text-neutral-400 text-sm">A regra que você escreveu uma vez dispara sozinha.</p></li>
+<li class="ml-6"><span class="absolute -left-2.5 w-5 h-5 rounded-full bg-emerald-500/20 border border-emerald-500/40"></span><h4 class="font-semibold text-white text-sm">Modelo-maestro (Fugu)</h4><p class="text-neutral-400 text-sm">Um modelo roteia e funde sozinho. Conveniência máxima, custo máximo.</p></li>
+</ol>
+</div>
+<!-- Checagem leve opcional -->
+<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-1-2#q1">
+<p class="font-medium mb-4">Recuperação rápida (opcional): andar para a direita do espectro de autonomia troca, sobretudo, o quê?</p>
+<div class="inema-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Mais qualidade garantida em troca de menos velocidade</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Mais controle e custo em troca de menos conveniência</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Menos controle e esforço seu em troca de mais conveniência (e geralmente mais custo)</button>
+</div>
+<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6 mt-8">
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Trade-off</div><div class="text-xs text-neutral-400">troca, não upgrade</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Controle ↓</div><div class="text-xs text-neutral-400">indo p/ a direita</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Custo ↑</div><div class="text-xs text-neutral-400">mais modelos rodando</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Ponto certo</div><div class="text-xs text-neutral-400">depende da tarefa</div></div>
+</div>
+<div class="flex justify-start mt-8">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span><span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+</button>
+</div>
+</section>
+<!-- ===== RESUMO ===== -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumo do módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">É um espectro, não 2 caixas</strong><span class="text-neutral-400"> — orquestrar é uma régua de autonomia, da sua mão ao modelo-maestro.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Esquerda: na mão</strong><span class="text-neutral-400"> — Codex + Claude, você roteia e funde. Controle máximo, seu tempo é o custo.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Meio: sub-agents e workflows</strong><span class="text-neutral-400"> — você delega a execução mas mantém o plano (intra-provider).</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Direita: o modelo decide</strong><span class="text-neutral-400"> — Fugu como 1 endpoint que esconde a orquestra. Autonomia máxima.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">O conductor é a chave</strong><span class="text-neutral-400"> — quem roteia muda em cada ponto; saber não chamar o time é metade da inteligência.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">É troca, não upgrade</strong><span class="text-neutral-400"> — direita custa controle e dinheiro por conveniência; o ponto certo depende da tarefa.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-emerald-400 mb-2">Próximo módulo:</h3>
+<p class="text-neutral-300">Trilha 2 — Fugu Ultra: o modelo-maestro na ponta direita, com 38 testes reais para descobrir quando ele vale a pena.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Voltar para a Trilha</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="../trilha2/index.html">Próxima trilha →</a>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-8">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>LLMs Orquestradas — Módulo 1.2 · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
     function toggleTopic(button) {
       const topicItem = button.closest('.topic-item');
       if (!topicItem) return;
@@ -713,9 +659,8 @@ marcando onde eles concordam e onde se contradizem.</pre>
     function closeModal() { document.querySelectorAll('.modal').forEach(m => m.classList.add('hidden')); document.body.style.overflow = 'auto'; }
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
   </script>
-
-  <script src="../../assets/learn.js"></script>
-  <script>
+<script src="../../assets/learn.js"></script>
+<script>
     if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init(); }
     window.addEventListener('DOMContentLoaded', function () {
       if (window.INEMA && INEMA.registerCheck) {

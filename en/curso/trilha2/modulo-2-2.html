@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="pt-BR">
+<html class="dark" lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="llms-orquestradas" name="inema-course"/>
-<title>Módulo 2.2 · O veredito: 38 testes | LLMs Orquestradas</title>
+<title>Module 2.2 · The verdict: 38 tests | Orchestrated LLMs</title>
 <script>
   (function () {
     try {
@@ -115,54 +115,54 @@
     .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
     html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
   </style>
-<link href="../../assets/learn.css" rel="stylesheet"/>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
 <link href="https://inematds.github.io/sakanafugu/curso/trilha2/modulo-2-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/sakanafugu/en/curso/trilha2/modulo-2-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/sakanafugu/es/curso/trilha2/modulo-2-2.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-2-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha2/modulo-2-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha2/modulo-2-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
-<a class="skip sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-2 focus:left-2 focus:px-4 focus:py-2 focus:bg-dark-800 focus:rounded-lg focus:text-primary" href="#conteudo">Pular para o conteúdo</a>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-2-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha2/modulo-2-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="skip sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-2 focus:left-2 focus:px-4 focus:py-2 focus:bg-dark-800 focus:rounded-lg focus:text-primary" href="#conteudo">Skip to content</a>
 <!-- ===== NAV (trilha 2 ativa) ===== -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex justify-between items-center h-14">
 <div class="flex items-center space-x-4">
 <a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
-<span class="text-2xl">🐟</span><span class="font-bold text-lg hidden sm:inline">LLMs Orquestradas</span>
+<span class="text-2xl">🐟</span><span class="font-bold text-lg hidden sm:inline">Orchestrated LLMs</span>
 </a>
 <span class="text-neutral-600">|</span>
 <a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
-<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentals</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10" href="index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Fugu</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Fusion</span></a>
 <button class="ml-1 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-inema-journey-open="" type="button">
-<span aria-hidden="true">◷</span><span class="hidden sm:inline">Jornada</span><span aria-hidden="true" class="inema-journey-badge hidden" data-count="0" data-inema-journey-badge=""></span>
+<span aria-hidden="true">◷</span><span class="hidden sm:inline">Journey</span><span aria-hidden="true" class="inema-journey-badge hidden" data-count="0" data-inema-journey-badge=""></span>
 </button>
 <div class="relative">
 <button aria-expanded="false" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-inema-appearance-toggle="[data-inema-appearance]" type="button">
-<span aria-hidden="true">◑</span><span class="hidden sm:inline">Aparência</span>
+<span aria-hidden="true">◑</span><span class="hidden sm:inline">Appearance</span>
 </button>
 <div class="inema-appearance-pop" data-inema-appearance="">
-<div aria-label="Tema" class="inema-segment" role="group">
-<button data-inema-set-theme="inema-dark">Escuro</button><button data-inema-set-theme="claro">Claro</button><button data-inema-set-theme="sepia">Sépia</button><button data-inema-set-theme="foco">Foco</button><button data-inema-set-theme="contraste">Alto contraste</button>
+<div aria-label="Theme" class="inema-segment" role="group">
+<button data-inema-set-theme="inema-dark">Dark</button><button data-inema-set-theme="claro">Clear</button><button data-inema-set-theme="sepia">Sepia</button><button data-inema-set-theme="foco">Focus</button><button data-inema-set-theme="contraste">High contrast</button>
 </div>
-<div aria-label="Fonte" class="inema-segment" role="group">
-<button data-inema-set-font="inter">Inter</button><button data-inema-set-font="system">Sistema</button><button data-inema-set-font="leitura">Leitura</button>
+<div aria-label="Source" class="inema-segment" role="group">
+<button data-inema-set-font="inter">Inter</button><button data-inema-set-font="system">System</button><button data-inema-set-font="leitura">Reading</button>
 </div>
-<div aria-label="Tamanho do texto" class="inema-segment" role="group">
+<div aria-label="Text size" class="inema-segment" role="group">
 <button data-inema-set-fontscale="100">A</button><button data-inema-set-fontscale="112">A+</button><button data-inema-set-fontscale="125">A++</button>
 </div>
-<div aria-label="Largura da linha" class="inema-segment" role="group">
-<button data-inema-set-linewidth="60">Estreito</button><button data-inema-set-linewidth="68">Médio</button><button data-inema-set-linewidth="75">Largo</button>
+<div aria-label="Line width" class="inema-segment" role="group">
+<button data-inema-set-linewidth="60">Narrow</button><button data-inema-set-linewidth="68">Medium</button><button data-inema-set-linewidth="75">Wide</button>
 </div>
-<div aria-label="Entrelinha" class="inema-segment" role="group">
-<button data-inema-set-leading="1.45">Compacto</button><button data-inema-set-leading="1.7">Confortável</button>
+<div aria-label="Between the lines" class="inema-segment" role="group">
+<button data-inema-set-leading="1.45">Compact</button><button data-inema-set-leading="1.7">Comfortable</button>
 </div>
-<div aria-label="Cor de acento" class="inema-accent-grid" role="group">
-<button data-inema-set-accent="emerald" title="Esmeralda"></button><button data-inema-set-accent="blue" title="Azul"></button><button data-inema-set-accent="purple" title="Roxo"></button><button data-inema-set-accent="amber" title="Âmbar"></button><button data-inema-set-accent="teal" title="Teal"></button><button data-inema-set-accent="rose" title="Rosa"></button>
+<div aria-label="Accent color" class="inema-accent-grid" role="group">
+<button data-inema-set-accent="emerald" title="Emerald"></button><button data-inema-set-accent="blue" title="Blue"></button><button data-inema-set-accent="purple" title="Purple"></button><button data-inema-set-accent="amber" title="Amber"></button><button data-inema-set-accent="teal" title="Teal"></button><button data-inema-set-accent="rose" title="Pink"></button>
 </div>
 </div>
 </div>
-<button aria-label="Alternar tema claro/escuro" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<button aria-label="Switch between light and dark themes" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
 </button>
@@ -171,25 +171,25 @@
 </div>
 </nav>
 <!-- Breadcrumb -->
-<nav aria-label="Trilha de navegação" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<nav aria-label="Navigation path" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
 <div class="flex items-center space-x-2 text-sm text-neutral-400">
-<a class="hover:text-blue-400" href="../../index.html">Início</a><span>/</span>
-<a class="hover:text-blue-400" href="index.html">Trilha 2</a><span>/</span>
-<span class="text-blue-400">Módulo 2.2</span>
+<a class="hover:text-blue-400" href="../../index.html">Start</a><span>/</span>
+<a class="hover:text-blue-400" href="index.html">Track 2</a><span>/</span>
+<span class="text-blue-400">Module 2.2</span>
 </div>
 </nav>
 <!-- Header do módulo -->
 <header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÓDULO 2.2</span>
-<h1 class="text-3xl sm:text-4xl font-bold mb-4">📊 O veredito: 38 testes, e quando vale a pena</h1>
-<p class="text-lg text-neutral-400 max-w-3xl">O field test (22 jun 2026), graded por código: Fugu Ultra vs Opus 4.8 nas mesmas 38 tarefas. Resultado headline — <strong>36/38 empate, 4.5× mais lento, 5× mais caro</strong>. Aqui você vê os números por wave, as 2 únicas derrotas do time, o ladder de decisão e um setup conceitual no Claude Code.</p>
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MODULE 2.2</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">📊 The verdict: 38 tests, and when it's worth it</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">The field test (22 jun 2026), graded by code: Fugu Ultra vs Opus 4.8 on the same 38 tasks. The headline result — <strong>36/38 tie, 4.5× slower, 5× more expensive</strong>. Here you’ll see the numbers for each wave, the team’s only 2 losses, the decision ladder, and a conceptual setup in Claude Code.</p>
 <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-3xl">
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">~30</div><div class="text-xs text-neutral-400">Minutos</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Intermed.</div><div class="text-xs text-neutral-400">Nível</div></div>
-<div aria-label="Progresso do módulo 2.2" aria-valuemax="100" aria-valuemin="0" class="inema-meter bg-dark-800/50 rounded-lg p-3 border border-dark-600" data-inema-meter="modulo:2-2" role="progressbar">
-<div class="text-xl font-bold text-blue-400" data-inema-meter-pct="">0%</div><div class="text-xs text-neutral-400" data-inema-meter-frac="">0 de 6</div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">6</div><div class="text-xs text-neutral-400">Topics</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">~30</div><div class="text-xs text-neutral-400">Minutes</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Intermed.</div><div class="text-xs text-neutral-400">Level</div></div>
+<div aria-label="Module 2.2 progress" aria-valuemax="100" aria-valuemin="0" class="inema-meter bg-dark-800/50 rounded-lg p-3 border border-dark-600" data-inema-meter="modulo:2-2" role="progressbar">
+<div class="text-xl font-bold text-blue-400" data-inema-meter-pct="">0%</div><div class="text-xs text-neutral-400" data-inema-meter-frac="">0 of 6</div>
 </div>
 </div>
 </div>
@@ -197,15 +197,15 @@
 <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12" data-inema-module="2-2" data-inema-track="2" id="conteudo">
 <div class="lg:grid lg:grid-cols-[210px_1fr] lg:gap-10">
 <!-- TOC sticky + scrollspy -->
-<nav aria-label="Índice da página" class="hidden lg:block sticky top-24 self-start" data-inema-toc="">
-<p class="text-sm text-neutral-400 mb-3">Seção <span data-inema-section-counter="">1 de 6</span></p>
+<nav aria-label="Page index" class="hidden lg:block sticky top-24 self-start" data-inema-toc="">
+<p class="text-sm text-neutral-400 mb-3">Section <span data-inema-section-counter="">1 of 6</span></p>
 <ol class="space-y-1.5 text-sm">
-<li><a class="inema-toc-link text-neutral-400 hover:text-blue-400" href="#topico-1">1. O exame (38 tarefas, 4 waves)</a></li>
-<li><a class="inema-toc-link text-neutral-400 hover:text-blue-400" href="#topico-2">2. Quem foi mais correto</a></li>
-<li><a class="inema-toc-link text-neutral-400 hover:text-blue-400" href="#topico-3">3. O relógio (4.5× mais lento)</a></li>
-<li><a class="inema-toc-link text-neutral-400 hover:text-blue-400" href="#topico-4">4. A conta (5× mais caro)</a></li>
-<li><a class="inema-toc-link text-neutral-400 hover:text-blue-400" href="#topico-5">5. As 2 derrotas do time</a></li>
-<li><a class="inema-toc-link text-neutral-400 hover:text-blue-400" href="#topico-6">6. O ladder + setup no Claude Code</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-blue-400" href="#topico-1">1. The exam (38 tasks, 4 waves)</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-blue-400" href="#topico-2">2. Who was more accurate</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-blue-400" href="#topico-3">3. The clock (4.5× slower)</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-blue-400" href="#topico-4">4. The math (5× more expensive)</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-blue-400" href="#topico-5">5. The team's 2 losses</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-blue-400" href="#topico-6">6. The ladder + setup in Claude Code</a></li>
 </ol>
 </nav>
 <div>
@@ -214,49 +214,49 @@
 <div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">1</span>
-<h2 class="text-2xl font-bold">🧪 O exame: 38 tarefas, 4 waves, graded por código</h2>
+<h2 class="text-2xl font-bold">🧪 The test: 38 tasks, 4 waves, graded by code</h2>
 </div>
-<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
+<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>I have a question</span></button>
 </div>
 <div class="inema-prose">
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t1-p1">Antes dos números, a régua. O field test (2026-06-22) colocou <strong class="text-blue-400">38 tarefas</strong> divididas em <strong class="text-blue-400">4 waves</strong> de dificuldade crescente, somando <strong>334 chamadas graded</strong>. "Graded por código" significa que cada resposta passou por <em>testes ocultos</em> — a chave foi provada por um solver independente antes de qualquer chamada paga. Sem juiz humano, sem achismo: ou passou no teste, ou não.</p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t1-p2">O prompt foi <strong>idêntico dos dois lados</strong> (Fugu e Opus), com 3 a 7 runs por tarefa para medir consistência, e <em>partial credit</em> nas tarefas multi-regra (você ganha proporcional ao número de regras cumpridas). Essa é a base que dá peso a tudo que vem depois.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t1-p1">Before the numbers, a benchmark. The field test (2026-06-22) put <strong class="text-blue-400">38 tasks</strong> divided into <strong class="text-blue-400">4 waves</strong> of increasing difficulty, adding up <strong>334 graded calls</strong>. "Graded by code" means that each answer was evaluated using <em>hidden tests</em> — the key was verified by an independent solver before any paid call. No human judge, no guesswork: it either passed the test or it didn't.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t1-p2">The prompt was <strong>identical on both sides</strong> (Fugu and Opus), with 3 to 7 runs per task to measure consistency, and <em>partial credit</em> For multi-rule tasks (you gain in proportion to the number of rules followed). This is the foundation that gives weight to everything that comes after.</p>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">🆕</span> Novo aqui? Três termos</h3>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">🆕</span> New here? Three terms</h3>
 <ul class="space-y-2 text-neutral-300 text-sm">
-<li><strong>Graded por código:</strong> a nota vem de testes automatizados, não de opinião — remove viés do avaliador.</li>
-<li><strong>Testes ocultos:</strong> os casos de avaliação não são mostrados ao modelo, para ele não "decorar" a resposta.</li>
-<li><strong>Partial credit:</strong> em tarefas com várias regras, acertar 4 de 5 vale 4/5, não zero.</li>
+<li><strong>Code-graded:</strong> the score comes from automated tests, not opinion — removing evaluator bias.</li>
+<li><strong>Hidden tests:</strong> the evaluation cases aren’t shown to the model, so it can’t “memorize” the answer.</li>
+<li><strong>Partial credit:</strong> on tasks with multiple rules, getting 4 out of 5 right is 4/5, not zero.</li>
 </ul>
 </div>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🌊</span> As 4 waves</h3>
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🌊</span> The 4 waves</h3>
 <div class="overflow-x-auto">
 <table class="w-full text-sm text-left">
 <thead class="text-blue-400 border-b border-dark-600">
-<tr><th class="py-2 pr-4">Wave</th><th class="py-2 pr-4">Tarefas</th><th class="py-2">Caráter</th></tr>
+<tr><th class="py-2 pr-4">Wave</th><th class="py-2 pr-4">Tasks</th><th class="py-2">Character</th></tr>
 </thead>
 <tbody class="text-neutral-300">
-<tr class="border-b border-dark-600"><td class="py-2 pr-4 font-semibold">Wave 1</td><td class="py-2 pr-4">14</td><td class="py-2">puzzles "textbook-hard" (teto do solo já alto)</td></tr>
-<tr class="border-b border-dark-600"><td class="py-2 pr-4 font-semibold">Wave 2</td><td class="py-2 pr-4">11</td><td class="py-2">"designed traps" (armadilhas projetadas)</td></tr>
-<tr class="border-b border-dark-600"><td class="py-2 pr-4 font-semibold">Wave 3</td><td class="py-2 pr-4">6</td><td class="py-2">"dense multi-rule specs" (specs densas, multi-regra)</td></tr>
-<tr><td class="py-2 pr-4 font-semibold">Wave 4</td><td class="py-2 pr-4">7</td><td class="py-2">"failure frontier" (feitas para quebrar 1 modelo)</td></tr>
+<tr class="border-b border-dark-600"><td class="py-2 pr-4 font-semibold">Wave 1</td><td class="py-2 pr-4">14</td><td class="py-2">“textbook-hard” puzzles (the baseline ceiling is already high)</td></tr>
+<tr class="border-b border-dark-600"><td class="py-2 pr-4 font-semibold">Wave 2</td><td class="py-2 pr-4">11</td><td class="py-2">“designed traps” (designed traps)</td></tr>
+<tr class="border-b border-dark-600"><td class="py-2 pr-4 font-semibold">Wave 3</td><td class="py-2 pr-4">6</td><td class="py-2">“dense multi-rule specs” (dense, multi-rule specs)</td></tr>
+<tr><td class="py-2 pr-4 font-semibold">Wave 4</td><td class="py-2 pr-4">7</td><td class="py-2">“failure frontier” (designed to break 1 model)</td></tr>
 </tbody>
 </table>
 </div>
-<p class="text-neutral-300 text-sm mt-3">Total: 14 + 11 + 6 + 7 = <strong>38 tarefas</strong>. Cada wave é mais difícil que a anterior — a Wave 4 foi desenhada para encontrar onde um modelo solo trava.</p>
+<p class="text-neutral-300 text-sm mt-3">Total: 14 + 11 + 6 + 7 = <strong>38 tasks</strong>. Each wave is harder than the last—the Wave 4 was designed to find where a solo model gets stuck.</p>
 </div>
 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">38 tarefas</div><div class="text-xs text-neutral-400">em 4 waves</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">38 tasks</div><div class="text-xs text-neutral-400">in 4 waves</div></div>
 <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">334 calls</div><div class="text-xs text-neutral-400">graded</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">3–7 runs</div><div class="text-xs text-neutral-400">por tarefa</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Partial credit</div><div class="text-xs text-neutral-400">nas multi-regra</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">3–7 runs</div><div class="text-xs text-neutral-400">per task</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Partial credit</div><div class="text-xs text-neutral-400">For multi-rule</div></div>
 </div>
 <div class="flex justify-start mt-6">
 <button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
 <span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
 </button>
 </div>
 </section>
@@ -265,19 +265,19 @@
 <div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">2</span>
-<h2 class="text-2xl font-bold">🎯 Quem foi mais correto</h2>
+<h2 class="text-2xl font-bold">🎯 Who was more accurate</h2>
 </div>
-<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
+<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>I have a question</span></button>
 </div>
 <div class="inema-prose">
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t2-p1">O placar de correção, somando as 38 tarefas: <strong class="text-blue-400">36 empates · 2 vitórias do soloist (Opus) · 0 vitórias do time (Fugu)</strong>. Lendo wave a wave, o time escondido nunca achou uma resposta que o solo não achasse. Nas palavras do field test: "nem 1 vez em 38".</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t2-p1">The accuracy score across all 38 tasks: <strong class="text-blue-400">36 ties · 2 soloist wins (Opus) · 0 team wins (Fugu)</strong>. Reading wave by wave, the hidden team never found an answer the soloist didn’t. In the words of the field test: “not once in 38.”</p>
 </div>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🏁</span> Correção por wave (Fugu / Opus / empate)</h3>
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🏁</span> Accuracy by wave (Fugu / Opus / tie)</h3>
 <div class="overflow-x-auto">
 <table class="w-full text-sm text-left">
 <thead class="text-blue-400 border-b border-dark-600">
-<tr><th class="py-2 pr-4">Wave</th><th class="py-2 pr-4">Vitórias Fugu</th><th class="py-2 pr-4">Vitórias Opus</th><th class="py-2">Empates</th></tr>
+<tr><th class="py-2 pr-4">Wave</th><th class="py-2 pr-4">Fugu Wins</th><th class="py-2 pr-4">Opus Wins</th><th class="py-2">Ties</th></tr>
 </thead>
 <tbody class="text-neutral-300">
 <tr class="border-b border-dark-600"><td class="py-2 pr-4 font-semibold">Wave 1</td><td class="py-2 pr-4">0</td><td class="py-2 pr-4">1</td><td class="py-2">13</td></tr>
@@ -288,21 +288,21 @@
 </tbody>
 </table>
 </div>
-<p class="text-neutral-300 text-sm mt-3">As 2 vitórias do Opus vieram da Wave 1 e da Wave 3 (detalhadas no tópico 5). O time não venceu nenhuma, em nenhuma wave.</p>
+<p class="text-neutral-300 text-sm mt-3">Opus’s 2 wins came in Wave 1 and Wave 3 (detailed in topic 5). The team didn’t win any, in any wave.</p>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> A leitura crua</h3>
-<p class="text-neutral-300 text-sm">Mais modelos não produziram mais acerto. A promessa "combine vários e passe do teto do solo" (Trilha 1) <strong>não se confirmou</strong> neste exame: o teto do solo já era suficiente para empatar quase tudo, e o ganho marginal do time foi exatamente zero em correção.</p>
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> The raw reading</h3>
+<p class="text-neutral-300 text-sm">More models did not produce more accuracy. The promise: "combine several and exceed the solo ceiling" (Path 1) <strong>Wasn’t confirmed</strong> In this benchmark, the solo ceiling was already high enough to match almost everything, and the team’s marginal gain was exactly zero in accuracy.</p>
 </div>
 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">36 empates</div><div class="text-xs text-neutral-400">de 38</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">2 do soloist</div><div class="text-xs text-neutral-400">Opus venceu</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">0 do team</div><div class="text-xs text-neutral-400">Fugu não venceu</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Ganho marginal</div><div class="text-xs text-neutral-400">zero em correção</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">36 ties</div><div class="text-xs text-neutral-400">of 38</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">2 of the soloist</div><div class="text-xs text-neutral-400">Opus won</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">0 of the team</div><div class="text-xs text-neutral-400">Fugu did not win</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Marginal gain</div><div class="text-xs text-neutral-400">zero in correctness</div></div>
 </div>
 <div class="flex justify-start mt-6">
 <button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span><span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span><span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
 </button>
 </div>
 </section>
@@ -311,16 +311,16 @@
 <div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">3</span>
-<h2 class="text-2xl font-bold">⏱️ O relógio: 4.5× mais lento</h2>
+<h2 class="text-2xl font-bold">⏱️ The clock: 4.5× slower</h2>
 </div>
-<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
+<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>I have a question</span></button>
 </div>
 <div class="inema-prose">
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t3-p1">Se a correção empatou, o relógio não. No total do exame, o Fugu levou <strong class="text-blue-400">357 minutos</strong> contra <strong class="text-blue-400">80 minutos</strong> do Opus — cerca de <strong>4.5× mais lento</strong>. Em código simples o contraste é brutal: Opus respondia em 3–6 segundos, o Fugu em 2–7 minutos — para a <em>mesma</em> resposta.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t3-p1">If accuracy was a tie, the clock wasn’t. Across the entire exam, Fugu took <strong class="text-blue-400">357 minutes</strong> against <strong class="text-blue-400">80 minutes</strong> of Opus — about <strong>4.5× slower</strong>. For simple code, the contrast is stark: Opus responded in 3–6 seconds, while Fugu took 2–7 minutes — for the <em>same</em> answer.</p>
 </div>
 <!-- SVG comparativo: latência média por wave -->
 <div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
-<svg aria-label="Barras comparando a latência média por tarefa do Fugu (azul) contra o Opus (ciano) nas quatro waves, em segundos" class="w-full h-auto" role="img" viewbox="0 0 1000 320">
+<svg aria-label="Bars comparing the average latency per task for Fugu (blue) versus Opus (cyan) across the four waves, in seconds" class="w-full h-auto" role="img" viewbox="0 0 1000 320">
 <defs>
 <lineargradient id="m22t3-grad" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#60a5fa"></stop><stop offset="1" stop-color="#3b82f6"></stop></lineargradient>
 <pattern height="32" id="m22t3-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#3b82f6" opacity="0.10" r="1.3"></circle></pattern>
@@ -328,7 +328,7 @@
 <rect fill="url(#m22t3-grid)" height="320" width="1000" x="0" y="0"></rect>
 <!-- eixo base -->
 <line stroke="#374151" stroke-width="1.5" x1="70" x2="960" y1="270" y2="270"></line>
-<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="12" x="40" y="60">seg/tarefa (média)</text>
+<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="12" x="40" y="60">sec/task (average)</text>
 <!-- legenda -->
 <rect fill="url(#m22t3-grad)" height="12" rx="3" width="16" x="640" y="28"></rect><text fill="#bcd6ff" font-family="Inter,sans-serif" font-size="13" x="662" y="38">Fugu</text>
 <rect fill="#0e1b26" height="12" rx="3" stroke="#38bdf8" stroke-width="2" width="16" x="730" y="28"></rect><text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="13" x="752" y="38">Opus</text>
@@ -357,14 +357,14 @@
 <text fill="#9ca3af" font-size="13" text-anchor="middle" x="792" y="290">Wave 4</text>
 </g>
 </svg>
-<p class="text-xs text-neutral-400 mt-2 text-center">Latência média por tarefa, Fugu (azul) vs Opus (ciano). Em todas as waves o time é multiplicamente mais lento — o preço de esperar o fan-out inteiro.</p>
+<p class="text-xs text-neutral-400 mt-2 text-center">Average latency per task, Fugu (blue) vs. Opus (cyan). In every wave, the team is multiple times slower—the cost of waiting for the entire fan-out.</p>
 </div>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">📊</span> Latência média por tarefa (segundos)</h3>
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">📊</span> Average latency per task (seconds)</h3>
 <div class="overflow-x-auto">
 <table class="w-full text-sm text-left">
 <thead class="text-blue-400 border-b border-dark-600">
-<tr><th class="py-2 pr-4">Wave</th><th class="py-2 pr-4">Fugu</th><th class="py-2 pr-4">Opus</th><th class="py-2">Razão aprox.</th></tr>
+<tr><th class="py-2 pr-4">Wave</th><th class="py-2 pr-4">Fugu</th><th class="py-2 pr-4">Opus</th><th class="py-2">Approx. ratio</th></tr>
 </thead>
 <tbody class="text-neutral-300">
 <tr class="border-b border-dark-600"><td class="py-2 pr-4 font-semibold">Wave 1</td><td class="py-2 pr-4">205s</td><td class="py-2 pr-4">40s</td><td class="py-2">~5×</td></tr>
@@ -375,17 +375,17 @@
 </tbody>
 </table>
 </div>
-<p class="text-neutral-300 text-sm mt-3">A Wave 3 (specs densas) foi a mais desproporcional: o Opus resolvia em 6s o que o Fugu levava ~161s — mesma resposta, ~27× o tempo.</p>
+<p class="text-neutral-300 text-sm mt-3">Wave 3 (dense specs) was the most disproportionate: Opus solved in 6s what took Fugu ~161s — same answer, ~27× the time.</p>
 </div>
 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">357 vs 80 min</div><div class="text-xs text-neutral-400">total do exame</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">4.5×</div><div class="text-xs text-neutral-400">mais lento</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">3–6s vs 2–7min</div><div class="text-xs text-neutral-400">em código</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Latência somada</div><div class="text-xs text-neutral-400">esperar o time</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">357 vs 80 min</div><div class="text-xs text-neutral-400">total for the exam</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">4.5×</div><div class="text-xs text-neutral-400">slower</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">3–6s vs 2–7min</div><div class="text-xs text-neutral-400">in code</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Combined latency</div><div class="text-xs text-neutral-400">wait for the team</div></div>
 </div>
 <div class="flex justify-start mt-6">
 <button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span><span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span><span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
 </button>
 </div>
 </section>
@@ -394,23 +394,23 @@
 <div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">4</span>
-<h2 class="text-2xl font-bold">💸 A conta: 5× mais caro</h2>
+<h2 class="text-2xl font-bold">💸 The bill: 5× more expensive</h2>
 </div>
-<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
+<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>I have a question</span></button>
 </div>
 <div class="inema-prose">
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t4-p1">A conta final do exame: <strong class="text-blue-400">US$ 53,60 (Fugu, 163 calls)</strong> contra <strong class="text-blue-400">US$ 10,66 (Opus, 171 calls)</strong> — cerca de <strong>5× mais caro</strong>. Repare: o Fugu fez até <em>menos</em> chamadas externas, mas custou muito mais. O motivo é o custo escondido da Trilha 1, agora com nota fiscal: a maior parte do gasto do Fugu são os <em>orchestration tokens</em> — o que o time privado lê e escreve por dentro, todo billado.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t4-p1">The final exam math: <strong class="text-blue-400">US$ 53,60 (Fugu, 163 calls)</strong> against <strong class="text-blue-400">US$ 10,66 (Opus, 171 calls)</strong> — about <strong>5× more expensive</strong>. Notice: Fugu even did <em>less</em> external calls, but it cost much more. The reason is the hidden cost of Track 1, now itemized: most of Fugu's spending goes to <em>orchestration tokens</em> — what the private team reads and writes internally, all billed.</p>
 </div>
 <!-- SVG comparativo: custo médio por wave -->
 <div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
-<svg aria-label="Barras comparando o custo médio por tarefa do Fugu (azul) contra o Opus (ciano) nas quatro waves, em dólares" class="w-full h-auto" role="img" viewbox="0 0 1000 320">
+<svg aria-label="Bars comparing the average cost per task for Fugu (blue) versus Opus (cyan) across the four waves, in dollars" class="w-full h-auto" role="img" viewbox="0 0 1000 320">
 <defs>
 <lineargradient id="m22t4-grad" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#60a5fa"></stop><stop offset="1" stop-color="#3b82f6"></stop></lineargradient>
 <pattern height="32" id="m22t4-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#3b82f6" opacity="0.10" r="1.3"></circle></pattern>
 </defs>
 <rect fill="url(#m22t4-grid)" height="320" width="1000" x="0" y="0"></rect>
 <line stroke="#374151" stroke-width="1.5" x1="70" x2="960" y1="270" y2="270"></line>
-<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="12" x="40" y="60">US$/tarefa (média)</text>
+<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="12" x="40" y="60">US$/task (average)</text>
 <rect fill="url(#m22t4-grad)" height="12" rx="3" width="16" x="640" y="28"></rect><text fill="#bcd6ff" font-family="Inter,sans-serif" font-size="13" x="662" y="38">Fugu</text>
 <rect fill="#0e1b26" height="12" rx="3" stroke="#38bdf8" stroke-width="2" width="16" x="730" y="28"></rect><text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="13" x="752" y="38">Opus</text>
 <!-- escala: $0.389 -> 200px (≈514 px/$) -->
@@ -439,14 +439,14 @@
 <text fill="#9ca3af" font-size="13" text-anchor="middle" x="792" y="290">Wave 4</text>
 </g>
 </svg>
-<p class="text-xs text-neutral-400 mt-2 text-center">Custo médio por tarefa, Fugu (azul) vs Opus (ciano). A Wave 3 é a mais desigual: ~$0.358 vs ~$0.014 — o time custa ~26× para empatar.</p>
+<p class="text-xs text-neutral-400 mt-2 text-center">Average cost per task, Fugu (blue) vs. Opus (cyan). Wave 3 is the most uneven: ~$0.358 vs. ~$0.014—the team costs ~26× as much to tie.</p>
 </div>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">📊</span> Custo médio por tarefa (US$)</h3>
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">📊</span> Average cost per task (US$)</h3>
 <div class="overflow-x-auto">
 <table class="w-full text-sm text-left">
 <thead class="text-blue-400 border-b border-dark-600">
-<tr><th class="py-2 pr-4">Wave</th><th class="py-2 pr-4">Fugu</th><th class="py-2 pr-4">Opus</th><th class="py-2">Razão aprox.</th></tr>
+<tr><th class="py-2 pr-4">Wave</th><th class="py-2 pr-4">Fugu</th><th class="py-2 pr-4">Opus</th><th class="py-2">Approx. ratio</th></tr>
 </thead>
 <tbody class="text-neutral-300">
 <tr class="border-b border-dark-600"><td class="py-2 pr-4 font-semibold">Wave 1</td><td class="py-2 pr-4">$0.389</td><td class="py-2 pr-4">$0.100</td><td class="py-2">~4×</td></tr>
@@ -457,17 +457,17 @@
 </tbody>
 </table>
 </div>
-<p class="text-neutral-300 text-sm mt-3">Mais caro com <em>menos</em> chamadas: o custo não está no número de calls, está nos tokens internos do time. Você paga o pool inteiro, não só a resposta final.</p>
+<p class="text-neutral-300 text-sm mt-3">More expensive with <em>less</em> calls: the cost isn't in the number of calls, it's in the team's internal tokens. You pay for the entire pool, not just the final response.</p>
 </div>
 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">$53.60 vs $10.66</div><div class="text-xs text-neutral-400">total do exame</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">5×</div><div class="text-xs text-neutral-400">mais caro</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">163 vs 171 calls</div><div class="text-xs text-neutral-400">Fugu fez menos</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Orchestration tokens</div><div class="text-xs text-neutral-400">o time é billado</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">$53.60 vs $10.66</div><div class="text-xs text-neutral-400">total for the exam</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">5×</div><div class="text-xs text-neutral-400">more expensive</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">163 vs 171 calls</div><div class="text-xs text-neutral-400">Fugu did less</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Orchestration tokens</div><div class="text-xs text-neutral-400">the team is billed</div></div>
 </div>
 <div class="flex justify-start mt-6">
 <button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span><span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span><span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
 </button>
 </div>
 </section>
@@ -476,56 +476,56 @@
 <div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">5</span>
-<h2 class="text-2xl font-bold">🥈 As 2 derrotas do time</h2>
+<h2 class="text-2xl font-bold">🥈 The team's 2 losses</h2>
 </div>
-<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
+<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>I have a question</span></button>
 </div>
 <div class="inema-prose">
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t5-p1">Das 38 tarefas, só 2 não empataram — e nas duas foi o <strong class="text-blue-400">solo</strong> que ganhou. O time não só não venceu nada: onde houve diferença, perdeu. Coordenar não imuniza contra escorregões; às vezes adiciona pontos de falha.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t5-p1">Of the 38 tasks, only 2 didn't tie—and in both cases it was the <strong class="text-blue-400">solo</strong> that it won. The team didn’t just fail to win anything: where there was a difference, it lost. Coordination doesn’t prevent slipups; sometimes it adds points of failure.</p>
 </div>
 <div class="space-y-6 mb-6">
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">1</span></div>
 <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
 <h4 class="font-semibold text-white mb-2">Wave 3 — "fix every bug in stats module"</h4>
-<p class="text-neutral-300 text-sm">O módulo tinha 6 bugs. O Opus pegou os 6 em todo run (100%). O Fugu, repetidamente, perdeu 1 — ficou em <strong class="text-blue-400">80% (5/6)</strong>. Mesma tarefa, e o time consistentemente deixou um bug passar.</p>
+<p class="text-neutral-300 text-sm">The module had 6 bugs. Opus caught all 6 on every run (100%). Fugu repeatedly missed 1 — it ended up at <strong class="text-blue-400">80% (5/6)</strong>. Same task, and the team consistently let a bug slip through.</p>
 </div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center"><span class="text-blue-400 font-bold">2</span></div>
 <div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600">
 <h4 class="font-semibold text-white mb-2">Wave 1 — "strict Roman numeral validation"</h4>
-<p class="text-neutral-300 text-sm">A regra era rejeitar formas inválidas como "IIII". O Opus fez <strong class="text-blue-400">5/5</strong>; o Fugu fez <strong class="text-blue-400">4/5</strong> — escorregou uma vez, aceitando o que deveria recusar.</p>
+<p class="text-neutral-300 text-sm">The rule was to reject invalid forms like “IIII”. Opus did <strong class="text-blue-400">5/5</strong>; Fugu did <strong class="text-blue-400">4/5</strong> — slipped once, accepting what it should have rejected.</p>
 </div>
 </div>
 </div>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">📊</span> As 2 derrotas, lado a lado</h3>
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">📊</span> The 2 losses, side by side</h3>
 <div class="overflow-x-auto">
 <table class="w-full text-sm text-left">
 <thead class="text-blue-400 border-b border-dark-600">
-<tr><th class="py-2 pr-4">Tarefa</th><th class="py-2 pr-4">Fugu</th><th class="py-2 pr-4">Opus</th><th class="py-2">Vencedor</th></tr>
+<tr><th class="py-2 pr-4">Task</th><th class="py-2 pr-4">Fugu</th><th class="py-2 pr-4">Opus</th><th class="py-2">Winner</th></tr>
 </thead>
 <tbody class="text-neutral-300">
 <tr class="border-b border-dark-600"><td class="py-2 pr-4 font-semibold">Stats: 6 bugs</td><td class="py-2 pr-4">80% (5/6)</td><td class="py-2 pr-4">100% (6/6)</td><td class="py-2 text-blue-400">Opus</td></tr>
-<tr><td class="py-2 pr-4 font-semibold">Romano estrito</td><td class="py-2 pr-4">4/5</td><td class="py-2 pr-4">5/5</td><td class="py-2 text-blue-400">Opus</td></tr>
+<tr><td class="py-2 pr-4 font-semibold">Strict Romano</td><td class="py-2 pr-4">4/5</td><td class="py-2 pr-4">5/5</td><td class="py-2 text-blue-400">Opus</td></tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> A lição</h3>
-<p class="text-neutral-300 text-sm">Quando o ganho de juntar modelos é zero (correção) e o time ainda escorrega onde o solo acerta, a conta de custo × benefício pende forte para o modelo único — exatamente o que o ladder do próximo tópico formaliza.</p>
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> The lesson</h3>
+<p class="text-neutral-300 text-sm">When the benefit of combining models is zero (correctness) and the team still slips where a solo model gets it right, the cost-benefit calculation strongly favors the single model—exactly what the ladder in the next topic formalizes.</p>
 </div>
 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Stats 80%</div><div class="text-xs text-neutral-400">vs 100% do Opus</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Romano 4/5</div><div class="text-xs text-neutral-400">vs 5/5 do Opus</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">2 derrotas</div><div class="text-xs text-neutral-400">ambas do time</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Pontos de falha</div><div class="text-xs text-neutral-400">coordenar pode somar</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Stats: 80%</div><div class="text-xs text-neutral-400">vs. 100% for Opus</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Romano 4/5</div><div class="text-xs text-neutral-400">vs. 5/5 for Opus</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">2 losses</div><div class="text-xs text-neutral-400">both from the team</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Failure points</div><div class="text-xs text-neutral-400">coordination can add up</div></div>
 </div>
 <div class="flex justify-start mt-6">
 <button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span><span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span><span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
 </button>
 </div>
 </section>
@@ -534,16 +534,16 @@
 <div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-blue-500/20 text-blue-400 font-bold text-xl">6</span>
-<h2 class="text-2xl font-bold">🪜 O ladder de decisão + setup no Claude Code</h2>
+<h2 class="text-2xl font-bold">🪜 The decision ladder + setup in Claude Code</h2>
 </div>
-<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
+<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>I have a question</span></button>
 </div>
 <div class="inema-prose">
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t6-p1">O veredito não é "orquestrador é ruim" — é "use o critério certo". O field test propõe um <strong class="text-blue-400">ladder de decisão</strong>: uma escada de 3 perguntas que diz, para cada tarefa, se o orquestrador ganha seu lugar ou se um modelo forte sozinho é a melhor compra.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m2-2-t6-p1">The verdict isn’t “orchestrators are bad” — it’s “use the right criteria.” The field test proposes a <strong class="text-blue-400">decision ladder</strong>: a ladder of 3 questions that tells you, for each task, whether the orchestrator earns its place or whether a single strong model is the best buy.</p>
 </div>
 <!-- SVG: ladder de decisão (fluxo) -->
 <div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
-<svg aria-label="Fluxo do ladder de decisão: se um modelo forte já resolve, use 1 modelo; senão, se não precisa de 1 endpoint mais hedge, ainda 1 modelo; só então o orquestrador ganha lugar" class="w-full h-auto" role="img" viewbox="0 0 1000 260">
+<svg aria-label="Decision ladder flow: if one strong model already solves it, use 1 model; otherwise, if you don’t need 1 endpoint plus a hedge, still use 1 model; only then does the orchestrator earn its place" class="w-full h-auto" role="img" viewbox="0 0 1000 260">
 <defs>
 <lineargradient id="m22t6-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#60a5fa"></stop><stop offset="1" stop-color="#3b82f6"></stop></lineargradient>
 <filter height="180%" id="m22t6-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
@@ -559,52 +559,52 @@
 </g>
 <!-- decisão 1 -->
 <g filter="url(#m22t6-glow)"><rect fill="#0e1622" height="70" rx="14" stroke="url(#m22t6-grad)" stroke-width="2.5" width="210" x="40" y="60"></rect></g>
-<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="14" font-weight="700" text-anchor="middle" x="145" y="88">1 modelo forte</text>
-<text fill="#bcd6ff" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="145" y="108">já resolve?</text>
+<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="14" font-weight="700" text-anchor="middle" x="145" y="88">1 strong model</text>
+<text fill="#bcd6ff" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="145" y="108">does it already solve it?</text>
 <!-- saída SIM -> 1 modelo -->
-<g><rect fill="#0e1b26" height="56" rx="12" stroke="#38bdf8" stroke-width="2" width="200" x="380" y="32"></rect><text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="13" font-weight="600" text-anchor="middle" x="480" y="56">SIM → use 1 modelo</text><text fill="#9ca3af" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="480" y="74">rápido, barato, empata</text></g>
+<g><rect fill="#0e1b26" height="56" rx="12" stroke="#38bdf8" stroke-width="2" width="200" x="380" y="32"></rect><text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="13" font-weight="600" text-anchor="middle" x="480" y="56">YES → use 1 model</text><text fill="#9ca3af" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="480" y="74">fast, cheap, ties</text></g>
 <!-- decisão 2 (NÃO) -->
 <g filter="url(#m22t6-glow)"><rect fill="#0e1622" height="56" rx="12" stroke="url(#m22t6-grad)" stroke-width="2" width="210" x="380" y="112"></rect></g>
-<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="12.5" font-weight="600" text-anchor="middle" x="485" y="134">NÃO → quer 1 endpoint</text>
-<text fill="#bcd6ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="485" y="152">+ hedge, e custo/espera não importam?</text>
+<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="12.5" font-weight="600" text-anchor="middle" x="485" y="134">NO → you want 1 endpoint</text>
+<text fill="#bcd6ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="485" y="152">+ hedge, and cost/wait don’t matter?</text>
 <!-- saída final -->
 <g filter="url(#m22t6-glow)"><rect fill="#0e1622" height="60" rx="14" stroke="url(#m22t6-grad)" stroke-width="2.5" width="240" x="700" y="172"></rect></g>
-<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="14" font-weight="700" text-anchor="middle" x="820" y="198">SIM → orquestrador</text>
-<text fill="#bcd6ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="820" y="216">ganha seu lugar</text>
-<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="430" y="218">NÃO → 1 modelo ainda é melhor compra</text>
+<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="14" font-weight="700" text-anchor="middle" x="820" y="198">YES → orchestrator</text>
+<text fill="#bcd6ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="820" y="216">earns its place</text>
+<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="11.5" text-anchor="middle" x="430" y="218">NO → 1 model is still the better buy</text>
 </svg>
-<p class="text-xs text-neutral-400 mt-2 text-center">O ladder: só no degrau final o orquestrador vence. Neste exame, toda tarefa "caiu pelo topo" — um modelo forte já empatava, mais rápido e barato.</p>
+<p class="text-xs text-neutral-400 mt-2 text-center">The ladder: the orchestrator wins only on the final rung. In this test, every task "fell off the top" — a strong model already tied, faster and cheaper.</p>
 </div>
 <div class="bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🪜</span> Os 3 degraus</h3>
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">🪜</span> The 3 steps</h3>
 <ul class="space-y-3 text-neutral-300">
-<li class="flex items-start space-x-2"><span class="text-blue-400 mt-1 font-bold">1.</span><span><strong>Um modelo forte já resolve?</strong> → <em>SIM</em>: use 1 modelo (mais rápido, barato e empata).</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400 mt-1 font-bold">2.</span><span><strong>NÃO</strong> → quer 1 endpoint + hedge de vendor, <em>e</em> a espera e a conta não importam? → <em>NÃO</em>: 1 modelo ainda é a melhor compra.</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400 mt-1 font-bold">3.</span><span><strong>SIM</strong> → aí sim o orquestrador ganha seu lugar.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400 mt-1 font-bold">1.</span><span><strong>Can a strong model already solve it?</strong> → <em>YES</em>: use 1 model (faster, cheaper, and a tie).</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400 mt-1 font-bold">2.</span><span><strong>NO</strong> → you want 1 endpoint + a vendor hedge, <em>e</em> the wait and the bill don't matter? → <em>NO</em>: 1 model is still the best buy.</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400 mt-1 font-bold">3.</span><span><strong>YES</strong> → that’s when the orchestrator earns its place.</span></li>
 </ul>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6">
-<h4 class="font-bold text-blue-400 mb-4">✓ Quando escolher Fugu</h4>
+<h4 class="font-bold text-blue-400 mb-4">✓ When to choose Fugu</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Quer zero código de orquestração + 1 endpoint</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Quer hedge contra lock-in de 1 vendor</span></li>
-<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Custo e espera não importam para o seu caso</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Want zero orchestration code + 1 endpoint</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Want a hedge against vendor lock-in</span></li>
+<li class="flex items-start space-x-2"><span class="text-blue-400">✓</span><span>Cost and wait time don't matter in your case</span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">✗ Quando ficar com 1 modelo forte</h4>
+<h4 class="font-bold text-red-400 mb-4">✗ When to stick with 1 strong model</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Um top model já resolve a tarefa</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Você liga para velocidade (o time soma minutos)</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Você liga para custo (paga o time escondido)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>A top model already solves the task</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>You care about speed (the team adds minutes)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>You care about cost (you pay for the hidden team)</span></li>
 </ul>
 </div>
 </div>
 <!-- BOX PRÁTICO: setup conceitual no Claude Code -->
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">🛠️</span> Prático: setup conceitual do Fugu no Claude Code</h3>
-<p class="text-neutral-300 text-sm mb-3">A ideia, no nível de conceito, é apontar o Claude Code para o endpoint do Fugu usando sua API key — o mesmo padrão de "base URL + API key" que você usa para qualquer provider compatível. <strong>Honestidade primeiro:</strong> os passos <em>exatos</em> (endpoint correto, nome das variáveis, billing) vêm da <strong>documentação oficial da Sakana (sakana.ai)</strong> e do markdown de setup do autor. O field test relata que o setup do Fugu <em>não é trivial</em> — não é só "trocar endpoint + key" como num provider OpenAI-compatible comum. Trate o exemplo abaixo como esqueleto, não como receita literal.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">🛠️</span> Hands-on: conceptual Fugu setup in Claude Code</h3>
+<p class="text-neutral-300 text-sm mb-3">At the conceptual level, the idea is to point Claude Code to the Fugu endpoint using your API key—the same “base URL + API key” pattern you use with any compatible provider. <strong>Honesty first:</strong> the steps <em>exact</em> (correct endpoint, variable names, billing) come from <strong>Sakana's official documentation (sakana.ai)</strong> and the author's setup markdown. The field test reports that Fugu's setup <em>Isn’t trivial</em> — it’s not just “swap the endpoint + key” like with a typical OpenAI-compatible provider. Treat the example below as a skeleton, not a literal recipe.</p>
 <pre class="font-mono text-xs sm:text-sm bg-dark-900 border border-dark-600 rounded-lg p-4 overflow-x-auto text-neutral-200 whitespace-pre-wrap"># Esqueleto conceitual — substitua pelos valores reais da doc da Sakana.
 # NÃO é um endpoint garantido; confirme em sakana.ai e no .md do autor.
 
@@ -614,48 +614,48 @@ export ANTHROPIC_API_KEY="&lt;sua-api-key&gt;"           # sua chave do Fugu
 # depois, no Claude Code, você apontaria a sessão para esse provider
 # e usaria o modelo "fugu-ultra" conforme a doc indicar.
 claude --model fugu-ultra "resuma este repositório e aponte 3 riscos"</pre>
-<p class="text-neutral-300 text-sm mt-3"><strong>Billing:</strong> há duas formas — <em>assinatura</em> (plano mensal, como o autor que estourou a janela de 5h no plano de US$ 200/mês) ou <em>pay-as-you-go via API</em> (paga por token usado). Para experimentar sem comprometer um plano, pay-as-you-go costuma ser o caminho — mas lembre do custo escondido: você paga os <em>orchestration tokens</em> do time. Confirme valores e endpoints em <code class="text-primary">sakana.ai</code> antes de rodar.</p>
+<p class="text-neutral-300 text-sm mt-3"><strong>Billing:</strong> there are two ways — <em>subscription</em> (monthly plan, like the author who exceeded the 5h window on the US$ 200/month plan) or <em>pay-as-you-go via API</em> (pay per token used). To experiment without committing to a plan, pay-as-you-go is usually the way to go—but remember the hidden cost: you pay for the <em>orchestration tokens</em> of the team. Confirm values and endpoints in <code class="text-primary">sakana.ai</code> before running.</p>
 </div>
 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Ladder</div><div class="text-xs text-neutral-400">3 degraus</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Caiu pelo topo</div><div class="text-xs text-neutral-400">solo já empatava</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Hedge de vendor</div><div class="text-xs text-neutral-400">não travar em 1</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Pay-as-you-go</div><div class="text-xs text-neutral-400">ou assinatura</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Ladder</div><div class="text-xs text-neutral-400">3 steps</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Dropped at the top</div><div class="text-xs text-neutral-400">solo already tied</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Vendor hedge</div><div class="text-xs text-neutral-400">Don’t get locked into one</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-blue-400 font-bold text-sm mb-1">Pay-as-you-go</div><div class="text-xs text-neutral-400">or subscription</div></div>
 </div>
 <!-- Checagem leve opcional -->
 <div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-2-2#q1">
-<p class="font-medium mb-4">Recuperação rápida (opcional): no field test, qual foi o resultado headline?</p>
+<p class="font-medium mb-4">Quick recall (optional): in the field test, what was the headline result?</p>
 <div class="inema-check-options space-y-2">
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">O Fugu venceu a maioria das tarefas e foi mais barato</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">36/38 empate, ~4.5× mais lento e ~5× mais caro que o Opus</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Empate total, mesmo custo e mesma latência</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Fugu won most of the tasks and cost less</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">36/38 tie, ~4.5× slower and ~5× more expensive than Opus</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Complete tie, same cost and same latency</button>
 </div>
 <div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
 </div>
 <div class="flex justify-start mt-8">
 <button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/20 border border-blue-500/30 text-blue-400 hover:bg-blue-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span><span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span><span class="inema-label-todo">Mark as read</span><span class="inema-label-done">Read</span>
 </button>
 </div>
 </section>
 <!-- ===== RESUMO ===== -->
 <section class="mb-12">
 <div class="bg-gradient-to-br from-blue-900/40 via-dark-800 to-dark-800 rounded-xl border border-blue-500/30 p-8">
-<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumo do módulo</h2>
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Module summary</h2>
 <div class="space-y-4 mb-8">
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">O exame</strong><span class="text-neutral-400"> — 38 tarefas, 4 waves, 334 calls graded por código, prompt idêntico, 3–7 runs.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Correção</strong><span class="text-neutral-400"> — 36 empates, 2 do Opus, 0 do time: o team nunca achou o que o solo não achou.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Relógio e conta</strong><span class="text-neutral-400"> — 357 vs 80 min (4.5×) e US$ 53,60 vs US$ 10,66 (5×).</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">As 2 derrotas</strong><span class="text-neutral-400"> — stats 80% vs 100% e romano 4/5 vs 5/5: onde houve diferença, o solo ganhou.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Ladder + setup</strong><span class="text-neutral-400"> — use 1 modelo até o orquestrador justificar; setup no Claude Code segue a doc da Sakana.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">The test</strong><span class="text-neutral-400"> — 38 tasks, 4 waves, 334 calls graded by code, identical prompt, 3–7 runs.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Accuracy</strong><span class="text-neutral-400"> — 36 ties, 2 for Opus, 0 for the team: the team never found what the solo model didn't.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Clock and cost</strong><span class="text-neutral-400"> — 357 vs 80 min (4.5×) and US$ 53,60 vs US$ 10,66 (5×).</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">The 2 losses</strong><span class="text-neutral-400"> — stats 80% vs. 100% and Roman numerals 4/5 vs. 5/5: where there was a difference, solo won.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-blue-400 mt-1">✓</span><div><strong class="text-white">Ladder + setup</strong><span class="text-neutral-400"> — use 1 model until the orchestrator proves its worth; setup in Claude Code follows Sakana’s docs.</span></div></div>
 </div>
 <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
-<h3 class="font-semibold text-blue-400 mb-2">Próxima trilha:</h3>
-<p class="text-neutral-300">Trilha 3 — OpenRouter Fusion: o ensemble (mesmo prompt, N modelos, um juiz)</p>
+<h3 class="font-semibold text-blue-400 mb-2">Next track:</h3>
+<p class="text-neutral-300">Track 3 — OpenRouter Fusion: the ensemble (same prompt, N models, one judge)</p>
 </div>
 <div class="flex flex-col sm:flex-row gap-4">
-<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Voltar para a Trilha</a>
-<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="../trilha3/index.html">Próxima trilha: Fusion →</a>
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Back to the Track</a>
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="../trilha3/index.html">Next track: Fusion →</a>
 </div>
 </div>
 </section>
@@ -664,7 +664,7 @@ claude --model fugu-ultra "resuma este repositório e aponte 3 riscos"</pre>
 </main>
 <footer class="border-t border-dark-600 py-8 mt-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p>LLMs Orquestradas — Módulo 2.2 · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+<p>Orchestrated LLMs — Module 2.2 · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
 </div>
 </footer>
 <script>
@@ -695,7 +695,7 @@ claude --model fugu-ultra "resuma este repositório e aponte 3 riscos"</pre>
     function closeModal() { document.querySelectorAll('.modal').forEach(m => m.classList.add('hidden')); document.body.style.overflow = 'auto'; }
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
   </script>
-<script src="../../assets/learn.js"></script>
+<script src="../../../assets/learn.js"></script>
 <script>
     if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init(); }
     window.addEventListener('DOMContentLoaded', function () {

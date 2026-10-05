@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="pt-BR">
+<html class="dark" lang="es">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="llms-orquestradas" name="inema-course"/>
-<title>Módulo 1.1 · O que é orquestrar várias LLMs | LLMs Orquestradas</title>
+<title>Módulo 1.1 · Qué es orquestar varias LLM | LLM Orquestadas</title>
 <script>
   (function () {
     try {
@@ -121,17 +121,17 @@
       .wf-a:nth-child(4){animation-delay:.75s} .wf-a:nth-child(5){animation-delay:1s}
     }
   </style>
-<link href="../../assets/learn.css" rel="stylesheet"/>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
 <link href="https://inematds.github.io/sakanafugu/curso/trilha1/modulo-1-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/sakanafugu/en/curso/trilha1/modulo-1-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/sakanafugu/es/curso/trilha1/modulo-1-1.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-1-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha1/modulo-1-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha1/modulo-1-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
-<a class="skip sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-2 focus:left-2 focus:px-4 focus:py-2 focus:bg-dark-800 focus:rounded-lg focus:text-primary" href="#conteudo">Pular para o conteúdo</a>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha1/modulo-1-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-1-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<a class="skip sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-2 focus:left-2 focus:px-4 focus:py-2 focus:bg-dark-800 focus:rounded-lg focus:text-primary" href="#conteudo">Saltar al contenido</a>
 <!-- ===== NAV (trilha 1 ativa) ===== -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex justify-between items-center h-14">
 <div class="flex items-center space-x-4">
 <a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
-<span class="text-2xl">🐟</span><span class="font-bold text-lg hidden sm:inline">LLMs Orquestradas</span>
+<span class="text-2xl">🐟</span><span class="font-bold text-lg hidden sm:inline">LLMs orquestados</span>
 </a>
 <span class="text-neutral-600">|</span>
 <a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
@@ -141,34 +141,34 @@
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Fugu</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Fusion</span></a>
 <button class="ml-1 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-inema-journey-open="" type="button">
-<span aria-hidden="true">◷</span><span class="hidden sm:inline">Jornada</span><span aria-hidden="true" class="inema-journey-badge hidden" data-count="0" data-inema-journey-badge=""></span>
+<span aria-hidden="true">◷</span><span class="hidden sm:inline">Recorrido</span><span aria-hidden="true" class="inema-journey-badge hidden" data-count="0" data-inema-journey-badge=""></span>
 </button>
 <div class="relative">
 <button aria-expanded="false" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-inema-appearance-toggle="[data-inema-appearance]" type="button">
-<span aria-hidden="true">◑</span><span class="hidden sm:inline">Aparência</span>
+<span aria-hidden="true">◑</span><span class="hidden sm:inline">Apariencia</span>
 </button>
 <div class="inema-appearance-pop" data-inema-appearance="">
 <div aria-label="Tema" class="inema-segment" role="group">
-<button data-inema-set-theme="inema-dark">Escuro</button><button data-inema-set-theme="claro">Claro</button><button data-inema-set-theme="sepia">Sépia</button><button data-inema-set-theme="foco">Foco</button><button data-inema-set-theme="contraste">Alto contraste</button>
+<button data-inema-set-theme="inema-dark">Oscuro</button><button data-inema-set-theme="claro">Claro</button><button data-inema-set-theme="sepia">Sepia</button><button data-inema-set-theme="foco">Enfoque</button><button data-inema-set-theme="contraste">Alto contraste</button>
 </div>
-<div aria-label="Fonte" class="inema-segment" role="group">
-<button data-inema-set-font="inter">Inter</button><button data-inema-set-font="system">Sistema</button><button data-inema-set-font="leitura">Leitura</button>
+<div aria-label="Fuente" class="inema-segment" role="group">
+<button data-inema-set-font="inter">Inter</button><button data-inema-set-font="system">Sistema</button><button data-inema-set-font="leitura">Lectura</button>
 </div>
-<div aria-label="Tamanho do texto" class="inema-segment" role="group">
+<div aria-label="Tamaño del texto" class="inema-segment" role="group">
 <button data-inema-set-fontscale="100">A</button><button data-inema-set-fontscale="112">A+</button><button data-inema-set-fontscale="125">A++</button>
 </div>
-<div aria-label="Largura da linha" class="inema-segment" role="group">
-<button data-inema-set-linewidth="60">Estreito</button><button data-inema-set-linewidth="68">Médio</button><button data-inema-set-linewidth="75">Largo</button>
+<div aria-label="Ancho de línea" class="inema-segment" role="group">
+<button data-inema-set-linewidth="60">Estrecho</button><button data-inema-set-linewidth="68">Medio</button><button data-inema-set-linewidth="75">Ancho</button>
 </div>
-<div aria-label="Entrelinha" class="inema-segment" role="group">
-<button data-inema-set-leading="1.45">Compacto</button><button data-inema-set-leading="1.7">Confortável</button>
+<div aria-label="Entre líneas" class="inema-segment" role="group">
+<button data-inema-set-leading="1.45">Compacto</button><button data-inema-set-leading="1.7">Cómodo</button>
 </div>
-<div aria-label="Cor de acento" class="inema-accent-grid" role="group">
-<button data-inema-set-accent="emerald" title="Esmeralda"></button><button data-inema-set-accent="blue" title="Azul"></button><button data-inema-set-accent="purple" title="Roxo"></button><button data-inema-set-accent="amber" title="Âmbar"></button><button data-inema-set-accent="teal" title="Teal"></button><button data-inema-set-accent="rose" title="Rosa"></button>
+<div aria-label="Color de acento" class="inema-accent-grid" role="group">
+<button data-inema-set-accent="emerald" title="Esmeralda"></button><button data-inema-set-accent="blue" title="Azul"></button><button data-inema-set-accent="purple" title="Morado"></button><button data-inema-set-accent="amber" title="Ámbar"></button><button data-inema-set-accent="teal" title="Teal"></button><button data-inema-set-accent="rose" title="Rosa"></button>
 </div>
 </div>
 </div>
-<button aria-label="Alternar tema claro/escuro" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<button aria-label="Alternar entre tema claro y oscuro" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
 </button>
@@ -177,10 +177,10 @@
 </div>
 </nav>
 <!-- Breadcrumb -->
-<nav aria-label="Trilha de navegação" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<nav aria-label="Ruta de navegación" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
 <div class="flex items-center space-x-2 text-sm text-neutral-400">
-<a class="hover:text-emerald-400" href="../../index.html">Início</a><span>/</span>
-<a class="hover:text-emerald-400" href="index.html">Trilha 1</a><span>/</span>
+<a class="hover:text-emerald-400" href="../../index.html">Inicio</a><span>/</span>
+<a class="hover:text-emerald-400" href="index.html">Ruta 1</a><span>/</span>
 <span class="text-emerald-400">Módulo 1.1</span>
 </div>
 </nav>
@@ -188,13 +188,13 @@
 <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.1</span>
-<h1 class="text-3xl sm:text-4xl font-bold mb-4">🧩 O que é orquestrar várias LLMs</h1>
-<p class="text-lg text-neutral-400 max-w-3xl">A base de tudo: por que um modelo sozinho tem teto, o que significa "orquestrar", a anatomia maestro–especialistas–fusor, e o custo escondido que faz a conta fechar (ou não).</p>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🧩 Qué es orquestar varias LLM</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">La base de todo: por qué un solo modelo tiene un límite, qué significa «orquestar», la anatomía director–especialistas–fusor y el costo oculto que hace que las cuentas cierren (o no).</p>
 <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-3xl">
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">6</div><div class="text-xs text-neutral-400">Temas</div></div>
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">~30</div><div class="text-xs text-neutral-400">Minutos</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Básico</div><div class="text-xs text-neutral-400">Nível</div></div>
-<div aria-label="Progresso do módulo 1.1" aria-valuemax="100" aria-valuemin="0" class="inema-meter bg-dark-800/50 rounded-lg p-3 border border-dark-600" data-inema-meter="modulo:1-1" role="progressbar">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Básico</div><div class="text-xs text-neutral-400">Nivel</div></div>
+<div aria-label="Progreso del módulo 1.1" aria-valuemax="100" aria-valuemin="0" class="inema-meter bg-dark-800/50 rounded-lg p-3 border border-dark-600" data-inema-meter="modulo:1-1" role="progressbar">
 <div class="text-xl font-bold text-emerald-400" data-inema-meter-pct="">0%</div><div class="text-xs text-neutral-400" data-inema-meter-frac="">0 de 6</div>
 </div>
 </div>
@@ -203,15 +203,15 @@
 <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12" data-inema-module="1-1" data-inema-track="1" id="conteudo">
 <div class="lg:grid lg:grid-cols-[210px_1fr] lg:gap-10">
 <!-- TOC sticky + scrollspy -->
-<nav aria-label="Índice da página" class="hidden lg:block sticky top-24 self-start" data-inema-toc="">
-<p class="text-sm text-neutral-400 mb-3">Seção <span data-inema-section-counter="">1 de 6</span></p>
+<nav aria-label="Índice de la página" class="hidden lg:block sticky top-24 self-start" data-inema-toc="">
+<p class="text-sm text-neutral-400 mb-3">Sección <span data-inema-section-counter="">1 de 6</span></p>
 <ol class="space-y-1.5 text-sm">
-<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400" href="#topico-1">1. Por que um modelo só tem teto</a></li>
-<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400" href="#topico-2">2. As 2 perguntas</a></li>
-<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400" href="#topico-3">3. Maestro, especialistas, fusor</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400" href="#topico-1">1. Por qué un solo modelo tiene un límite</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400" href="#topico-2">2. Las 2 preguntas</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400" href="#topico-3">3. Maestro, especialistas, fusionador</a></li>
 <li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400" href="#topico-4">4. Mixture of experts como 1 API</a></li>
-<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400" href="#topico-5">5. Você já orquestra</a></li>
-<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400" href="#topico-6">6. O custo escondido</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400" href="#topico-5">5. Tú ya orquestas</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-emerald-400" href="#topico-6">6. El costo oculto</a></li>
 </ol>
 </nav>
 <div>
@@ -220,32 +220,32 @@
 <div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">1</span>
-<h2 class="text-2xl font-bold">🤖 Por que um modelo só tem teto</h2>
+<h2 class="text-2xl font-bold">🤖 Por qué un solo modelo tiene un límite</h2>
 </div>
-<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
+<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>Tengo una duda</span></button>
 </div>
 <div class="inema-prose">
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t1-p1">Antes de juntar vários modelos, vale entender o que é <strong class="text-emerald-400">um</strong>. Uma LLM (Large Language Model) é o tipo de IA que roda atrás do ChatGPT e do Claude: recebe texto e devolve texto, prevendo a próxima palavra com base em tudo que leu no treino. Cada modelo tem um perfil — um é melhor em código, outro em escrita, outro em raciocínio longo.</p>
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t1-p2">A consequência: <strong>nenhum modelo é o melhor em tudo</strong>. Existe um "teto" para cada um. A aposta da orquestração é que, se você combinar o melhor de cada um, talvez passe do teto que qualquer modelo alcançaria sozinho. Talvez. O curso inteiro é sobre testar esse "talvez".</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t1-p1">Antes de combinar varios modelos, conviene entender qué es <strong class="text-emerald-400">uno</strong>. Una LLM (Large Language Model) es el tipo de IA que funciona detrás de ChatGPT y Claude: recibe texto y devuelve texto, prediciendo la siguiente palabra con base en todo lo que leyó durante el entrenamiento. Cada modelo tiene un perfil: uno es mejor en código, otro en escritura y otro en razonamiento extenso.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t1-p2">La consecuencia: <strong>ningún modelo es el mejor en todo</strong>. Existe un "límite" para cada uno. La apuesta de la orquestación es que, si combinas lo mejor de cada uno, quizá superes el límite que cualquier modelo alcanzaría por sí solo. Quizá. Todo el curso trata de poner a prueba ese "quizá".</p>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">🆕</span> Novo aqui? Três termos</h3>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">🆕</span> ¿Nuevo por aquí? Tres términos</h3>
 <ul class="space-y-2 text-neutral-300 text-sm">
-<li><strong>LLM:</strong> o modelo de IA que gera texto (o "cérebro" do ChatGPT/Claude).</li>
-<li><strong>Token:</strong> o pedacinho de texto que o modelo lê e escreve (≈ ¾ de uma palavra). Você paga por token — tanto os que entram quanto os que saem.</li>
-<li><strong>Ferramentas (tools):</strong> ações que o modelo executa sozinho — buscar na web, rodar código, editar um arquivo.</li>
+<li><strong>LLMs:</strong> el modelo de IA que genera texto (el «cerebro» de ChatGPT/Claude).</li>
+<li><strong>Token:</strong> el fragmento de texto que el modelo lee y escribe (≈ ¾ de una palabra). Pagas por token, tanto por los que entran como por los que salen.</li>
+<li><strong>Herramientas (tools):</strong> acciones que el modelo ejecuta por su cuenta: buscar en la web, ejecutar código, editar un archivo.</li>
 </ul>
 </div>
 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Modelo único</div><div class="text-xs text-neutral-400">um cérebro, um perfil</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Forças/fraquezas</div><div class="text-xs text-neutral-400">nenhum vence em tudo</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Teto do solo</div><div class="text-xs text-neutral-400">limite de um modelo só</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">A promessa</div><div class="text-xs text-neutral-400">combinar para passar do teto</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Modelo único</div><div class="text-xs text-neutral-400">un cerebro, un perfil</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Fortalezas/debilidades</div><div class="text-xs text-neutral-400">ninguno gana en todo</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Límite de uno solo</div><div class="text-xs text-neutral-400">límite de un solo modelo</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">La promesa</div><div class="text-xs text-neutral-400">combinar para superar el límite</div></div>
 </div>
 <div class="flex justify-start mt-6">
 <button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
 <span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
-<span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
 </button>
 </div>
 </section>
@@ -254,45 +254,45 @@
 <div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">2</span>
-<h2 class="text-2xl font-bold">❓ As 2 perguntas que definem tudo</h2>
+<h2 class="text-2xl font-bold">❓ Las 2 preguntas que lo definen todo</h2>
 </div>
-<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
+<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>Tengo una duda</span></button>
 </div>
 <div class="inema-prose">
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t2-p1">Existe um jeito simples de enxergar qualquer sistema multi-LLM, por mais complexo que pareça. Ele responde a <strong class="text-emerald-400">duas perguntas</strong>, e só. Se você consegue respondê-las para um sistema, você entendeu o sistema.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t2-p1">Existe una forma sencilla de entender cualquier sistema multi-LLM, por complejo que parezca. Responde a <strong class="text-emerald-400">dos preguntas</strong>, y nada más. Si puedes responderlas para un sistema, entendiste el sistema.</p>
 </div>
 <div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
-<svg aria-label="Orquestração é a soma de duas perguntas: quem faz cada parte mais como as respostas se combinam" class="w-full h-auto" role="img" viewbox="0 0 1000 190">
+<svg aria-label="La orquestación es la suma de dos preguntas: quién hace cada parte y cómo se combinan las respuestas" class="w-full h-auto" role="img" viewbox="0 0 1000 190">
 <defs>
 <lineargradient id="m11t2-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#34d399"></stop><stop offset="1" stop-color="#10b981"></stop></lineargradient>
 <filter height="180%" id="m11t2-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
 <pattern height="32" id="m11t2-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#10b981" opacity="0.10" r="1.3"></circle></pattern>
 </defs>
 <rect fill="url(#m11t2-grid)" height="190" width="1000" x="0" y="0"></rect>
-<g><rect fill="#0e2018" height="74" rx="14" stroke="#34d399" stroke-width="2" width="280" x="36" y="58"></rect><text fill="#34d399" font-family="Inter,sans-serif" font-size="18" font-weight="600" text-anchor="middle" x="176" y="92">1 · Quem faz cada parte</text><text fill="#9decc4" font-family="Inter,sans-serif" font-size="12.5" text-anchor="middle" x="176" y="114">roteamento</text></g>
+<g><rect fill="#0e2018" height="74" rx="14" stroke="#34d399" stroke-width="2" width="280" x="36" y="58"></rect><text fill="#34d399" font-family="Inter,sans-serif" font-size="18" font-weight="600" text-anchor="middle" x="176" y="92">1 · Quién hace cada parte</text><text fill="#9decc4" font-family="Inter,sans-serif" font-size="12.5" text-anchor="middle" x="176" y="114">enrutamiento</text></g>
 <text fill="#34d399" font-family="Inter,sans-serif" font-size="30" font-weight="700" text-anchor="middle" x="352" y="103">+</text>
-<g><rect fill="#0e2018" height="74" rx="14" stroke="#34d399" stroke-width="2" width="280" x="392" y="58"></rect><text fill="#34d399" font-family="Inter,sans-serif" font-size="18" font-weight="600" text-anchor="middle" x="532" y="92">2 · Como se combinam</text><text fill="#9decc4" font-family="Inter,sans-serif" font-size="12.5" text-anchor="middle" x="532" y="114">fusão</text></g>
+<g><rect fill="#0e2018" height="74" rx="14" stroke="#34d399" stroke-width="2" width="280" x="392" y="58"></rect><text fill="#34d399" font-family="Inter,sans-serif" font-size="18" font-weight="600" text-anchor="middle" x="532" y="92">2 · Cómo se combinan</text><text fill="#9decc4" font-family="Inter,sans-serif" font-size="12.5" text-anchor="middle" x="532" y="114">fusión</text></g>
 <text fill="#34d399" font-family="Inter,sans-serif" font-size="30" font-weight="700" text-anchor="middle" x="712" y="103">=</text>
-<g filter="url(#m11t2-glow)"><rect fill="#1f1604" height="90" rx="16" stroke="url(#m11t2-grad)" stroke-width="2.5" width="212" x="752" y="50"></rect><text fill="#34d399" font-family="Inter,sans-serif" font-size="18" font-weight="700" text-anchor="middle" x="858" y="90">Orquestração</text><text fill="#9decc4" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="858" y="112">multi-LLM</text></g>
+<g filter="url(#m11t2-glow)"><rect fill="#1f1604" height="90" rx="16" stroke="url(#m11t2-grad)" stroke-width="2.5" width="212" x="752" y="50"></rect><text fill="#34d399" font-family="Inter,sans-serif" font-size="18" font-weight="700" text-anchor="middle" x="858" y="90">Orquestación</text><text fill="#9decc4" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="858" y="112">multi-LLM</text></g>
 </svg>
-<p class="text-xs text-neutral-400 mt-2 text-center">Decore esta soma. Fugu, Fusion e seus sub-agents só mudam <em>como</em> respondem cada lado — nunca as perguntas.</p>
+<p class="text-xs text-neutral-400 mt-2 text-center">Memoriza esta suma. Fugu, Fusion y sus sub-agents solo cambian <em>cómo</em> responden cada lado, nunca las preguntas.</p>
 </div>
 <div class="bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-xl border border-emerald-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🎯</span> As duas perguntas</h3>
+<h3 class="text-lg font-semibold text-emerald-400 mb-4 flex items-center"><span class="mr-2">🎯</span> Las dos preguntas</h3>
 <ul class="space-y-3 text-neutral-300">
-<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1 font-bold">1.</span><span><strong>Quem faz cada parte?</strong> — o <em>roteamento</em>. Pode ser regra sua, um workflow, ou um modelo treinado para escolher.</span></li>
-<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1 font-bold">2.</span><span><strong>Como as respostas se combinam?</strong> — a <em>fusão</em>. Concatenar, votar, um juiz que escolhe, ou um modelo que reescreve tudo num só texto.</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1 font-bold">1.</span><span><strong>¿Quién hace cada parte?</strong> — o <em>enrutamiento</em>. Puede ser una regla tuya, un workflow o un modelo entrenado para elegir.</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-1 font-bold">2.</span><span><strong>¿Cómo se combinan las respuestas?</strong> — a <em>fusión</em>. Concatenar, votar, un juez que elige o un modelo que reescribe todo en un solo texto.</span></li>
 </ul>
 </div>
 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Roteamento</div><div class="text-xs text-neutral-400">"quem"</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Fusão</div><div class="text-xs text-neutral-400">"como"</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Decomposição</div><div class="text-xs text-neutral-400">quebrar a tarefa</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Agregação</div><div class="text-xs text-neutral-400">juntar de volta</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Enrutamiento</div><div class="text-xs text-neutral-400">"quién"</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Fusión</div><div class="text-xs text-neutral-400">"cómo"</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Descomposición</div><div class="text-xs text-neutral-400">dividir la tarea</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Agregación</div><div class="text-xs text-neutral-400">volver a unir</div></div>
 </div>
 <div class="flex justify-start mt-6">
 <button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span><span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span><span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
 </button>
 </div>
 </section>
@@ -301,15 +301,15 @@
 <div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">3</span>
-<h2 class="text-2xl font-bold">🎼 Maestro, especialistas e fusor</h2>
+<h2 class="text-2xl font-bold">🎼 Maestro, especialistas y fusionador</h2>
 </div>
-<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
+<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>Tengo una duda</span></button>
 </div>
 <div class="inema-prose">
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t3-p1">Toda orquestração tem três papéis. O <strong class="text-emerald-400">maestro</strong> (ou "conductor") lê o pedido e reparte. Os <strong class="text-emerald-400">especialistas</strong> são os modelos que executam cada parte. E o <strong class="text-emerald-400">fusor</strong> junta as respostas num resultado só. Reconhecer esses três papéis deixa qualquer sistema "mágico" legível.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t3-p1">Toda orquestación tiene tres roles. El <strong class="text-emerald-400">director de orquesta</strong> (o "conductor") lee el pedido y lo distribuye. Los <strong class="text-emerald-400">especialistas</strong> son los modelos que ejecutan cada parte. Y el <strong class="text-emerald-400">fusor</strong> une las respuestas en un solo resultado. Reconocer estos tres roles hace que cualquier sistema «mágico» sea legible.</p>
 </div>
 <div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
-<svg aria-label="O maestro dispara vários modelos especialistas em paralelo, e um fusor converge tudo num resultado" class="w-full h-auto" role="img" viewbox="0 0 1000 240">
+<svg aria-label="El director lanza varios modelos especialistas en paralelo, y un fusionador converge todo en un resultado" class="w-full h-auto" role="img" viewbox="0 0 1000 240">
 <defs>
 <lineargradient id="m11t3-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#34d399"></stop><stop offset="1" stop-color="#10b981"></stop></lineargradient>
 <filter height="180%" id="m11t3-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
@@ -344,33 +344,33 @@
 </g>
 <g filter="url(#m11t3-glow)"><rect fill="#1f1604" height="64" rx="14" stroke="url(#m11t3-grad)" stroke-width="2.5" width="156" x="800" y="88"></rect></g>
 <text fill="#34d399" font-family="Inter,sans-serif" font-size="16" font-weight="700" text-anchor="middle" x="878" y="116">Fusor</text>
-<text fill="#9decc4" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="878" y="135">funde</text>
+<text fill="#9decc4" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="878" y="135">fusiona</text>
 </svg>
-<p class="text-xs text-neutral-400 mt-2 text-center">Maestro (esquerda) → especialistas em paralelo (ciano) → fusor (direita). É o esqueleto do Fugu — e, virado de lado, da Fusion.</p>
+<p class="text-xs text-neutral-400 mt-2 text-center">Maestro (izquierda) → especialistas en paralelo (cian) → fusor (derecha). Es el esqueleto de Fugu y, girado de lado, el de Fusion.</p>
 </div>
 <div class="space-y-6 mb-6">
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">1</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Maestro / conductor</h4><p class="text-neutral-300 text-sm">Lê o pedido, decide se resolve sozinho ou reparte, e escolhe quem recebe cada parte. É onde mora a "inteligência de coordenação".</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Maestro / director</h4><p class="text-neutral-300 text-sm">Lee la solicitud, decide si la resuelve por sí solo o la reparte, y elige quién recibe cada parte. Aquí vive la «inteligencia de coordinación».</p></div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">2</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Especialistas</h4><p class="text-neutral-300 text-sm">Os modelos que executam: um bom em código, outro em raciocínio, outro em escrita. Cada um faz a parte em que é forte.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Especialistas</h4><p class="text-neutral-300 text-sm">Los modelos que ejecutan: uno bueno para programar, otro para razonar y otro para escribir. Cada uno hace la parte en la que destaca.</p></div>
 </div>
 <div class="flex items-start space-x-4">
 <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center"><span class="text-emerald-400 font-bold">3</span></div>
-<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Fusor</h4><p class="text-neutral-300 text-sm">Junta as respostas num resultado único — concatenando, escolhendo a melhor, ou reescrevendo tudo. Sem fusor, você tem N respostas soltas, não uma.</p></div>
+<div class="flex-1 bg-dark-800 rounded-xl p-6 border border-dark-600"><h4 class="font-semibold text-white mb-2">Fusor</h4><p class="text-neutral-300 text-sm">Une las respuestas en un único resultado: concatenándolas, eligiendo la mejor o reescribiéndolo todo. Sin un fusor, tienes N respuestas sueltas, no una sola.</p></div>
 </div>
 </div>
 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
 <div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Maestro</div><div class="text-xs text-neutral-400">reparte</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Especialista</div><div class="text-xs text-neutral-400">executa</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Fusor</div><div class="text-xs text-neutral-400">junta</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Pipeline</div><div class="text-xs text-neutral-400">os três em sequência</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Especialista</div><div class="text-xs text-neutral-400">ejecuta</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Fusor</div><div class="text-xs text-neutral-400">une</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Pipeline</div><div class="text-xs text-neutral-400">los tres en secuencia</div></div>
 </div>
 <div class="flex justify-start mt-6">
 <button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span><span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span><span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
 </button>
 </div>
 </section>
@@ -381,47 +381,47 @@
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">4</span>
 <h2 class="text-2xl font-bold">📦 "Mixture of experts" como 1 API</h2>
 </div>
-<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
+<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>Tengo una duda</span></button>
 </div>
 <div class="inema-prose">
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t4-p1">"Mixture of experts" é a ideia de manter vários especialistas e chamar o certo para cada caso. O pulo do gato comercial é <strong class="text-emerald-400">empacotar isso atrás de uma única API</strong>: você bate em um endereço só, manda seu pedido, e todo o time roda escondido. Por fora parece um modelo; por dentro é uma orquestra.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t4-p1">"Mixture of experts" es la idea de mantener varios especialistas y llamar al indicado para cada caso. El truco comercial es <strong class="text-emerald-400">empaquetar esto detrás de una única API</strong>: accedes a una sola dirección, envías tu solicitud y todo el equipo trabaja a escondidas. Desde fuera parece un modelo; por dentro es una orquesta.</p>
 </div>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">📊</span> O que "1 API" esconde</h3>
-<p class="text-neutral-300 text-sm mb-3">A abstração é elegante e tem um preço. Você ganha simplicidade; paga em controle e dinheiro:</p>
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">📊</span> Lo que oculta "1 API"</h3>
+<p class="text-neutral-300 text-sm mb-3">La abstracción es elegante y tiene un precio. Ganas simplicidad; pagas con control y dinero:</p>
 <ul class="space-y-2 text-neutral-300 text-sm">
-<li><strong>Você não vê</strong> quais modelos foram chamados nem quantos.</li>
-<li><strong>Você paga</strong> os tokens de todos eles, não só da resposta final.</li>
-<li><strong>Você espera</strong> o time inteiro — contratar, rodar e fundir leva tempo.</li>
+<li><strong>No ves</strong> qué modelos se llamaron ni cuántos.</li>
+<li><strong>Pagas</strong> los tokens de todos ellos, no solo los de la respuesta final.</li>
+<li><strong>Esperas</strong> el equipo completo: contratar, ejecutar y combinar lleva tiempo.</li>
 </ul>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
 <div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
-<h4 class="font-bold text-emerald-400 mb-4">✓ O que 1 API te dá</h4>
+<h4 class="font-bold text-emerald-400 mb-4">✓ Lo que te da 1 API</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Zero código de orquestração</span></li>
-<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Um endpoint, um billing</span></li>
-<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Hedge: não trava em um vendor só</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Cero código de orquestación</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Un endpoint, una facturación</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Hedge: no te quedas atado a un solo proveedor</span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
-<h4 class="font-bold text-red-400 mb-4">✗ O que ela cobra</h4>
+<h4 class="font-bold text-red-400 mb-4">✗ Qué exige</h4>
 <ul class="space-y-3 text-neutral-300 text-sm">
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Custo dos tokens do time escondido</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Latência somada de vários modelos</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Pouca visibilidade do que rolou</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Costo de los tokens del equipo oculto</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Latencia total de varios modelos</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Poca visibilidad de lo que pasó</span></li>
 </ul>
 </div>
 </div>
 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Mixture of experts</div><div class="text-xs text-neutral-400">chamar o certo</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">1 endpoint</div><div class="text-xs text-neutral-400">um endereço só</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Abstração</div><div class="text-xs text-neutral-400">esconde o time</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Time escondido</div><div class="text-xs text-neutral-400">você paga por ele</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Mixture of experts</div><div class="text-xs text-neutral-400">llamar al adecuado</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">1 endpoint</div><div class="text-xs text-neutral-400">una sola dirección</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Abstracción</div><div class="text-xs text-neutral-400">oculta al equipo</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Equipo oculto</div><div class="text-xs text-neutral-400">tú pagas por él</div></div>
 </div>
 <div class="flex justify-start mt-6">
 <button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span><span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span><span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
 </button>
 </div>
 </section>
@@ -430,33 +430,33 @@
 <div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">5</span>
-<h2 class="text-2xl font-bold">🛠️ Você já orquestra (e nem percebe)</h2>
+<h2 class="text-2xl font-bold">🛠️ Ya orquestas (y ni te das cuenta)</h2>
 </div>
-<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
+<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>Tengo una duda</span></button>
 </div>
 <div class="inema-prose">
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t5-p1">Orquestração não é exótica. Quando o Claude Code abre <strong class="text-emerald-400">sub-agents</strong> (workers que podem rodar modelos diferentes — haiku, sonnet, opus) e reparte um plano entre eles, está orquestrando: um maestro divide, vários executam em paralelo, um junta. A diferença para o Fugu é só <em>quem decide</em> e se cruza providers.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t5-p1">La orquestación no es algo exótico. Cuando Claude Code abre <strong class="text-emerald-400">sub-agents</strong> (workers que pueden ejecutar modelos diferentes — haiku, sonnet, opus) y distribuye un plan entre ellos, está orquestando: un director divide, varios ejecutan en paralelo y uno reúne el resultado. La diferencia con Fugu es solo <em>quién decide</em> y cruza proveedores.</p>
 </div>
 <div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Pratique: orquestre você mesmo</h3>
-<p class="text-neutral-300 text-sm mb-3"><strong>Objetivo:</strong> ver a orquestração (fan-out + fusão) acontecer na sua frente, no Claude Code.</p>
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Practica: orquesta tú mismo</h3>
+<p class="text-neutral-300 text-sm mb-3"><strong>Objetivo:</strong> ver la orquestación (fan-out + fusión) ocurrir frente a ti, en Claude Code.</p>
 <pre class="font-mono text-xs sm:text-sm bg-dark-900 border border-dark-600 rounded-lg p-4 overflow-x-auto text-neutral-200 whitespace-pre-wrap">Use uma abordagem multi-agente neste arquivo: abra 3 sub-agents
 em PARALELO, cada um revisando por um ângulo diferente
 (1: bugs, 2: performance, 3: legibilidade). Depois um agente
 final FUNDE os três achados num só relatório priorizado.
 
 Arquivo: &lt;caminho/do/seu/arquivo&gt;</pre>
-<p class="text-neutral-300 text-sm mt-3"><strong>Como verificar:</strong> você verá 3 agentes rodando ao mesmo tempo (o fan-out) e, no fim, um único relatório consolidado (a fusão). Troque <code class="text-primary">&lt;caminho/do/seu/arquivo&gt;</code> por um arquivo real seu.</p>
+<p class="text-neutral-300 text-sm mt-3"><strong>Cómo verificar:</strong> verás 3 agentes ejecutándose al mismo tiempo (el fan-out) y, al final, un único informe consolidado (la fusión). Cambia <code class="text-primary">&lt;caminho/do/seu/arquivo&gt;</code> por un archivo tuyo y real.</p>
 </div>
 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Sub-agent</div><div class="text-xs text-neutral-400">worker que executa parte</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Fan-out</div><div class="text-xs text-neutral-400">vários em paralelo</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Delegação manual</div><div class="text-xs text-neutral-400">você no comando</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Intra-provider</div><div class="text-xs text-neutral-400">tudo num vendor</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Sub-agent</div><div class="text-xs text-neutral-400">worker que ejecuta una parte</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Fan-out</div><div class="text-xs text-neutral-400">varios en paralelo</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Delegación manual</div><div class="text-xs text-neutral-400">tú al mando</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Intra-provider</div><div class="text-xs text-neutral-400">todo en un vendor</div></div>
 </div>
 <div class="flex justify-start mt-6">
 <button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span><span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span><span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
 </button>
 </div>
 </section>
@@ -465,66 +465,66 @@ Arquivo: &lt;caminho/do/seu/arquivo&gt;</pre>
 <div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
 <div class="flex items-center space-x-4">
 <span class="flex items-center justify-center w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xl">6</span>
-<h2 class="text-2xl font-bold">🧾 O custo escondido da orquestração</h2>
+<h2 class="text-2xl font-bold">🧾 El costo oculto de la orquestación</h2>
 </div>
-<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>Tenho dúvida</span></button>
+<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>Tengo una duda</span></button>
 </div>
 <div class="inema-prose">
-<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t6-p1">Aqui está o contrapeso que fecha (ou não) a conta. Cada especialista que o maestro chama <strong class="text-emerald-400">lê e escreve tokens</strong> — e você paga por todos. Some a isso a espera: contratar, rodar e fundir o time leva muito mais tempo que um modelo respondendo direto. Mais modelos = mais conta e mais relógio.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m1-1-t6-p1">Aquí está el contrapeso que permite saber si las cuentas cuadran. Cada especialista al que llama el maestro <strong class="text-emerald-400">lee y escribe tokens</strong> — y pagas por todos. A eso súmale la espera: contratar, ejecutar y fusionar el equipo lleva mucho más tiempo que recibir una respuesta directa de un modelo. Más modelos = más costo y más tiempo.</p>
 </div>
 <div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">📊</span> Um aperitivo dos números (Trilha 2)</h3>
-<p class="text-neutral-300 text-sm mb-3">No field test que você vai estudar a fundo na Trilha 2, o orquestrador (Fugu) contra um modelo forte sozinho (Opus 4.8), nas mesmas tarefas:</p>
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">📊</span> Un adelanto de las cifras (Ruta 2)</h3>
+<p class="text-neutral-300 text-sm mb-3">En el field test que estudiarás a fondo en la Trilha 2, el orquestador (Fugu) frente a un modelo potente por sí solo (Opus 4.8), en las mismas tareas:</p>
 <ul class="space-y-2 text-neutral-300 text-sm">
-<li><strong class="text-blue-400">4.5×</strong> mais lento no total</li>
-<li><strong class="text-blue-400">5×</strong> mais caro (US$ 53,60 vs US$ 10,66)</li>
-<li><strong class="text-blue-400">36 de 38</strong> tarefas: empate técnico</li>
+<li><strong class="text-blue-400">4.5×</strong> más lento en total</li>
+<li><strong class="text-blue-400">5×</strong> más caro (US$ 53,60 vs US$ 10,66)</li>
+<li><strong class="text-blue-400">36 de 38</strong> tareas: empate técnico</li>
 </ul>
 </div>
 <div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6">
-<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> A armadilha mental</h3>
-<p class="text-neutral-300 text-sm">Sem ver o custo escondido, "juntar mais modelos" parece sempre melhor. Não é. O time só vale a pena quando entrega algo que o solo não alcança — e, como você vai ver, isso é mais raro do que o hype sugere.</p>
+<h3 class="text-lg font-semibold text-red-400 mb-3 flex items-center"><span class="mr-2">⚠️</span> La trampa mental</h3>
+<p class="text-neutral-300 text-sm">Sin ver el costo oculto, «juntar más modelos» siempre parece mejor. No lo es. El equipo solo vale la pena cuando ofrece algo que no puedes alcanzar por tu cuenta — y, como verás, eso es más raro de lo que sugiere el hype.</p>
 </div>
 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Tokens de orquestração</div><div class="text-xs text-neutral-400">o time inteiro é billado</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Latência somada</div><div class="text-xs text-neutral-400">esperar todos</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Overhead</div><div class="text-xs text-neutral-400">contratar + fundir</div></div>
-<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Custo × benefício</div><div class="text-xs text-neutral-400">a pergunta final</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Tokens de orquestación</div><div class="text-xs text-neutral-400">se factura el equipo completo</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Latencia total</div><div class="text-xs text-neutral-400">esperar a todos</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Sobrecarga</div><div class="text-xs text-neutral-400">contratar + fusionar</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-emerald-400 font-bold text-sm mb-1">Costo × beneficio</div><div class="text-xs text-neutral-400">la pregunta final</div></div>
 </div>
 <!-- Checagem leve opcional -->
 <div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-1-1#q1">
-<p class="font-medium mb-4">Recuperação rápida (opcional): orquestrar é responder a duas perguntas. Quais?</p>
+<p class="font-medium mb-4">Repaso rápido (opcional): orquestar es responder dos preguntas. ¿Cuáles?</p>
 <div class="inema-check-options space-y-2">
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Qual modelo é o mais inteligente / qual é o mais barato</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Quem faz cada parte / como as respostas se combinam</button>
-<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Quanto custa / quanto demora</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">Qué modelo es el más inteligente / cuál es el más barato</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">Quién hace cada parte / cómo se combinan las respuestas</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">Cuánto cuesta / cuánto tarda</button>
 </div>
 <div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
 </div>
 <div class="flex justify-start mt-8">
 <button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/30 transition-colors" data-inema-read-toggle="" type="button">
-<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span><span class="inema-label-todo">Marcar como lido</span><span class="inema-label-done">Lido</span>
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span><span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
 </button>
 </div>
 </section>
 <!-- ===== RESUMO ===== -->
 <section class="mb-12">
 <div class="bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 rounded-xl border border-emerald-500/30 p-8">
-<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumo do módulo</h2>
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumen del módulo</h2>
 <div class="space-y-4 mb-8">
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Um modelo tem teto</strong><span class="text-neutral-400"> — nenhum é o melhor em tudo; daí a aposta de combinar.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">As 2 perguntas</strong><span class="text-neutral-400"> — quem faz cada parte (roteamento) + como se combinam (fusão).</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Três papéis</strong><span class="text-neutral-400"> — maestro, especialistas, fusor: o esqueleto de todo orquestrador.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">1 API esconde um time</strong><span class="text-neutral-400"> — conveniência por fora, custo por dentro.</span></div></div>
-<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Custo escondido</strong><span class="text-neutral-400"> — você paga os tokens de todos e espera o time inteiro.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Un modelo tiene un límite</strong><span class="text-neutral-400"> — ninguno es el mejor en todo; de ahí la apuesta por combinarlos.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Las 2 preguntas</strong><span class="text-neutral-400"> — quién hace cada parte (enrutamiento) + cómo se combinan (fusión).</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Tres roles</strong><span class="text-neutral-400"> — director de orquesta, especialistas, fusionador: la estructura de todo orquestador.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">1 API oculta un equipo</strong><span class="text-neutral-400"> — comodidad por fuera, costo por dentro.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-emerald-400 mt-1">✓</span><div><strong class="text-white">Costo oculto</strong><span class="text-neutral-400"> — pagas los tokens de todos y esperas al equipo completo.</span></div></div>
 </div>
 <div class="bg-dark-800/50 rounded-lg p-4 mb-8">
-<h3 class="font-semibold text-emerald-400 mb-2">Próximo módulo:</h3>
-<p class="text-neutral-300">1.2 — O espectro: da mão ao modelo-maestro</p>
+<h3 class="font-semibold text-emerald-400 mb-2">Siguiente módulo:</h3>
+<p class="text-neutral-300">1.2 — El espectro: de lo manual al modelo maestro</p>
 </div>
 <div class="flex flex-col sm:flex-row gap-4">
-<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Voltar para a Trilha</a>
-<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="modulo-1-2.html">Próximo módulo →</a>
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Volver al Tramo</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="modulo-1-2.html">Siguiente módulo →</a>
 </div>
 </div>
 </section>
@@ -533,7 +533,7 @@ Arquivo: &lt;caminho/do/seu/arquivo&gt;</pre>
 </main>
 <footer class="border-t border-dark-600 py-8 mt-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p>LLMs Orquestradas — Módulo 1.1 · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+<p>LLMs orquestados — Módulo 1.1 · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
 </div>
 </footer>
 <script>
@@ -564,7 +564,7 @@ Arquivo: &lt;caminho/do/seu/arquivo&gt;</pre>
     function closeModal() { document.querySelectorAll('.modal').forEach(m => m.classList.add('hidden')); document.body.style.overflow = 'auto'; }
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
   </script>
-<script src="../../assets/learn.js"></script>
+<script src="../../../assets/learn.js"></script>
 <script>
     if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init(); }
     window.addEventListener('DOMContentLoaded', function () {

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="pt-BR">
+<html class="dark" lang="es">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="llms-orquestradas" name="inema-course"/>
-<title>Trilha 3 · OpenRouter Fusion | LLMs Orquestradas</title>
+<title>Ruta 3 · OpenRouter Fusion | LLMs Orquestradas</title>
 <script>
   (function () {
     try {
@@ -111,10 +111,10 @@
     .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
     html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
   </style>
-<link href="../../assets/learn.css" rel="stylesheet"/>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
 <link href="https://inematds.github.io/sakanafugu/curso/trilha3/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/sakanafugu/en/curso/trilha3/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/sakanafugu/es/curso/trilha3/" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="./" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha3/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha3/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
-<a class="skip sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-2 focus:left-2 focus:px-4 focus:py-2 focus:bg-dark-800 focus:rounded-lg focus:text-primary" href="#conteudo">Pular para o conteúdo</a>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha3/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha3/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="./" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<a class="skip sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-2 focus:left-2 focus:px-4 focus:py-2 focus:bg-dark-800 focus:rounded-lg focus:text-primary" href="#conteudo">Saltar al contenido</a>
 <!-- ===== NAV (trilha 3 ativa) ===== -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -122,7 +122,7 @@
 <div class="flex items-center space-x-4">
 <a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
 <span class="text-2xl">🐟</span>
-<span class="font-bold text-lg hidden sm:inline">LLMs Orquestradas</span>
+<span class="font-bold text-lg hidden sm:inline">LLMs orquestados</span>
 </a>
 <span class="text-neutral-600">|</span>
 <a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
@@ -138,51 +138,51 @@
 <span class="sm:hidden">T3</span><span class="hidden sm:inline">Fusion</span>
 </a>
 <button class="ml-1 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-inema-journey-open="" type="button">
-<span aria-hidden="true">◷</span><span class="hidden sm:inline">Jornada</span>
+<span aria-hidden="true">◷</span><span class="hidden sm:inline">Recorrido</span>
 <span aria-hidden="true" class="inema-journey-badge hidden" data-count="0" data-inema-journey-badge=""></span>
 </button>
 <div class="relative">
 <button aria-expanded="false" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-inema-appearance-toggle="[data-inema-appearance]" type="button">
-<span aria-hidden="true">◑</span><span class="hidden sm:inline">Aparência</span>
+<span aria-hidden="true">◑</span><span class="hidden sm:inline">Apariencia</span>
 </button>
 <div class="inema-appearance-pop" data-inema-appearance="">
 <div aria-label="Tema" class="inema-segment" role="group">
-<button data-inema-set-theme="inema-dark">Escuro</button>
+<button data-inema-set-theme="inema-dark">Oscuro</button>
 <button data-inema-set-theme="claro">Claro</button>
-<button data-inema-set-theme="sepia">Sépia</button>
-<button data-inema-set-theme="foco">Foco</button>
+<button data-inema-set-theme="sepia">Sepia</button>
+<button data-inema-set-theme="foco">Enfoque</button>
 <button data-inema-set-theme="contraste">Alto contraste</button>
 </div>
-<div aria-label="Fonte" class="inema-segment" role="group">
+<div aria-label="Fuente" class="inema-segment" role="group">
 <button data-inema-set-font="inter">Inter</button>
 <button data-inema-set-font="system">Sistema</button>
-<button data-inema-set-font="leitura">Leitura</button>
+<button data-inema-set-font="leitura">Lectura</button>
 </div>
-<div aria-label="Tamanho do texto" class="inema-segment" role="group">
+<div aria-label="Tamaño del texto" class="inema-segment" role="group">
 <button data-inema-set-fontscale="100">A</button>
 <button data-inema-set-fontscale="112">A+</button>
 <button data-inema-set-fontscale="125">A++</button>
 </div>
-<div aria-label="Largura da linha" class="inema-segment" role="group">
-<button data-inema-set-linewidth="60">Estreito</button>
-<button data-inema-set-linewidth="68">Médio</button>
-<button data-inema-set-linewidth="75">Largo</button>
+<div aria-label="Ancho de línea" class="inema-segment" role="group">
+<button data-inema-set-linewidth="60">Estrecho</button>
+<button data-inema-set-linewidth="68">Medio</button>
+<button data-inema-set-linewidth="75">Ancho</button>
 </div>
-<div aria-label="Entrelinha" class="inema-segment" role="group">
+<div aria-label="Entre líneas" class="inema-segment" role="group">
 <button data-inema-set-leading="1.45">Compacto</button>
-<button data-inema-set-leading="1.7">Confortável</button>
+<button data-inema-set-leading="1.7">Cómodo</button>
 </div>
-<div aria-label="Cor de acento" class="inema-accent-grid" role="group">
+<div aria-label="Color de acento" class="inema-accent-grid" role="group">
 <button data-inema-set-accent="emerald" title="Esmeralda"></button>
 <button data-inema-set-accent="blue" title="Azul"></button>
-<button data-inema-set-accent="purple" title="Roxo"></button>
-<button data-inema-set-accent="amber" title="Âmbar"></button>
+<button data-inema-set-accent="purple" title="Morado"></button>
+<button data-inema-set-accent="amber" title="Ámbar"></button>
 <button data-inema-set-accent="teal" title="Teal"></button>
 <button data-inema-set-accent="rose" title="Rosa"></button>
 </div>
 </div>
 </div>
-<button aria-label="Alternar tema claro/escuro" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<button aria-label="Alternar entre tema claro y oscuro" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
 </button>
@@ -194,14 +194,14 @@
 <!-- ===== HEADER DA TRILHA ===== -->
 <header class="bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-<span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">TRILHA 3</span>
+<span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">RUTA 3</span>
 <h1 class="text-3xl sm:text-4xl font-bold mb-4">⚖️ OpenRouter Fusion</h1>
-<p class="text-lg text-neutral-400 max-w-3xl">O outro padrão de orquestração: em vez de quebrar a tarefa e delegar pedaços (Fugu), a Fusion manda o <strong>mesmo</strong> prompt para vários modelos em <strong>paralelo</strong> e deixa um <strong>juiz</strong> fundir as respostas. Ensemble, não decomposição — e a mentalidade de orquestrar com consciência de custo.</p>
+<p class="text-lg text-neutral-400 max-w-3xl">El otro patrón de orquestación: en vez de dividir la tarea y delegar partes (Fugu), Fusion envía el <strong>mismo</strong> prompt a varios modelos en <strong>paralelo</strong> y deja un <strong>juez</strong> fusionar las respuestas. Ensemble, no descomposición, y la mentalidad de orquestar teniendo en cuenta los costos.</p>
 <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-3xl">
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">2</div><div class="text-xs text-neutral-400">Módulos</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">12</div><div class="text-xs text-neutral-400">Tópicos</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">~1h</div><div class="text-xs text-neutral-400">Duração</div></div>
-<div aria-label="Progresso da trilha 3" aria-valuemax="100" aria-valuemin="0" class="inema-meter bg-dark-800/50 rounded-lg p-3 border border-dark-600" data-inema-meter="trilha:3" role="progressbar">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">12</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">~1h</div><div class="text-xs text-neutral-400">Duración</div></div>
+<div aria-label="Progreso de la ruta 3" aria-valuemax="100" aria-valuemin="0" class="inema-meter bg-dark-800/50 rounded-lg p-3 border border-dark-600" data-inema-meter="trilha:3" role="progressbar">
 <div class="text-xl font-bold text-purple-400" data-inema-meter-pct="">0%</div>
 <div class="text-xs text-neutral-400" data-inema-meter-frac="">0 de 12</div>
 </div>
@@ -211,7 +211,7 @@
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 <!-- Hero SVG: ensemble — 1 prompt entra, N modelos respondem o MESMO prompt em paralelo, um juiz funde -->
 <div class="rounded-2xl border border-purple-500/30 bg-dark-900/40 p-3 sm:p-4 mb-12 overflow-hidden">
-<svg aria-label="Um prompt vai para vários modelos em paralelo, cada um responde o mesmo prompt, e um juiz funde tudo numa resposta única" class="w-full h-auto" role="img" viewbox="0 0 1000 240">
+<svg aria-label="Un prompt va a varios modelos en paralelo, cada uno responde el mismo prompt y un juez lo fusiona todo en una única respuesta" class="w-full h-auto" role="img" viewbox="0 0 1000 240">
 <defs>
 <lineargradient id="t3h-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#c084fc"></stop><stop offset="1" stop-color="#a855f7"></stop></lineargradient>
 <filter height="180%" id="t3h-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
@@ -236,7 +236,7 @@
 </g>
 <g filter="url(#t3h-glow)"><rect fill="#1a1230" height="64" rx="14" stroke="url(#t3h-grad)" stroke-width="2.5" width="156" x="40" y="88"></rect></g>
 <text fill="#c084fc" font-family="Inter,sans-serif" font-size="17" font-weight="700" text-anchor="middle" x="118" y="114">1 prompt</text>
-<text fill="#e3ccff" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="118" y="134">o mesmo p/ todos</text>
+<text fill="#e3ccff" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="118" y="134">el mismo para todos</text>
 <g font-family="Inter,sans-serif" font-size="13" font-weight="600">
 <g><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="136" x="452" y="22"></rect><text fill="#bfe6ff" text-anchor="middle" x="520" y="43">modelo A</text></g>
 <g><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="136" x="452" y="63"></rect><text fill="#bfe6ff" text-anchor="middle" x="520" y="84">modelo B</text></g>
@@ -245,204 +245,204 @@
 <g><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="136" x="452" y="186"></rect><text fill="#bfe6ff" text-anchor="middle" x="520" y="207">modelo N …</text></g>
 </g>
 <g filter="url(#t3h-glow)"><rect fill="#1a1230" height="72" rx="14" stroke="url(#t3h-grad)" stroke-width="2.5" width="160" x="800" y="84"></rect></g>
-<text fill="#c084fc" font-family="Inter,sans-serif" font-size="17" font-weight="700" text-anchor="middle" x="880" y="114">⚖️ Juiz</text>
-<text fill="#e3ccff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="880" y="134">funde numa só</text>
+<text fill="#c084fc" font-family="Inter,sans-serif" font-size="17" font-weight="700" text-anchor="middle" x="880" y="114">⚖️ Juez</text>
+<text fill="#e3ccff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="880" y="134">fusiona en una sola</text>
 </svg>
-<p class="text-xs text-neutral-400 mt-2 text-center">Note: todos recebem o <em>mesmo</em> prompt (não pedaços diferentes). É ensemble paralelo + juiz — o oposto da decomposição do Fugu. Guarde esta imagem: ela define a trilha inteira.</p>
+<p class="text-xs text-neutral-400 mt-2 text-center">Nota: todos reciben el <em>mismo</em> prompt (no fragmentos diferentes). Es ensemble en paralelo + juez: lo opuesto a la descomposición de Fugu. Quédate con esta imagen: define toda la ruta.</p>
 </div>
 <!-- ===== MAPA DA TRILHA ===== -->
 <section class="mb-12">
-<h2 class="text-2xl font-bold mb-6">Mapa da trilha</h2>
+<h2 class="text-2xl font-bold mb-6">Mapa de la ruta</h2>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 <a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-purple-500/30 p-5 transition-all" href="#modulo-3-1">
 <div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold text-sm">3.1</span><span class="text-xs text-neutral-500">~30 min</span></div>
-<h3 class="font-semibold mb-1 group-hover:text-purple-400 transition-colors">⚖️ Mesmo prompt, N modelos, um juiz</h3>
-<p class="text-xs text-neutral-400">Paralelo, não decomposição</p>
+<h3 class="font-semibold mb-1 group-hover:text-purple-400 transition-colors">⚖️ El mismo prompt, N modelos, un juez</h3>
+<p class="text-xs text-neutral-400">En paralelo, no por descomposición</p>
 </a>
 <a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-purple-500/30 p-5 transition-all" href="#modulo-3-2">
 <div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold text-sm">3.2</span><span class="text-xs text-neutral-500">~30 min</span></div>
-<h3 class="font-semibold mb-1 group-hover:text-purple-400 transition-colors">🚀 Fusion na prática e o futuro</h3>
-<p class="text-xs text-neutral-400">Otimizar custo × qualidade</p>
+<h3 class="font-semibold mb-1 group-hover:text-purple-400 transition-colors">🚀 Fusion en la práctica y el futuro</h3>
+<p class="text-xs text-neutral-400">Optimizar costo × calidad</p>
 </a>
 </div>
 </section>
-<h2 class="text-2xl font-bold mb-6">Conteúdo detalhado</h2>
+<h2 class="text-2xl font-bold mb-6">Contenido detallado</h2>
 <!-- ===== MÓDULO 3.1 ===== -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" data-inema-module="3-1" id="modulo-3-1">
 <div class="p-6 border-b border-dark-600">
-<div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold">3.1</span><span class="text-xs text-neutral-500">~30 min · 6 tópicos</span></div>
-<h3 class="text-2xl font-bold mb-2">⚖️ Mesmo prompt, N modelos, um juiz</h3>
-<p class="text-neutral-400 text-sm">O mecanismo da Fusion, por que ele melhora, e o que o separa do Fugu: ensemble em paralelo contra decomposição em pedaços.</p>
+<div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold">3.1</span><span class="text-xs text-neutral-500">~30 min · 6 temas</span></div>
+<h3 class="text-2xl font-bold mb-2">⚖️ El mismo prompt, N modelos, un juez</h3>
+<p class="text-neutral-400 text-sm">El mecanismo de Fusion, por qué mejora y qué lo distingue de Fugu: ensemble en paralelo frente a descomposición en partes.</p>
 </div>
 <div class="divide-y divide-dark-600">
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
 <span class="text-lg">📨</span>
-<div><span class="font-medium">O que a Fusion faz</span><span class="text-neutral-500 text-sm ml-2">- 1 prompt → N modelos</span></div>
+<div><span class="font-medium">Lo que hace Fusion</span><span class="text-neutral-500 text-sm ml-2">- 1 prompt → N modelos</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">A Fusion pega <strong>um</strong> prompt e o envia, inalterado, para vários modelos ao mesmo tempo. Cada modelo responde a tarefa inteira por conta própria — ninguém recebe só um pedaço.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É a diferença de fábrica para o Fugu. Quem confunde "vários modelos" com "decompor a tarefa" não entende nenhum dos dois. Aqui é replicação, não repartição.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Ensemble · fan-out · mesmo prompt · candidatos paralelos.</p></div>
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Fusion toma <strong>uno</strong> envía el prompt, sin modificarlo, a varios modelos al mismo tiempo. Cada modelo responde a toda la tarea por su cuenta: nadie recibe solo un fragmento.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es la diferencia de fábrica de Fugu. Quien confunde "varios modelos" con "descomponer la tarea" no entiende ninguno de los dos. Aquí hay replicación, no reparto.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Ensemble · fan-out · mismo prompt · candidatos en paralelo.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
 <span class="text-lg">⚖️</span>
-<div><span class="font-medium">O juiz que funde</span><span class="text-neutral-500 text-sm ml-2">- LLM-as-judge</span></div>
+<div><span class="font-medium">El juez que fusiona</span><span class="text-neutral-500 text-sm ml-2">- LLM-as-judge</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Depois que N modelos respondem, um modelo <strong>juiz</strong> lê todas as respostas e produz a final — escolhendo a melhor, votando, ou reescrevendo um híbrido. É a "fusão" da Fusion.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">O juiz é onde o ensemble vira <em>uma</em> resposta. Sem ele você só tem N candidatos soltos. A qualidade do juiz é metade da qualidade da Fusion.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">LLM-as-judge · merge · agregação · pick-best vs síntese.</p></div>
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Después de que N modelos responden, un modelo <strong>juez</strong> lee todas las respuestas y produce la final: elige la mejor, vota o reescribe una híbrida. Es la «fusión» de Fusion.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">El juez es donde el ensemble se convierte en <em>una</em> respuesta. Sin él, solo tienes N candidatas sueltas. La calidad del juez es la mitad de la calidad de Fusion.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">LLM-as-judge · merge · agregación · elegir la mejor vs. síntesis.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
 <span class="text-lg">🌈</span>
-<div><span class="font-medium">Por que isso melhora</span><span class="text-neutral-500 text-sm ml-2">- perspectivas diversas</span></div>
+<div><span class="font-medium">Por qué esto mejora</span><span class="text-neutral-500 text-sm ml-2">- perspectivas diversas</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Modelos diferentes erram de jeitos diferentes. Quando vários respondem o mesmo prompt, os acertos tendem a coincidir e os erros a se espalhar — o juiz pode então favorecer o consenso.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É a teoria por trás do ensemble: diversidade reduz erro idiossincrático. Mas só funciona se os modelos forem realmente diversos — modelos iguais erram igual.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Diversidade · erros descorrelacionados · consenso · sabedoria das multidões.</p></div>
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Los distintos modelos se equivocan de maneras diferentes. Cuando varios responden al mismo prompt, los aciertos tienden a coincidir y los errores se dispersan; entonces, el juez puede favorecer el consenso.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es la teoría detrás del ensemble: la diversidad reduce el error idiosincrático. Pero solo funciona si los modelos son realmente diversos; los modelos iguales se equivocan igual.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Diversidad · errores no correlacionados · consenso · sabiduría de las multitudes.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
 <span class="text-lg">🔀</span>
-<div><span class="font-medium">Fusion × Fugu</span><span class="text-neutral-500 text-sm ml-2">- ensemble × decomposição</span></div>
+<div><span class="font-medium">Fusion × Fugu</span><span class="text-neutral-500 text-sm ml-2">- ensemble × descomposición</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Fugu <strong>decompõe</strong>: quebra a tarefa, dá pedaços a especialistas, junta. Fusion <strong>replica</strong>: o mesmo prompt inteiro vai a todos, e um juiz funde respostas concorrentes.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">São duas respostas opostas à pergunta "quem faz cada parte". Entender o contraste te dá o vocabulário para classificar qualquer orquestrador que você encontrar.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Decompor vs replicar · pedaços vs candidatos · gerente vs jurado.</p></div>
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Fugu <strong>descompone</strong>: divide la tarea, asigna partes a especialistas y las reúne. Fusion <strong>replica</strong>: el mismo prompt completo se envía a todos, y un juez fusiona las respuestas en competencia.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Son dos respuestas opuestas a la pregunta «quién hace cada parte». Entender el contraste te da el vocabulario para clasificar cualquier orquestador que encuentres.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Descomponer vs. replicar · partes vs. candidatos · gerente vs. juez.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
 <span class="text-lg">👪</span>
-<div><span class="font-medium">Os parentes da Fusion</span><span class="text-neutral-500 text-sm ml-2">- self-consistency, MoA</span></div>
+<div><span class="font-medium">Los parientes de Fusion</span><span class="text-neutral-500 text-sm ml-2">- self-consistency, MoA</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">A Fusion tem uma família. <strong>Self-consistency</strong>: perguntar várias vezes ao mesmo modelo e votar na resposta mais comum. <strong>Mixture-of-agents</strong>: camadas de modelos refinando respostas uns dos outros.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Reconhecer os parentes mostra que "paralelo + agregar" é um padrão antigo e bem estudado — a Fusion só o empacota cross-provider atrás de uma API.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Self-consistency · LLM-as-judge · mixture-of-agents · votação.</p></div>
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Fusion tiene una familia. <strong>Autoconsistencia</strong>: preguntar varias veces al mismo modelo y votar por la respuesta más común. <strong>Mixture-of-agents</strong>: capas de modelos que refinan las respuestas de los demás.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Reconocer los parientes muestra que «paralelo + agregación» es un patrón antiguo y bien estudiado: Fusion solo lo empaqueta entre proveedores detrás de una API.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Autoconsistencia · LLM-as-judge · mixture-of-agents · votación.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
 <span class="text-lg">🧾</span>
-<div><span class="font-medium">O custo do paralelo</span><span class="text-neutral-500 text-sm ml-2">- N respostas + juiz</span></div>
+<div><span class="font-medium">El costo del trabajo en paralelo</span><span class="text-neutral-500 text-sm ml-2">- N respuestas + juez</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Rodar N modelos significa pagar N respostas completas — mais a chamada do juiz, que lê todas elas. Você gasta ≈ N+1 vezes para entregar uma resposta só.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">O custo é o calcanhar do ensemble. Sem somar os N+1, "perguntar a todo mundo" parece grátis; com a conta, fica claro quando vale (e quando não).</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Custo N+1 · tokens do juiz · latência do mais lento · custo × benefício.</p></div>
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Ejecutar N modelos significa pagar N respuestas completas, más la llamada del juez, que las lee todas. Gastas ≈ N+1 veces para entregar una sola respuesta.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">El costo es el talón de Aquiles del ensemble. Sin sumar los N+1, "preguntarles a todos" parece gratis; al hacer las cuentas, queda claro cuándo conviene (y cuándo no).</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Costo N+1 · tokens del juez · latencia del más lento · costo × beneficio.</p></div>
 </div></div>
 </div>
 </div>
 <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
-<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-3-1')">Ver em Modal</button>
-<a class="px-4 py-2 text-sm bg-purple-600 hover:bg-purple-500 text-white rounded-lg transition-colors" href="modulo-3-1.html">Ver Completo</a>
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-3-1')">Ver en modal</button>
+<a class="px-4 py-2 text-sm bg-purple-600 hover:bg-purple-500 text-white rounded-lg transition-colors" href="modulo-3-1.html">Ver completo</a>
 </div>
 </div>
 <!-- ===== MÓDULO 3.2 ===== -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" data-inema-module="3-2" id="modulo-3-2">
 <div class="p-6 border-b border-dark-600">
-<div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold">3.2</span><span class="text-xs text-neutral-500">~30 min · 6 tópicos</span></div>
-<h3 class="text-2xl font-bold mb-2">🚀 Fusion na prática e o futuro da skill</h3>
-<p class="text-neutral-400 text-sm">Quando o ensemble paga, quando 1 modelo forte basta, como montar o padrão "juiz" você mesmo, e a mentalidade de orquestrar com consciência de custo.</p>
+<div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold">3.2</span><span class="text-xs text-neutral-500">~30 min · 6 temas</span></div>
+<h3 class="text-2xl font-bold mb-2">🚀 Fusion en la práctica y el futuro de la skill</h3>
+<p class="text-neutral-400 text-sm">Cuándo conviene el ensemble, cuándo basta con 1 modelo potente, cómo crear tú mismo el patrón "juez" y cómo orquestar con conciencia de costos.</p>
 </div>
 <div class="divide-y divide-dark-600">
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
 <span class="text-lg">🎯</span>
-<div><span class="font-medium">Quando paralelo-e-fundir ganha</span><span class="text-neutral-500 text-sm ml-2">- risco alto, sem gabarito</span></div>
+<div><span class="font-medium">Cuándo gana el enfoque paralelo y fusión</span><span class="text-neutral-500 text-sm ml-2">- alto riesgo, sin respuesta modelo</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">O ensemble brilha quando o erro é caro e não há resposta verificável: decisões abertas, redação de alto risco, tarefas onde diversidade de ângulos pega o que um modelo só perderia.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Define o nicho real da Fusion. Sem saber onde ela ganha, você a aplica em tudo (caro) ou em nada (perde o ganho de robustez).</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Custo do erro · sem gabarito · robustez · alta variância.</p></div>
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">El ensemble destaca cuando el error es costoso y no hay una respuesta verificable: decisiones abiertas, redacción de alto riesgo, tareas en las que la diversidad de perspectivas detecta lo que un solo modelo pasaría por alto.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Define el nicho real de Fusion. Sin saber dónde gana, la aplicas a todo (caro) o a nada (pierdes la ganancia de robustez).</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Costo del error · sin respuestas correctas · robustez · alta varianza.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
 <span class="text-lg">🥇</span>
-<div><span class="font-medium">Quando 1 modelo forte basta</span><span class="text-neutral-500 text-sm ml-2">- o caso comum</span></div>
+<div><span class="font-medium">Cuándo basta con 1 modelo potente</span><span class="text-neutral-500 text-sm ml-2">- el caso común</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Se um top model já resolve a tarefa, o ensemble só adiciona custo e espera sem mudar o resultado — exatamente o que os 38 testes do Fugu mostraram (36/38 empate).</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É o default honesto. A maioria das tarefas "cai pelo topo do ladder": 1 modelo forte empata, mais rápido e barato. Orquestrar é a exceção, não a regra.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Teto já atingido · ladder de decisão · default = 1 modelo.</p></div>
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Si un modelo de primer nivel ya resuelve la tarea, el ensemble solo añade costo y espera sin cambiar el resultado; eso es exactamente lo que mostraron las 38 pruebas de Fugu (empate en 36/38).</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es la opción predeterminada más honesta. La mayoría de las tareas "se resuelven en la cima del ladder": 1 modelo potente empata, más rápido y barato. Orquestar es la excepción, no la regla.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Límite ya alcanzado · ladder de decisión · default = 1 modelo.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
 <span class="text-lg">🛠️</span>
-<div><span class="font-medium">Montar você mesmo</span><span class="text-neutral-500 text-sm ml-2">- o padrão "juiz" no Claude Code</span></div>
+<div><span class="font-medium">Armarlo tú mismo</span><span class="text-neutral-500 text-sm ml-2">- el patrón «juez» en Claude Code</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Você não precisa de uma API especial para o padrão Fusion. Peça ao Claude Code N respostas por ângulos diferentes e um agente-juiz que funde — ensemble manual, controle total.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Desmistifica a Fusion: o padrão é seu, não do produto. Saber montá-lo na mão te deixa escolher quando vale rodar — e ver o custo antes de pagar.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Ensemble manual · agente-juiz · fan-out + merge · copy-run.</p></div>
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">No necesitas una API especial para el patrón Fusion. Pídele a Claude Code N respuestas desde distintos enfoques y un agente juez que las fusione: ensemble manual, control total.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Desmitifica Fusion: el patrón es tuyo, no del producto. Saber montarlo a mano te permite elegir cuándo vale la pena ejecutarlo y ver el costo antes de pagar.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Ensemble manual · agente-juez · fan-out + merge · copy-run.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
 <span class="text-lg">💰</span>
-<div><span class="font-medium">Unit economics da orquestração</span><span class="text-neutral-500 text-sm ml-2">- $ por resultado bom</span></div>
+<div><span class="font-medium">Economía unitaria de la orquestación</span><span class="text-neutral-500 text-sm ml-2">- $ por buen resultado</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">A pergunta certa não é "qual modelo é melhor" e sim "qual o custo por resultado aceitável". Às vezes 3 modelos baratos + juiz batem 1 modelo caro pelo mesmo dinheiro.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É a métrica que o autor do field test usa: otimizar unit economics, não vaidade de benchmark. Pensar em $/resultado muda toda decisão de orquestração.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Custo por resultado · barato×bom · trade-off de qualidade · ROI da chamada.</p></div>
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">La pregunta correcta no es «qué modelo es mejor», sino «cuál es el costo por resultado aceptable». A veces, 3 modelos baratos + un juez superan a 1 modelo caro por el mismo dinero.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es la métrica que usa el autor de la prueba de campo: optimizar la economía unitaria, no la vanidad del benchmark. Pensar en $/resultado cambia todas las decisiones de orquestación.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Costo por resultado · barato×bueno · equilibrio entre calidad y costo · ROI de la llamada.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
 <span class="text-lg">🛡️</span>
-<div><span class="font-medium">Hedge de vendor</span><span class="text-neutral-500 text-sm ml-2">- não travar em 1 provider</span></div>
+<div><span class="font-medium">Hedge de proveedor</span><span class="text-neutral-500 text-sm ml-2">- no depender de 1 provider</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Rodar em vários providers via uma API só é um seguro: se um modelo sai do ar, fica caro ou degrada, sua aplicação não para — ela continua com os outros.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É o benefício da Fusion que <em>não</em> depende de qualidade extra. Mesmo quando o ensemble não melhora a resposta, o hedge contra lock-in pode valer sozinho.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Vendor lock-in · hedge · resiliência · cross-provider.</p></div>
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Ejecutar modelos de varios proveedores a través de una sola API es un seguro: si un modelo deja de funcionar, se vuelve caro o pierde calidad, tu aplicación no se detiene; continúa con los demás.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es el beneficio de Fusion que <em>no</em> depende de la calidad adicional. Incluso cuando el ensemble no mejora la respuesta, la cobertura frente al lock-in puede valer por sí sola.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Dependencia de un proveedor · hedge · resiliencia · entre proveedores.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
 <span class="text-lg">🔮</span>
-<div><span class="font-medium">A skill do futuro</span><span class="text-neutral-500 text-sm ml-2">- orquestrar com consciência de custo</span></div>
+<div><span class="font-medium">La habilidad del futuro</span><span class="text-neutral-500 text-sm ml-2">- orquestar teniendo en cuenta el costo</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-purple-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">A habilidade que se forma: saber <em>quando</em> orquestrar, <em>qual</em> padrão (decompor vs ensemble), e a que <em>custo</em> — em vez de adotar o produto mais automático por moda.</p></div>
-<div><span class="text-purple-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É o destino do curso. A ideia é o futuro; o julgamento sobre quando aplicá-la é o que separa quem orquestra bem de quem só queima tokens.</p></div>
-<div><span class="text-purple-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Julgamento de orquestração · consciência de custo · padrão certo · mentalidade.</p></div>
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">La habilidad que se desarrolla: saber <em>cuándo</em> orquestar, <em>cuál</em> predeterminado (descomponer vs. ensemble), y a qué <em>costo</em> — en vez de adoptar el producto más automático por moda.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es el destino del curso. La idea es el futuro; el criterio para saber cuándo aplicarla es lo que distingue a quien orquesta bien de quien solo quema tokens.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Juicio de orquestación · conciencia de costos · patrón adecuado · mentalidad.</p></div>
 </div></div>
 </div>
 </div>
 <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
-<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-3-2')">Ver em Modal</button>
-<a class="px-4 py-2 text-sm bg-purple-600 hover:bg-purple-500 text-white rounded-lg transition-colors" href="modulo-3-2.html">Ver Completo</a>
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-3-2')">Ver en modal</button>
+<a class="px-4 py-2 text-sm bg-purple-600 hover:bg-purple-500 text-white rounded-lg transition-colors" href="modulo-3-2.html">Ver completo</a>
 </div>
 </div>
 <!-- Navegação entre trilhas -->
 <div class="flex flex-col sm:flex-row gap-4 mt-10">
-<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="../trilha2/index.html">← Trilha anterior: Fugu Ultra</a>
-<a class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="../../index.html">Concluir → Voltar ao Início</a>
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="../trilha2/index.html">← Tramo anterior: Fugu Ultra</a>
+<a class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="../../index.html">Completar → Volver al inicio</a>
 </div>
 </div>
 </main>
@@ -450,8 +450,8 @@
 <div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-3-1" onclick="if(event.target === this) closeModal()">
 <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
 <div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
-<div class="flex items-center space-x-3"><span class="text-purple-400 font-bold">3.1</span><span class="font-semibold">Mesmo prompt, N modelos, um juiz</span></div>
-<button aria-label="Fechar" class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+<div class="flex items-center space-x-3"><span class="text-purple-400 font-bold">3.1</span><span class="font-semibold">Mismo prompt, N modelos, un juez</span></div>
+<button aria-label="Cerrar" class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
 </div>
 <iframe class="flex-1 w-full rounded-b-xl" src="modulo-3-1.html" title="Módulo 3.1"></iframe>
 </div>
@@ -459,15 +459,15 @@
 <div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-3-2" onclick="if(event.target === this) closeModal()">
 <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
 <div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
-<div class="flex items-center space-x-3"><span class="text-purple-400 font-bold">3.2</span><span class="font-semibold">Fusion na prática e o futuro da skill</span></div>
-<button aria-label="Fechar" class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+<div class="flex items-center space-x-3"><span class="text-purple-400 font-bold">3.2</span><span class="font-semibold">Fusion en la práctica y el futuro de la skill</span></div>
+<button aria-label="Cerrar" class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
 </div>
 <iframe class="flex-1 w-full rounded-b-xl" src="modulo-3-2.html" title="Módulo 3.2"></iframe>
 </div>
 </div>
 <footer class="border-t border-dark-600 py-8 mt-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p>LLMs Orquestradas — Trilha 3 · OpenRouter Fusion · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+<p>LLMs orquestados — Ruta 3 · OpenRouter Fusion · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
 </div>
 </footer>
 <script>
@@ -497,7 +497,7 @@
     function closeModal() { document.querySelectorAll('.modal').forEach(m => m.classList.add('hidden')); document.body.style.overflow = 'auto'; }
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
   </script>
-<script src="../../assets/learn.js"></script>
+<script src="../../../assets/learn.js"></script>
 <script>
     if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init(); }
   </script>

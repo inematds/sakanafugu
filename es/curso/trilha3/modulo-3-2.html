@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="llms-orquestradas" name="inema-course"/>
+<title>Módulo 3.2 · Fusion en la práctica y el futuro de la skill | LLMs Orquestradas</title>
+<script>
+  (function () {
+    try {
+      var html = document.documentElement;
+      var DEF = { theme: 'inema-dark', font: 'inter', fontScale: 100, lineWidth: 68, leading: 1.7, accent: 'emerald' };
+      function clone(o){var r={};for(var x in o)r[x]=o[x];return r;}
+      var p = clone(DEF);
+      try {
+        var raw = localStorage.getItem('inema.prefs');
+        if (raw) { var parsed = JSON.parse(raw); if (parsed && typeof parsed==='object'){ for (var k in DEF) if (parsed[k]!=null) p[k]=parsed[k]; } }
+        else { var legacy = localStorage.getItem('theme'); if (legacy==='light') p.theme='claro'; else if (legacy==='dark') p.theme='inema-dark'; }
+      } catch (e) { p = clone(DEF); }
+      var THEMES = { 'inema-dark':{dark:true,attr:null,cs:'dark'}, 'claro':{dark:false,attr:null,cs:'light'}, 'sepia':{dark:false,attr:'sepia',cs:'light'}, 'foco':{dark:null,attr:'foco',cs:null}, 'contraste':{dark:true,attr:'contraste',cs:'dark'} };
+      var t = THEMES[p.theme] || THEMES['inema-dark'];
+      if (t.dark===true) html.classList.add('dark'); else if (t.dark===false) html.classList.remove('dark');
+      if (t.attr) html.setAttribute('data-theme', t.attr); else html.removeAttribute('data-theme');
+      html.style.colorScheme = (t.cs ? t.cs : (html.classList.contains('dark')?'dark':'light'));
+      html.setAttribute('data-font', p.font||'inter'); html.setAttribute('data-accent', p.accent||'emerald');
+      var s = html.style, scale = (+p.fontScale||100);
+      s.setProperty('--inema-font-scale',(scale/100).toString()); s.setProperty('font-size', scale+'%');
+      s.setProperty('--measure',(+p.lineWidth||68)+'ch'); s.setProperty('--lh-body',(+p.leading||1.7).toString());
+      var fam = p.font==='system' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : (p.font==='leitura' ? '"Atkinson Hyperlegible", "Inter", system-ui, sans-serif' : '"Inter", system-ui, sans-serif');
+      s.setProperty('--font-body', fam);
+      var ACC = { emerald:[152,76,45], blue:[217,91,60], purple:[258,90,66], amber:[38,92,50], teal:[174,72,41], rose:[350,89,60] };
+      var a = ACC[p.accent]||ACC.emerald;
+      s.setProperty('--accent-h',a[0]+''); s.setProperty('--accent-s',a[1]+'%'); s.setProperty('--accent-l',a[2]+'%'); s.setProperty('--accent','hsl('+a[0]+' '+a[1]+'% '+a[2]+'%)');
+    } catch (err) { try { document.documentElement.classList.add('dark'); document.documentElement.style.colorScheme='dark'; } catch(e){} }
+  })();
+  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script data-inema-manifest="" type="application/json">
+  {
+    "course": "llms-orquestradas",
+    "tracks": [
+      { "n": "1", "title": "Fundamentos", "modules": [
+        { "id": "1-1", "title": "O que é orquestrar várias LLMs", "topics": 6, "href": "curso/trilha1/modulo-1-1.html" },
+        { "id": "1-2", "title": "O espectro: da mão ao modelo-maestro", "topics": 6, "href": "curso/trilha1/modulo-1-2.html" }
+      ]},
+      { "n": "2", "title": "Fugu Ultra", "modules": [
+        { "id": "2-1", "title": "Como o Fugu funciona", "topics": 6, "href": "curso/trilha2/modulo-2-1.html" },
+        { "id": "2-2", "title": "O veredito: 38 testes", "topics": 6, "href": "curso/trilha2/modulo-2-2.html" }
+      ]},
+      { "n": "3", "title": "OpenRouter Fusion", "modules": [
+        { "id": "3-1", "title": "Mesmo prompt, N modelos, um juiz", "topics": 6, "href": "curso/trilha3/modulo-3-1.html" },
+        { "id": "3-2", "title": "Fusion na prática", "topics": 6, "href": "curso/trilha3/modulo-3-2.html" }
+      ]}
+    ]
+  }
+  </script>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124,58,237,0.12); }
+    html:not(.dark) .bg-purple-500\/10 { background-color: rgba(124,58,237,0.08); }
+    html:not(.dark) .border-purple-500\/30 { border-color: rgba(124,58,237,0.25); }
+    html:not(.dark) .hover\:bg-purple-500\/30:hover { background-color: rgba(124,58,237,0.18); }
+    html:not(.dark) .hover\:bg-purple-500\/10:hover { background-color: rgba(124,58,237,0.08); }
+    html:not(.dark) .hover\:text-purple-400:hover { color: #7c3aed; }
+    html:not(.dark) .group:hover .group-hover\:text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .bg-purple-900\/20 { background-color: rgba(124,58,237,0.08); }
+    html:not(.dark) .bg-purple-900\/30 { background-color: rgba(124,58,237,0.10); }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .bg-blue-500\/10 { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .bg-blue-900\/20 { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37,99,235,0.25); }
+    html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .hover\:text-blue-400:hover { color: #2563eb; }
+
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161,98,7,0.08); }
+    html:not(.dark) .border-primary\/30 { border-color: rgba(161,98,7,0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .text-red-400 { color: #b91c1c; }
+    html:not(.dark) .bg-red-900\/20 { background-color: rgba(185,28,28,0.07); }
+    html:not(.dark) .border-red-500\/30 { border-color: rgba(185,28,28,0.25); }
+    html:not(.dark) .bg-emerald-900\/20 { background-color: rgba(5,150,105,0.07); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5,150,105,0.25); }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+    html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
+
+    @keyframes wf-pulse { 0%,100% { opacity:.55 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.25s} .wf-a:nth-child(3){animation-delay:.5s}
+      .wf-a:nth-child(4){animation-delay:.75s} .wf-a:nth-child(5){animation-delay:1s}
+    }
+  </style>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
+<link href="https://inematds.github.io/sakanafugu/curso/trilha3/modulo-3-2.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/sakanafugu/en/curso/trilha3/modulo-3-2.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/sakanafugu/es/curso/trilha3/modulo-3-2.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha3/modulo-3-2.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha3/modulo-3-2.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="modulo-3-2.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<a class="skip sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-2 focus:left-2 focus:px-4 focus:py-2 focus:bg-dark-800 focus:rounded-lg focus:text-primary" href="#conteudo">Saltar al contenido</a>
+<!-- ===== NAV (trilha 3 ativa) ===== -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🐟</span><span class="font-bold text-lg hidden sm:inline">LLMs orquestados</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Fugu</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-purple-400 bg-purple-500/10" href="index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Fusion</span></a>
+<button class="ml-1 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-inema-journey-open="" type="button">
+<span aria-hidden="true">◷</span><span class="hidden sm:inline">Recorrido</span><span aria-hidden="true" class="inema-journey-badge hidden" data-count="0" data-inema-journey-badge=""></span>
+</button>
+<div class="relative">
+<button aria-expanded="false" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-inema-appearance-toggle="[data-inema-appearance]" type="button">
+<span aria-hidden="true">◑</span><span class="hidden sm:inline">Apariencia</span>
+</button>
+<div class="inema-appearance-pop" data-inema-appearance="">
+<div aria-label="Tema" class="inema-segment" role="group">
+<button data-inema-set-theme="inema-dark">Oscuro</button><button data-inema-set-theme="claro">Claro</button><button data-inema-set-theme="sepia">Sepia</button><button data-inema-set-theme="foco">Enfoque</button><button data-inema-set-theme="contraste">Alto contraste</button>
+</div>
+<div aria-label="Fuente" class="inema-segment" role="group">
+<button data-inema-set-font="inter">Inter</button><button data-inema-set-font="system">Sistema</button><button data-inema-set-font="leitura">Lectura</button>
+</div>
+<div aria-label="Tamaño del texto" class="inema-segment" role="group">
+<button data-inema-set-fontscale="100">A</button><button data-inema-set-fontscale="112">A+</button><button data-inema-set-fontscale="125">A++</button>
+</div>
+<div aria-label="Ancho de línea" class="inema-segment" role="group">
+<button data-inema-set-linewidth="60">Estrecho</button><button data-inema-set-linewidth="68">Medio</button><button data-inema-set-linewidth="75">Ancho</button>
+</div>
+<div aria-label="Entre líneas" class="inema-segment" role="group">
+<button data-inema-set-leading="1.45">Compacto</button><button data-inema-set-leading="1.7">Cómodo</button>
+</div>
+<div aria-label="Color de acento" class="inema-accent-grid" role="group">
+<button data-inema-set-accent="emerald" title="Esmeralda"></button><button data-inema-set-accent="blue" title="Azul"></button><button data-inema-set-accent="purple" title="Morado"></button><button data-inema-set-accent="amber" title="Ámbar"></button><button data-inema-set-accent="teal" title="Teal"></button><button data-inema-set-accent="rose" title="Rosa"></button>
+</div>
+</div>
+</div>
+<button aria-label="Alternar entre tema claro y oscuro" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<!-- Breadcrumb -->
+<nav aria-label="Ruta de navegación" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center space-x-2 text-sm text-neutral-400">
+<a class="hover:text-purple-400" href="../../index.html">Inicio</a><span>/</span>
+<a class="hover:text-purple-400" href="index.html">Ruta 3</a><span>/</span>
+<span class="text-purple-400">Módulo 3.2</span>
+</div>
+</nav>
+<!-- Header do módulo -->
+<header class="bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">MÓDULO 3.2</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🚀 Fusion en la práctica y el futuro de la skill</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">La parte de decisión: cuándo conviene el ensemble paralelo, cuándo basta un modelo potente, cómo construir tú mismo el patrón de «juez», las matemáticas de unit economics, la cobertura frente al proveedor y la habilidad que todo esto desarrolla.</p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-3xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">6</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">~30</div><div class="text-xs text-neutral-400">Minutos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Inter.</div><div class="text-xs text-neutral-400">Nivel</div></div>
+<div aria-label="Progreso del módulo 3.2" aria-valuemax="100" aria-valuemin="0" class="inema-meter bg-dark-800/50 rounded-lg p-3 border border-dark-600" data-inema-meter="modulo:3-2" role="progressbar">
+<div class="text-xl font-bold text-purple-400" data-inema-meter-pct="">0%</div><div class="text-xs text-neutral-400" data-inema-meter-frac="">0 de 6</div>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12" data-inema-module="3-2" data-inema-track="3" id="conteudo">
+<div class="lg:grid lg:grid-cols-[210px_1fr] lg:gap-10">
+<!-- TOC sticky + scrollspy -->
+<nav aria-label="Índice de la página" class="hidden lg:block sticky top-24 self-start" data-inema-toc="">
+<p class="text-sm text-neutral-400 mb-3">Sección <span data-inema-section-counter="">1 de 6</span></p>
+<ol class="space-y-1.5 text-sm">
+<li><a class="inema-toc-link text-neutral-400 hover:text-purple-400" href="#topico-1">1. Cuándo gana el ensamble</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-purple-400" href="#topico-2">2. Cuando 1 modelo basta</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-purple-400" href="#topico-3">3. Armarlo tú mismo</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-purple-400" href="#topico-4">4. Economía unitaria</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-purple-400" href="#topico-5">5. Cobertura contra el riesgo del proveedor</a></li>
+<li><a class="inema-toc-link text-neutral-400 hover:text-purple-400" href="#topico-6">6. La skill del futuro</a></li>
+</ol>
+</nav>
+<div>
+<!-- ===== TÓPICO 1 ===== -->
+<section class="mb-16 scroll-mt-24" data-inema-topic="modulo-3-2#topico-1" id="topico-1">
+<div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">1</span>
+<h2 class="text-2xl font-bold">🎯 Cuándo gana el enfoque de paralelizar y fusionar</h2>
+</div>
+<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>Tengo una duda</span></button>
+</div>
+<div class="inema-prose">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-2-t1-p1">El ensemble no es gratis (viste el costo N+1 en el módulo anterior), así que necesita <em>pagar</em> el precio en sí. Gana exactamente cuando el <strong class="text-purple-400">el costo de equivocarse es alto</strong> e <strong class="text-purple-400">no hay respuestas correctas</strong> para verificar: decisiones abiertas, redacción de alto riesgo, análisis en los que el punto ciego de un modelo pasaría desapercibido.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-2-t1-p2">La lógica: cuando la tarea tiene <strong>alta variabilidad</strong> — los buenos modelos a veces aciertan y a veces fallan; ejecutar varios y dejar que el juez elija reduce la posibilidad de que te quedes con un fallo de un solo modelo. La diversidad compra <em>robustez</em>, no genialidad.</p>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">🆕</span> Tres términos de decisión</h3>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li><strong>Costo del error:</strong> cuánto duele una respuesta incorrecta (desde «lo rehago en 5 min» hasta «perdí un cliente»).</li>
+<li><strong>Verificable:</strong> ¿existe una prueba/solución que indique si la respuesta es correcta (código que se ejecuta, hecho verificable)?</li>
+<li><strong>Variabilidad:</strong> cuánto varía la calidad de la respuesta de un mismo modelo entre ejecuciones.</li>
+</ul>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-purple-400 font-bold text-sm mb-1">Error costoso</div><div class="text-xs text-neutral-400">vale la pena gastar para acertar</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-purple-400 font-bold text-sm mb-1">Sin respuestas correctas</div><div class="text-xs text-neutral-400">no se puede probar con uno solo</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-purple-400 font-bold text-sm mb-1">Alta variabilidad</div><div class="text-xs text-neutral-400">modelo fluctúa</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-purple-400 font-bold text-sm mb-1">Ganancia</div><div class="text-xs text-neutral-400">robustez, no genialidad</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span>
+<span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- ===== TÓPICO 2 ===== -->
+<section class="mb-16 scroll-mt-24" data-inema-topic="modulo-3-2#topico-2" id="topico-2">
+<div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">2</span>
+<h2 class="text-2xl font-bold">🥇 Cuándo basta con 1 modelo potente</h2>
+</div>
+<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>Tengo una duda</span></button>
+</div>
+<div class="inema-prose">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-2-t2-p1">El default honesto es incómodo para quien ama orquestar: <strong class="text-purple-400">en la mayoría de las tareas, un modelo de primer nivel por sí solo ya basta</strong>. Si lo resuelve, el ensamble solo agrega costo y espera sin cambiar el resultado. Eso fue exactamente lo que mostraron las 38 pruebas de la Trilha 2: 36 de 38 terminaron en empate técnico, y el modelo solo fue más rápido y barato.</p>
+</div>
+<!-- SVG: fluxo de decisão "quando vale o ensemble" -->
+<div class="rounded-2xl border border-purple-500/30 bg-dark-900/40 p-3 sm:p-4 mb-6 overflow-hidden">
+<svg aria-label="Flujo de decisión: si un modelo potente ya lo resuelve, usa uno; si no, si equivocarse sale caro y no hay una respuesta de referencia, ejecuta el ensemble; si no, sigue usando un solo modelo" class="w-full h-auto" role="img" viewbox="0 0 1000 280">
+<defs>
+<lineargradient id="m32t2-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#c084fc"></stop><stop offset="1" stop-color="#a855f7"></stop></lineargradient>
+<filter height="180%" id="m32t2-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.7"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m32t2-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#a855f7" opacity="0.10" r="1.3"></circle></pattern>
+<marker id="m32t2-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#c084fc"></path></marker>
+<marker id="m32t2-ahc" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#m32t2-grid)" height="280" width="1000" x="0" y="0"></rect>
+<!-- decisão 1 -->
+<g filter="url(#m32t2-glow)"><rect fill="#1a1230" height="72" rx="14" stroke="url(#m32t2-grad)" stroke-width="2.4" width="180" x="30" y="100"></rect></g>
+<text fill="#c084fc" font-family="Inter,sans-serif" font-size="13" font-weight="700" text-anchor="middle" x="120" y="130">1 modelo potente</text>
+<text fill="#e3ccff" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="120" y="150">¿ya lo resuelve?</text>
+<!-- SIM -> 1 modelo -->
+<path d="M120,172 C120,225 360,225 360,200" fill="none" marker-end="url(#m32t2-ahc)" stroke="#38bdf8" stroke-width="1.8"></path>
+<text fill="#7fd4ff" font-family="Inter,sans-serif" font-size="12" font-weight="600" x="200" y="216">SÍ</text>
+<rect fill="#0e1b26" height="44" rx="11" stroke="#38bdf8" stroke-width="2" width="160" x="280" y="200"></rect><text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="12.5" font-weight="600" text-anchor="middle" x="360" y="227">usa solo 1 modelo</text>
+<!-- NÃO -> decisão 2 -->
+<path d="M210,136 L290,136" fill="none" marker-end="url(#m32t2-ah)" stroke="#c084fc" stroke-width="1.8"></path>
+<text fill="#c4a6f5" font-family="Inter,sans-serif" font-size="12" font-weight="600" x="248" y="126">NO</text>
+<g filter="url(#m32t2-glow)"><rect fill="#1a1230" height="72" rx="14" stroke="url(#m32t2-grad)" stroke-width="2.4" width="200" x="290" y="100"></rect></g>
+<text fill="#c084fc" font-family="Inter,sans-serif" font-size="12.5" font-weight="700" text-anchor="middle" x="390" y="128">error costoso E</text>
+<text fill="#e3ccff" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="390" y="148">¿sin clave de respuestas?</text>
+<!-- NÃO -> 1 modelo -->
+<path d="M390,172 C390,235 600,235 600,210" fill="none" marker-end="url(#m32t2-ahc)" stroke="#38bdf8" stroke-width="1.8"></path>
+<text fill="#7fd4ff" font-family="Inter,sans-serif" font-size="12" font-weight="600" x="470" y="226">NO</text>
+<rect fill="#0e1b26" height="44" rx="11" stroke="#38bdf8" stroke-width="2" width="160" x="520" y="210"></rect><text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="12.5" font-weight="600" text-anchor="middle" x="600" y="237">1 modelo todavía</text>
+<!-- SIM -> ensemble -->
+<path d="M490,136 L700,136" fill="none" marker-end="url(#m32t2-ah)" stroke="#c084fc" stroke-width="2"></path>
+<text fill="#c4a6f5" font-family="Inter,sans-serif" font-size="12" font-weight="600" x="560" y="126">SÍ</text>
+<g filter="url(#m32t2-glow)"><rect fill="#26143f" height="64" rx="14" stroke="url(#m32t2-grad)" stroke-width="2.8" width="200" x="700" y="104"></rect></g>
+<text fill="#c084fc" font-family="Inter,sans-serif" font-size="14" font-weight="700" text-anchor="middle" x="800" y="132">⚖️ ejecuta el ensemble</text>
+<text fill="#e3ccff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="800" y="151">N modelos + juez</text>
+<text fill="#9aa7c2" font-family="Inter,sans-serif" font-size="13" font-weight="600" text-anchor="middle" x="500" y="34">La escalera: la mayoría de las tareas "cae por arriba" (usa 1 modelo)</text>
+</svg>
+<p class="text-xs text-neutral-400 mt-2 text-center">El ensemble es el último escalón, no el primero. La pregunta no es "¿cómo orquesto?", sino "¿necesito orquestar?".</p>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">📊</span> Señales de que 1 modelo es suficiente</h3>
+<ul class="space-y-2 text-neutral-300 text-sm">
+<li>La tarea es <strong>verificable</strong> (tiene una prueba/respuestas correctas) — entonces pruebas directamente la salida de 1 modelo.</li>
+<li>Un modelo top ya alcanza la meta de calidad en el caso común.</li>
+<li>La velocidad o el costo importan: el ensemble añade minutos y multiplica la cuenta.</li>
+</ul>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span><span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- ===== TÓPICO 3 ===== -->
+<section class="mb-16 scroll-mt-24" data-inema-topic="modulo-3-2#topico-3" id="topico-3">
+<div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">3</span>
+<h2 class="text-2xl font-bold">🛠️ Hacerlo tú mismo: el patrón del "juez"</h2>
+</div>
+<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>Tengo una duda</span></button>
+</div>
+<div class="inema-prose">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-2-t3-p1">No necesitas una API especial para usar el patrón Fusion. El patrón es tuyo, y Claude Code ya abre sub-agents en paralelo. Pide N respuestas desde <strong class="text-purple-400">ángulos diferentes</strong> y un agente juez que <strong class="text-purple-400">fusiona</strong>. Ensamble manual, con control total y el costo visible antes de pagar.</p>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">💡</span> Practica: ensemble + juez en acción</h3>
+<p class="text-neutral-300 text-sm mb-3"><strong>Objetivo:</strong> ejecutar tú mismo el patrón Fusion (N candidatas → el juez las combina), en Claude Code. Pega, cambia los <code class="text-primary">&lt;...&gt;</code> y ejecuta.</p>
+<pre class="font-mono text-xs sm:text-sm bg-dark-900 border border-dark-600 rounded-lg p-4 overflow-x-auto text-neutral-200 whitespace-pre-wrap">Tarefa: &lt;descreva a tarefa — ex.: "proponha um nome e tagline
+para o produto X"&gt;
+
+Use o padrão ENSEMBLE + JUIZ:
+1. Abra 3 sub-agents em PARALELO. Cada um resolve a tarefa INTEIRA,
+   mas por um ângulo diferente:
+   - agente 1: ângulo &lt;ex.: "ousado / memorável"&gt;
+   - agente 2: ângulo &lt;ex.: "claro / descritivo"&gt;
+   - agente 3: ângulo &lt;ex.: "técnico / sério"&gt;
+2. Depois, um agente JUIZ lê as 3 propostas, compara segundo
+   &lt;critério — ex.: "memorabilidade + clareza"&gt;, e produz UMA
+   resposta final (escolhendo a melhor OU sintetizando um híbrido).
+   O juiz deve justificar a escolha em 2 linhas.</pre>
+<p class="text-neutral-300 text-sm mt-3"><strong>Cómo verificar:</strong> verás los 3 agentes ejecutándose al mismo tiempo (el fan-out / paralelo) y, al final, una única respuesta con la justificación del juez (la fusión). Esto es Fusion, sin ninguna API de Fusion.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div class="bg-emerald-900/20 rounded-xl border border-emerald-500/30 p-6">
+<h4 class="font-bold text-emerald-400 mb-4">✓ Por qué hacerlo a mano</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Eliges los enfoques y el criterio del juez</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Consulta el costo (N agentes) antes de iniciar</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400">✓</span><span>Actívalo solo cuando la tarea requiera robustez</span></li>
+</ul>
+</div>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6">
+<h4 class="font-bold text-red-400 mb-4">✗ Precauciones</h4>
+<ul class="space-y-3 text-neutral-300 text-sm">
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Ángulos parecidos = candidatos parecidos (sin ganancia)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>Un juez débil elige mal: dale criterios explícitos</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400">✗</span><span>No lo uses en tareas que 1 agente ya puede resolver</span></li>
+</ul>
+</div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span><span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- ===== TÓPICO 4 ===== -->
+<section class="mb-16 scroll-mt-24" data-inema-topic="modulo-3-2#topico-4" id="topico-4">
+<div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">4</span>
+<h2 class="text-2xl font-bold">💰 Economía unitaria de la orquestación</h2>
+</div>
+<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>Tengo una duda</span></button>
+</div>
+<div class="inema-prose">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-2-t4-p1"><strong class="text-purple-400">Economía unitaria</strong> es el costo (y el retorno) de <em>una</em> unidad — aquí, una respuesta entregada. La pregunta correcta no es "¿cuál modelo es el más inteligente?", sino <strong class="text-purple-400">"¿cuál es el costo por resultado aceptable?"</strong>. A veces, 3 modelos baratos + un juez superan a 1 modelo caro por el mismo dinero, y a veces no.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-2-t4-p2">Es la métrica que usa el autor de la prueba de campo para decidir: optimizar la economía unitaria, no la vanidad del benchmark. Recuerda los números de la Ruta 2: el orquestador salió <strong>5× más caro</strong> (US$ 53,60 vs US$ 10,66) y <strong>4,5× más lento</strong> para el <em>mismo</em> resultado. Ahí, la economía por unidad es pésima; en otro contexto, excelente.</p>
+</div>
+<div class="overflow-x-auto mb-6">
+<table class="w-full text-sm border border-dark-600 rounded-xl overflow-hidden">
+<thead>
+<tr class="bg-dark-800">
+<th class="text-left px-4 py-3 border-b border-dark-600 text-neutral-400 font-semibold">Estrategia</th>
+<th class="text-left px-4 py-3 border-b border-dark-600 text-purple-400 font-semibold">Costo relativo</th>
+<th class="text-left px-4 py-3 border-b border-dark-600 text-purple-400 font-semibold">Cuándo tiene sentido</th>
+</tr>
+</thead>
+<tbody class="text-neutral-300">
+<tr class="bg-dark-800/40"><td class="px-4 py-3 border-b border-dark-600 font-medium">1 modelo potente</td><td class="px-4 py-3 border-b border-dark-600">1×</td><td class="px-4 py-3 border-b border-dark-600">tarea verificable / basta con el modelo de punta</td></tr>
+<tr><td class="px-4 py-3 border-b border-dark-600 font-medium">3 modelos baratos + juez</td><td class="px-4 py-3 border-b border-dark-600">~3–4× (pero barato por unidad)</td><td class="px-4 py-3 border-b border-dark-600">robustez por diversidad a bajo costo</td></tr>
+<tr class="bg-dark-800/40"><td class="px-4 py-3 border-b border-dark-600 font-medium">3 modelos caros + juez</td><td class="px-4 py-3 border-b border-dark-600">~4× del caro (alto)</td><td class="px-4 py-3 border-b border-dark-600">solo si el error cuesta más que la cuenta</td></tr>
+<tr><td class="px-4 py-3 font-medium">Orquestador cerrado</td><td class="px-4 py-3">5× (Fugu, prueba de campo)</td><td class="px-4 py-3">conveniencia + cobertura, el costo no importa</td></tr>
+</tbody>
+</table>
+</div>
+<div class="bg-blue-900/20 rounded-xl border border-blue-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-blue-400 mb-4 flex items-center"><span class="mr-2">📊</span> La cuenta que cambia la decisión</h3>
+<p class="text-neutral-300 text-sm">Pregunta por la respuesta: <strong class="text-blue-400">$ por buen resultado</strong> = costo total ÷ tasa de aciertos. Un modelo barato con un 90 % de aciertos puede tener una mejor economía unitaria que uno caro con un 95 %: depende de cuánto cuesta ese 5 % adicional y del precio de cada error.</p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-purple-400 font-bold text-sm mb-1">$ por resultado</div><div class="text-xs text-neutral-400">la métrica correcta</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-purple-400 font-bold text-sm mb-1">Barato × bueno</div><div class="text-xs text-neutral-400">compromiso de calidad</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-purple-400 font-bold text-sm mb-1">Costo del error</div><div class="text-xs text-neutral-400">cuánto duele fallar</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-purple-400 font-bold text-sm mb-1">ROI de la llamada</div><div class="text-xs text-neutral-400">beneficio ÷ costo</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span><span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- ===== TÓPICO 5 ===== -->
+<section class="mb-16 scroll-mt-24" data-inema-topic="modulo-3-2#topico-5" id="topico-5">
+<div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">5</span>
+<h2 class="text-2xl font-bold">🛡️ Cobertura ante proveedores: no quedar atado a 1 provider</h2>
+</div>
+<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>Tengo una duda</span></button>
+</div>
+<div class="inema-prose">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-2-t5-p1"><strong class="text-purple-400">Dependencia de un proveedor</strong> es quedar atado a un solo proveedor: si sube el precio, deja de funcionar o el modelo empeora, no tienes adónde ir. Usar varios providers, a través de una sola API como hace OpenRouter, es un <strong class="text-purple-400">cobertura</strong>: un seguro contra ese riesgo.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-2-t5-p2">El detalle ingenioso: ese beneficio <strong>no depende</strong> de que el ensemble mejore la respuesta. Incluso cuando varios modelos dan el mismo resultado, poder cambiar de proveedor sin reescribir nada ya tiene valor: pura resiliencia operativa.</p>
+</div>
+<div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">🛡️</span> Lo que te da el hedge</h3>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span><strong>Continuidad:</strong> si un modelo falla, tu app sigue con los demás.</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span><strong>Poder de negociación:</strong> no depende de un solo precio; puedes migrar.</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1">•</span><span><strong>Adaptación:</strong> ¿aparece un modelo nuevo mejor? Lo conectas sin reescribir.</span></li>
+</ul>
+</div>
+<div class="bg-primary/10 rounded-xl border border-primary/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-primary mb-3 flex items-center"><span class="mr-2">⚖️</span> Hedge ≠ calidad adicional</h3>
+<p class="text-neutral-300 text-sm">No confundas las dos ventajas de Fusion. Una es <strong>calidad</strong> (el ensemble + el juez aciertan más) y exige diversidad real. La otra es <strong>resiliencia</strong> (cobertura ante fallas del proveedor) y vale incluso sin ninguna mejora de calidad. Decide cuál estás comprando; a veces es solo la segunda.</p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-purple-400 font-bold text-sm mb-1">Dependencia de un proveedor</div><div class="text-xs text-neutral-400">atado a 1 proveedor</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-purple-400 font-bold text-sm mb-1">Hedge</div><div class="text-xs text-neutral-400">protegido contra eso</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-purple-400 font-bold text-sm mb-1">Resiliencia</div><div class="text-xs text-neutral-400">la app no se detiene</div></div>
+<div class="bg-dark-800 rounded-lg p-4 border border-dark-600"><div class="text-purple-400 font-bold text-sm mb-1">Cross-provider</div><div class="text-xs text-neutral-400">cambiar sin reescribir</div></div>
+</div>
+<div class="flex justify-start mt-6">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span><span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- ===== TÓPICO 6 ===== -->
+<section class="mb-16 scroll-mt-24" data-inema-topic="modulo-3-2#topico-6" id="topico-6">
+<div class="flex items-center justify-between gap-3 mb-6 flex-wrap">
+<div class="flex items-center space-x-4">
+<span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">6</span>
+<h2 class="text-2xl font-bold">🔮 La skill del futuro: orquestar teniendo en cuenta los costos</h2>
+</div>
+<button aria-pressed="false" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-dark-700 border border-dark-600 text-neutral-300 hover:bg-dark-600 transition-colors text-sm" data-inema-doubt-toggle="" type="button"><span aria-hidden="true">?</span><span>Tengo una duda</span></button>
+</div>
+<div class="inema-prose">
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-2-t6-p1">Al unirlo todo, aparece la habilidad que el curso quería desarrollar: <strong class="text-purple-400">saber cuándo orquestar, qué patrón usar y a qué costo</strong>. No se trata de memorizar productos, sino de tener criterio para aplicar la escalera de decisión y elegir entre descomponer (Fugu), replicar y fusionar (Fusion) o simplemente usar un solo modelo.</p>
+<p class="text-neutral-300 mb-6 leading-relaxed" data-inema-block="m3-2-t6-p2">La idea central del autor de la prueba de campo resume bien: la idea es el <strong>futuro</strong> — no quedar atado a un provider, optimizar la economía unitaria y usar el modelo más barato que no sacrifique calidad. Pero <em>hoy</em>, para mucho trabajo, todavía no compensa. La habilidad consiste precisamente en distinguir el «hoy» del «cuándo».</p>
+</div>
+<div class="bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-xl border border-purple-500/30 p-6 mb-6">
+<h3 class="text-lg font-semibold text-purple-400 mb-4 flex items-center"><span class="mr-2">🎯</span> La lista de verificación del orquestador consciente</h3>
+<ul class="space-y-3 text-neutral-300">
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1 font-bold">1.</span><span><strong>¿Necesito orquestar?</strong> ¿Un modelo potente ya no resuelve? (por defecto: usa solo 1)</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1 font-bold">2.</span><span><strong>¿Qué patrón?</strong> ¿La tarea requiere partes especializadas (descomponer) o robustez mediante diversidad (ensemble)?</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1 font-bold">3.</span><span><strong>¿A qué costo?</strong> ¿El costo por un buen resultado justifica el N+1 y la espera?</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-1 font-bold">4.</span><span><strong>¿Compro calidad o una cobertura?</strong> Sé honesto sobre qué beneficio estás pagando.</span></li>
+</ul>
+</div>
+<!-- Checagem leve opcional -->
+<div class="inema-check mt-8 bg-dark-800 border border-dark-600 rounded-xl p-6" data-inema-check="modulo-3-2#q1">
+<p class="font-medium mb-4">Repaso rápido (opcional): ¿cuál es la primera pregunta del orquestador consciente?</p>
+<div class="inema-check-options space-y-2">
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="0" type="button">¿Cuál es el orquestador más automático disponible?</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="1" type="button">¿De verdad necesito orquestar o basta con un modelo potente?</button>
+<button class="block w-full text-left px-4 py-2 rounded-lg bg-dark-700 border border-dark-600 hover:bg-dark-600 transition-colors text-sm" data-inema-check-option="2" type="button">¿Cuántos modelos puedo ejecutar en paralelo?</button>
+</div>
+<div aria-live="polite" class="mt-4 text-sm" data-inema-check-feedback="" role="status"></div>
+</div>
+<div class="flex justify-start mt-8">
+<button aria-pressed="false" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-500/20 border border-purple-500/30 text-purple-400 hover:bg-purple-500/30 transition-colors" data-inema-read-toggle="" type="button">
+<span aria-hidden="true" class="inema-ico-todo">○</span><span aria-hidden="true" class="inema-ico-done">●</span><span class="inema-label-todo">Marcar como leído</span><span class="inema-label-done">Leído</span>
+</button>
+</div>
+</section>
+<!-- ===== RESUMO ===== -->
+<section class="mb-12">
+<div class="bg-gradient-to-br from-purple-900/40 via-dark-800 to-dark-800 rounded-xl border border-purple-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumen del módulo</h2>
+<div class="space-y-4 mb-8">
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">El ensemble gana</strong><span class="text-neutral-400"> — cuando equivocarse cuesta caro, no hay una respuesta correcta conocida y la variabilidad es alta.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">1 modelo basta en el caso común</strong><span class="text-neutral-400"> — la mayoría de las tareas se resuelven en la cima del ladder.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Lo armas a mano</strong><span class="text-neutral-400"> — N sub-agents desde distintos ángulos + un agente juez que fusiona.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Economía unitaria</strong><span class="text-neutral-400"> — optimiza los $ por un buen resultado, no por vanidad de benchmark.</span></div></div>
+<div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Hedge ≠ calidad</strong><span class="text-neutral-400"> — la resiliencia ante vendors vale incluso sin mejorar la respuesta.</span></div></div>
+</div>
+<div class="bg-dark-800/50 rounded-lg p-4 mb-8">
+<h3 class="font-semibold text-purple-400 mb-2">Completaste el curso:</h3>
+<p class="text-neutral-300">Fundamentos → Fugu (descompone) → Fusion (ensemble). Ahora tú orquestas —o no— con conciencia de los costos.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Volver al Tramo</a>
+<a class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="../../index.html">Completar → Inicio</a>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-8">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p>LLMs orquestados — Módulo 3.2 · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+</div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      if (!topicItem) return;
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800') || document;
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => { if (exp !== explanation) exp.classList.remove('active'); });
+      explanation.classList.toggle('active');
+      button.setAttribute('aria-expanded', explanation.classList.contains('active') ? 'true' : 'false');
+    }
+    (function () {
+      const themeToggle = document.getElementById('theme-toggle');
+      const darkIcon = document.getElementById('theme-toggle-dark-icon');
+      const lightIcon = document.getElementById('theme-toggle-light-icon');
+      const html = document.documentElement;
+      function sync() { if (html.classList.contains('dark')) { lightIcon.classList.remove('hidden'); darkIcon.classList.add('hidden'); } else { darkIcon.classList.remove('hidden'); lightIcon.classList.add('hidden'); } }
+      sync();
+      themeToggle.addEventListener('click', () => {
+        const nowDark = !html.classList.contains('dark');
+        html.classList.toggle('dark', nowDark);
+        if (window.INEMA && INEMA.setPref) { INEMA.setPref('theme', nowDark ? 'inema-dark' : 'claro'); } else { localStorage.setItem('theme', nowDark ? 'dark' : 'light'); }
+        sync();
+      });
+    })();
+    function openModal(modalId) { const m = document.getElementById(modalId); if (m) { m.classList.remove('hidden'); document.body.style.overflow = 'hidden'; } }
+    function closeModal() { document.querySelectorAll('.modal').forEach(m => m.classList.add('hidden')); document.body.style.overflow = 'auto'; }
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<script src="../../../assets/learn.js"></script>
+<script>
+    if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init(); }
+    window.addEventListener('DOMContentLoaded', function () {
+      if (window.INEMA && INEMA.registerCheck) {
+        INEMA.registerCheck('modulo-3-2#q1', {
+          answer: 1,
+          explain: {
+            0: 'Esse é o erro de adotar o mais automático por moda. A primeira pergunta é se você precisa orquestrar.',
+            1: 'Isso. O default é 1 modelo forte; orquestrar é a exceção que precisa justificar o próprio custo.',
+            2: 'Capacidade técnica não é a primeira pergunta — primeiro decida se a orquestração se justifica.'
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

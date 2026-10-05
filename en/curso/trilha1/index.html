@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="pt-BR">
+<html class="dark" lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="llms-orquestradas" name="inema-course"/>
-<title>Trilha 1 · Fundamentos | LLMs Orquestradas</title>
+<title>Track 1 · Fundamentals | Orchestrated LLMs</title>
 <script>
   (function () {
     try {
@@ -109,10 +109,10 @@
     .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
     html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
   </style>
-<link href="../../assets/learn.css" rel="stylesheet"/>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
 <link href="https://inematds.github.io/sakanafugu/curso/trilha1/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/sakanafugu/en/curso/trilha1/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/sakanafugu/es/curso/trilha1/" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="./" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha1/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha1/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
-<a class="skip sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-2 focus:left-2 focus:px-4 focus:py-2 focus:bg-dark-800 focus:rounded-lg focus:text-primary" href="#conteudo">Pular para o conteúdo</a>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="./" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha1/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<a class="skip sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-2 focus:left-2 focus:px-4 focus:py-2 focus:bg-dark-800 focus:rounded-lg focus:text-primary" href="#conteudo">Skip to content</a>
 <!-- ===== NAV (trilha 1 ativa) ===== -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -120,14 +120,14 @@
 <div class="flex items-center space-x-4">
 <a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
 <span class="text-2xl">🐟</span>
-<span class="font-bold text-lg hidden sm:inline">LLMs Orquestradas</span>
+<span class="font-bold text-lg hidden sm:inline">Orchestrated LLMs</span>
 </a>
 <span class="text-neutral-600">|</span>
 <a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="index.html">
-<span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span>
+<span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentals</span>
 </a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html">
 <span class="sm:hidden">T2</span><span class="hidden sm:inline">Fugu</span>
@@ -136,51 +136,51 @@
 <span class="sm:hidden">T3</span><span class="hidden sm:inline">Fusion</span>
 </a>
 <button class="ml-1 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-inema-journey-open="" type="button">
-<span aria-hidden="true">◷</span><span class="hidden sm:inline">Jornada</span>
+<span aria-hidden="true">◷</span><span class="hidden sm:inline">Journey</span>
 <span aria-hidden="true" class="inema-journey-badge hidden" data-count="0" data-inema-journey-badge=""></span>
 </button>
 <div class="relative">
 <button aria-expanded="false" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-inema-appearance-toggle="[data-inema-appearance]" type="button">
-<span aria-hidden="true">◑</span><span class="hidden sm:inline">Aparência</span>
+<span aria-hidden="true">◑</span><span class="hidden sm:inline">Appearance</span>
 </button>
 <div class="inema-appearance-pop" data-inema-appearance="">
-<div aria-label="Tema" class="inema-segment" role="group">
-<button data-inema-set-theme="inema-dark">Escuro</button>
-<button data-inema-set-theme="claro">Claro</button>
-<button data-inema-set-theme="sepia">Sépia</button>
-<button data-inema-set-theme="foco">Foco</button>
-<button data-inema-set-theme="contraste">Alto contraste</button>
+<div aria-label="Theme" class="inema-segment" role="group">
+<button data-inema-set-theme="inema-dark">Dark</button>
+<button data-inema-set-theme="claro">Clear</button>
+<button data-inema-set-theme="sepia">Sepia</button>
+<button data-inema-set-theme="foco">Focus</button>
+<button data-inema-set-theme="contraste">High contrast</button>
 </div>
-<div aria-label="Fonte" class="inema-segment" role="group">
+<div aria-label="Source" class="inema-segment" role="group">
 <button data-inema-set-font="inter">Inter</button>
-<button data-inema-set-font="system">Sistema</button>
-<button data-inema-set-font="leitura">Leitura</button>
+<button data-inema-set-font="system">System</button>
+<button data-inema-set-font="leitura">Reading</button>
 </div>
-<div aria-label="Tamanho do texto" class="inema-segment" role="group">
+<div aria-label="Text size" class="inema-segment" role="group">
 <button data-inema-set-fontscale="100">A</button>
 <button data-inema-set-fontscale="112">A+</button>
 <button data-inema-set-fontscale="125">A++</button>
 </div>
-<div aria-label="Largura da linha" class="inema-segment" role="group">
-<button data-inema-set-linewidth="60">Estreito</button>
-<button data-inema-set-linewidth="68">Médio</button>
-<button data-inema-set-linewidth="75">Largo</button>
+<div aria-label="Line width" class="inema-segment" role="group">
+<button data-inema-set-linewidth="60">Narrow</button>
+<button data-inema-set-linewidth="68">Medium</button>
+<button data-inema-set-linewidth="75">Wide</button>
 </div>
-<div aria-label="Entrelinha" class="inema-segment" role="group">
-<button data-inema-set-leading="1.45">Compacto</button>
-<button data-inema-set-leading="1.7">Confortável</button>
+<div aria-label="Between the lines" class="inema-segment" role="group">
+<button data-inema-set-leading="1.45">Compact</button>
+<button data-inema-set-leading="1.7">Comfortable</button>
 </div>
-<div aria-label="Cor de acento" class="inema-accent-grid" role="group">
-<button data-inema-set-accent="emerald" title="Esmeralda"></button>
-<button data-inema-set-accent="blue" title="Azul"></button>
-<button data-inema-set-accent="purple" title="Roxo"></button>
-<button data-inema-set-accent="amber" title="Âmbar"></button>
+<div aria-label="Accent color" class="inema-accent-grid" role="group">
+<button data-inema-set-accent="emerald" title="Emerald"></button>
+<button data-inema-set-accent="blue" title="Blue"></button>
+<button data-inema-set-accent="purple" title="Purple"></button>
+<button data-inema-set-accent="amber" title="Amber"></button>
 <button data-inema-set-accent="teal" title="Teal"></button>
-<button data-inema-set-accent="rose" title="Rosa"></button>
+<button data-inema-set-accent="rose" title="Pink"></button>
 </div>
 </div>
 </div>
-<button aria-label="Alternar tema claro/escuro" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<button aria-label="Switch between light and dark themes" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
 </button>
@@ -192,16 +192,16 @@
 <!-- ===== HEADER DA TRILHA ===== -->
 <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">TRILHA 1</span>
-<h1 class="text-3xl sm:text-4xl font-bold mb-4">🧩 Fundamentos</h1>
-<p class="text-lg text-neutral-400 max-w-3xl">A "nova forma" e o vocabulário para entendê-la: o que é orquestrar várias LLMs, as duas perguntas que definem qualquer orquestração, e o espectro que vai de "você decide tudo na mão" até "um modelo treinado faz a orquestração por você".</p>
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">TRACK 1</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🧩 Fundamentals</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">The "new way" and the vocabulary for understanding it: what it means to orchestrate multiple LLMs, the two questions that define any orchestration, and the spectrum from "you decide everything by hand" to "a trained model does the orchestration for you."</p>
 <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-3xl">
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">2</div><div class="text-xs text-neutral-400">Módulos</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">12</div><div class="text-xs text-neutral-400">Tópicos</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">~1h</div><div class="text-xs text-neutral-400">Duração</div></div>
-<div aria-label="Progresso da trilha 1" aria-valuemax="100" aria-valuemin="0" class="inema-meter bg-dark-800/50 rounded-lg p-3 border border-dark-600" data-inema-meter="trilha:1" role="progressbar">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">2</div><div class="text-xs text-neutral-400">Modules</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">12</div><div class="text-xs text-neutral-400">Topics</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">~1h</div><div class="text-xs text-neutral-400">Duration</div></div>
+<div aria-label="Track 1 progress" aria-valuemax="100" aria-valuemin="0" class="inema-meter bg-dark-800/50 rounded-lg p-3 border border-dark-600" data-inema-meter="trilha:1" role="progressbar">
 <div class="text-xl font-bold text-emerald-400" data-inema-meter-pct="">0%</div>
-<div class="text-xs text-neutral-400" data-inema-meter-frac="">0 de 12</div>
+<div class="text-xs text-neutral-400" data-inema-meter-frac="">0 of 12</div>
 </div>
 </div>
 </div>
@@ -209,7 +209,7 @@
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 <!-- Hero SVG: equação "quem faz + como combina = orquestração" -->
 <div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mb-12 overflow-hidden">
-<svg aria-label="Orquestrar é a soma de duas perguntas: quem faz cada parte mais como as respostas se combinam" class="w-full h-auto" role="img" viewbox="0 0 1000 200">
+<svg aria-label="Orchestrating comes down to two questions: who does each part and how the answers are combined" class="w-full h-auto" role="img" viewbox="0 0 1000 200">
 <defs>
 <lineargradient id="t1h-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#34d399"></stop><stop offset="1" stop-color="#10b981"></stop></lineargradient>
 <filter height="180%" id="t1h-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
@@ -217,212 +217,212 @@
 </defs>
 <rect fill="url(#t1h-grid)" height="200" width="1000" x="0" y="0"></rect>
 <g><rect fill="#0e2018" height="72" rx="14" stroke="#34d399" stroke-width="2" width="270" x="40" y="64"></rect>
-<text fill="#34d399" font-family="Inter,sans-serif" font-size="18" font-weight="600" text-anchor="middle" x="175" y="98">Quem faz cada parte</text>
-<text fill="#9decc4" font-family="Inter,sans-serif" font-size="12.5" text-anchor="middle" x="175" y="120">roteamento / delegação</text></g>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="18" font-weight="600" text-anchor="middle" x="175" y="98">Who handles each part</text>
+<text fill="#9decc4" font-family="Inter,sans-serif" font-size="12.5" text-anchor="middle" x="175" y="120">routing / delegation</text></g>
 <text fill="#34d399" font-family="Inter,sans-serif" font-size="30" font-weight="700" text-anchor="middle" x="350" y="108">+</text>
 <g><rect fill="#0e2018" height="72" rx="14" stroke="#34d399" stroke-width="2" width="270" x="390" y="64"></rect>
-<text fill="#34d399" font-family="Inter,sans-serif" font-size="18" font-weight="600" text-anchor="middle" x="525" y="98">Como se combinam</text>
-<text fill="#9decc4" font-family="Inter,sans-serif" font-size="12.5" text-anchor="middle" x="525" y="120">fusão / merge</text></g>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="18" font-weight="600" text-anchor="middle" x="525" y="98">How they combine</text>
+<text fill="#9decc4" font-family="Inter,sans-serif" font-size="12.5" text-anchor="middle" x="525" y="120">merging / merge</text></g>
 <text fill="#34d399" font-family="Inter,sans-serif" font-size="30" font-weight="700" text-anchor="middle" x="700" y="108">=</text>
 <g filter="url(#t1h-glow)"><rect fill="#1f1604" height="88" rx="16" stroke="url(#t1h-grad)" stroke-width="2.5" width="220" x="740" y="56"></rect>
-<text fill="#34d399" font-family="Inter,sans-serif" font-size="19" font-weight="700" text-anchor="middle" x="850" y="96">Orquestração</text>
-<text fill="#9decc4" font-family="Inter,sans-serif" font-size="12.5" text-anchor="middle" x="850" y="118">multi-LLM</text></g>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="19" font-weight="700" text-anchor="middle" x="850" y="96">Orchestration</text>
+<text fill="#9decc4" font-family="Inter,sans-serif" font-size="12.5" text-anchor="middle" x="850" y="118">Multi-LLM</text></g>
 </svg>
-<p class="text-xs text-neutral-400 mt-2 text-center">Toda orquestração — manual ou automática, Fugu ou Fusion — é uma resposta a estas duas perguntas. Guarde esta equação: ela volta o curso inteiro.</p>
+<p class="text-xs text-neutral-400 mt-2 text-center">Every orchestration — manual or automatic, Fugu or Fusion — is an answer to these two questions. Remember this equation: it comes back throughout the course.</p>
 </div>
 <!-- ===== MAPA DA TRILHA ===== -->
 <section class="mb-12">
-<h2 class="text-2xl font-bold mb-6">Mapa da trilha</h2>
+<h2 class="text-2xl font-bold mb-6">Path map</h2>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 <a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-emerald-500/30 p-5 transition-all" href="#modulo-1-1">
 <div class="flex items-center justify-between mb-2"><span class="text-emerald-400 font-bold text-sm">1.1</span><span class="text-xs text-neutral-500">~30 min</span></div>
-<h3 class="font-semibold mb-1 group-hover:text-emerald-400 transition-colors">🧩 O que é orquestrar várias LLMs</h3>
-<p class="text-xs text-neutral-400">Quem faz / como combina</p>
+<h3 class="font-semibold mb-1 group-hover:text-emerald-400 transition-colors">🧩 What it means to orchestrate multiple LLMs</h3>
+<p class="text-xs text-neutral-400">Who does what / how they combine</p>
 </a>
 <a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-emerald-500/30 p-5 transition-all" href="#modulo-1-2">
 <div class="flex items-center justify-between mb-2"><span class="text-emerald-400 font-bold text-sm">1.2</span><span class="text-xs text-neutral-500">~30 min</span></div>
-<h3 class="font-semibold mb-1 group-hover:text-emerald-400 transition-colors">🎚️ O espectro: da mão ao maestro</h3>
-<p class="text-xs text-neutral-400">Da mão ao automático</p>
+<h3 class="font-semibold mb-1 group-hover:text-emerald-400 transition-colors">🎚️ The spectrum: from hands-on to maestro</h3>
+<p class="text-xs text-neutral-400">From manual to automatic</p>
 </a>
 </div>
 </section>
-<h2 class="text-2xl font-bold mb-6">Conteúdo detalhado</h2>
+<h2 class="text-2xl font-bold mb-6">Detailed content</h2>
 <!-- ===== MÓDULO 1.1 ===== -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" data-inema-module="1-1" id="modulo-1-1">
 <div class="p-6 border-b border-dark-600">
-<div class="flex items-center justify-between mb-2"><span class="text-emerald-400 font-bold">1.1</span><span class="text-xs text-neutral-500">~30 min · 6 tópicos</span></div>
-<h3 class="text-2xl font-bold mb-2">🧩 O que é orquestrar várias LLMs</h3>
-<p class="text-neutral-400 text-sm">A base: por que um modelo só tem teto, o que é orquestrar, e as duas perguntas que definem tudo.</p>
+<div class="flex items-center justify-between mb-2"><span class="text-emerald-400 font-bold">1.1</span><span class="text-xs text-neutral-500">~30 min · 6 topics</span></div>
+<h3 class="text-2xl font-bold mb-2">🧩 What it means to orchestrate multiple LLMs</h3>
+<p class="text-neutral-400 text-sm">The foundation: why a single model has a ceiling, what orchestration is, and the two questions that define everything.</p>
 </div>
 <div class="divide-y divide-dark-600">
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
 <span class="text-lg">🤖</span>
-<div><span class="font-medium">O que é uma LLM</span><span class="text-neutral-500 text-sm ml-2">- e por que uma só tem teto</span></div>
+<div><span class="font-medium">What an LLM is</span><span class="text-neutral-500 text-sm ml-2">- and why a single model has a ceiling</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Uma LLM é o modelo de IA que roda atrás do ChatGPT, do Claude e afins — recebe texto e devolve texto. Cada modelo tem forças e fraquezas próprias; nenhum é o melhor em tudo.</p></div>
-<div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Entender que um modelo único tem um "teto" é o que motiva a orquestração: se nenhum modelo é o melhor em tudo, juntar vários pode (em tese) passar do teto de qualquer um sozinho.</p></div>
-<div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Modelo único · forças/fraquezas por modelo · o teto de um solo · a promessa de combinar.</p></div>
+<div><span class="text-emerald-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">An LLM is the AI model that runs behind ChatGPT, Claude, and similar tools—it receives text and returns text. Each model has its own strengths and weaknesses; none is best at everything.</p></div>
+<div><span class="text-emerald-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Understanding that a single model has a “ceiling” is what motivates orchestration: if no model is best at everything, combining several may (in theory) go beyond any one model’s ceiling.</p></div>
+<div><span class="text-emerald-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Single model · strengths/weaknesses by model · the ceiling of a solo model · the promise of combining.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
 <span class="text-lg">❓</span>
-<div><span class="font-medium">As 2 perguntas</span><span class="text-neutral-500 text-sm ml-2">- quem faz / como combina</span></div>
+<div><span class="font-medium">The 2 questions</span><span class="text-neutral-500 text-sm ml-2">- who does what / how they combine</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Orquestrar é responder duas perguntas: <strong>(1) quem faz cada parte</strong> do trabalho e <strong>(2) como as respostas se combinam</strong> num resultado único.</p></div>
-<div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Toda solução — Fugu, Fusion, sub-agents do Claude Code — é só uma maneira diferente de responder a essas duas perguntas. É o mapa que organiza o curso inteiro.</p></div>
-<div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Roteamento (quem) · fusão (como) · decomposição · agregação.</p></div>
+<div><span class="text-emerald-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Orchestrating means answering two questions: <strong>(1) who does each part</strong> of the work and <strong>(2) how the answers are combined</strong> Into a single result.</p></div>
+<div><span class="text-emerald-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Every solution — Fugu, Fusion, Claude Code sub-agents — is just a different way of answering these two questions. It’s the map that organizes the entire course.</p></div>
+<div><span class="text-emerald-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Routing (who) · fusion (how) · decomposition · aggregation.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
 <span class="text-lg">🎼</span>
-<div><span class="font-medium">Maestro + especialistas</span><span class="text-neutral-500 text-sm ml-2">- e quem funde</span></div>
+<div><span class="font-medium">Maestro + specialists</span><span class="text-neutral-500 text-sm ml-2">- and who combines them</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">O papel de "maestro" (ou conductor) é quem lê o pedido, reparte em tarefas e entrega a especialistas — cada um um modelo bom naquilo. No fim, alguém funde as respostas.</p></div>
-<div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É a anatomia que se repete em qualquer orquestrador. Reconhecer os três papéis (maestro, especialistas, fusor) deixa qualquer sistema "mágico" legível.</p></div>
-<div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Maestro/conductor · especialista · fusor/merge · pipeline.</p></div>
+<div><span class="text-emerald-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">The "maestro" (or conductor) is the one who reads the request, splits it into tasks, and assigns them to specialists — each one a model that’s good at that kind of task. At the end, someone combines the answers.</p></div>
+<div><span class="text-emerald-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">It’s the anatomy that repeats in any orchestrator. Recognizing the three roles (conductor, specialists, fusion operator) makes any "magical" system understandable.</p></div>
+<div><span class="text-emerald-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Maestro/conductor · specialist · fuser/merge · pipeline.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
 <span class="text-lg">📦</span>
-<div><span class="font-medium">"Mixture of experts"</span><span class="text-neutral-500 text-sm ml-2">- entregue como 1 API</span></div>
+<div><span class="font-medium">“Mixture of experts”</span><span class="text-neutral-500 text-sm ml-2">- delivered as 1 API</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">A ideia de juntar especialistas e chamar o melhor para cada caso. Quando isso vem empacotado atrás de uma única API, você bate em um endereço só e a orquestração acontece escondida.</p></div>
-<div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É exatamente o que o Fugu vende. Entender o empacotamento ("1 API, time escondido") explica por que parece simples por fora e é caro por dentro.</p></div>
-<div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Mixture of experts · 1 endpoint · abstração · time escondido.</p></div>
+<div><span class="text-emerald-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">The idea of bringing specialists together and calling on the best one for each case. When that’s packaged behind a single API, you hit one address and the orchestration happens behind the scenes.</p></div>
+<div><span class="text-emerald-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">That's exactly what Fugu sells. Understanding the packaging ("1 API, hidden team") explains why it looks simple on the outside and is expensive on the inside.</p></div>
+<div><span class="text-emerald-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Mixture of experts · 1 endpoint · abstraction · hidden team.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
 <span class="text-lg">🛠️</span>
-<div><span class="font-medium">Você já orquestra</span><span class="text-neutral-500 text-sm ml-2">- Claude Code + sub-agents</span></div>
+<div><span class="font-medium">You already orchestrate</span><span class="text-neutral-500 text-sm ml-2">- Claude Code + sub-agents</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Quando o Claude Code abre sub-agents (workers haiku/sonnet/opus) e reparte um plano entre eles, ele está orquestrando — só que dentro de um provider e sob seu comando.</p></div>
-<div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Mostra que orquestração não é nada novo nem exótico: você provavelmente já usa. O que muda nos produtos é quem decide e quão automático é.</p></div>
-<div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Sub-agent · worker · delegação manual · orquestração intra-provider.</p></div>
+<div><span class="text-emerald-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">When Claude Code opens sub-agents (haiku/sonnet/opus workers) and splits a plan among them, it’s orchestrating—just within one provider and under your direction.</p></div>
+<div><span class="text-emerald-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Shows that orchestration is nothing new or exotic: you probably already use it. What changes in products is who decides and how automatic it is.</p></div>
+<div><span class="text-emerald-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Sub-agent · worker · manual delegation · intra-provider orchestration.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
 <span class="text-lg">🧾</span>
-<div><span class="font-medium">O custo escondido</span><span class="text-neutral-500 text-sm ml-2">- tokens do time, latência</span></div>
+<div><span class="font-medium">The hidden cost</span><span class="text-neutral-500 text-sm ml-2">- team tokens, latency</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Cada especialista que o maestro chama lê e escreve tokens — e você paga por todos eles, além de esperar cada um responder. Mais modelos = mais tempo e mais conta.</p></div>
-<div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É o contrapeso da promessa. Sem ver o custo escondido, a orquestração parece grátis; com ele, você entende por que o Fugu saiu 5× mais caro nos testes.</p></div>
-<div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Tokens de orquestração · latência somada · overhead · custo × benefício.</p></div>
+<div><span class="text-emerald-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Each specialist the maestro calls reads and writes tokens—and you pay for all of them, while waiting for each one to respond. More models = more time and a higher bill.</p></div>
+<div><span class="text-emerald-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">It's the counterweight to the promise. Without seeing the hidden cost, orchestration seems free; with it, you understand why Fugu came out 5× more expensive in the tests.</p></div>
+<div><span class="text-emerald-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Orchestration tokens · added latency · overhead · cost × benefit.</p></div>
 </div></div>
 </div>
 </div>
 <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
-<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-1-1')">Ver em Modal</button>
-<a class="px-4 py-2 text-sm bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition-colors" href="modulo-1-1.html">Ver Completo</a>
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-1-1')">View in Modal</button>
+<a class="px-4 py-2 text-sm bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition-colors" href="modulo-1-1.html">View Full</a>
 </div>
 </div>
 <!-- ===== MÓDULO 1.2 ===== -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" data-inema-module="1-2" id="modulo-1-2">
 <div class="p-6 border-b border-dark-600">
-<div class="flex items-center justify-between mb-2"><span class="text-emerald-400 font-bold">1.2</span><span class="text-xs text-neutral-500">~30 min · 6 tópicos</span></div>
-<h3 class="text-2xl font-bold mb-2">🎚️ O espectro: da mão ao modelo-maestro</h3>
-<p class="text-neutral-400 text-sm">Quem decide quem faz o quê? De "você fia tudo na mão" até "um modelo treinado orquestra sozinho".</p>
+<div class="flex items-center justify-between mb-2"><span class="text-emerald-400 font-bold">1.2</span><span class="text-xs text-neutral-500">~30 min · 6 topics</span></div>
+<h3 class="text-2xl font-bold mb-2">🎚️ The spectrum: from hands-on to the maestro model</h3>
+<p class="text-neutral-400 text-sm">Who decides who does what? From “you put everything in one model’s hands” to “a trained model orchestrates on its own.”</p>
 </div>
 <div class="divide-y divide-dark-600">
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
 <span class="text-lg">🎚️</span>
-<div><span class="font-medium">O eixo de quem decide</span><span class="text-neutral-500 text-sm ml-2">- você ↔ modelo</span></div>
+<div><span class="font-medium">The decision-maker’s axis</span><span class="text-neutral-500 text-sm ml-2">- you ↔ model</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Imagine uma régua: numa ponta você escreve tudo e decide quem faz cada parte; na outra, um modelo decide isso sozinho. Os produtos são pontos diferentes nessa régua.</p></div>
-<div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Dá um mapa único onde encaixar Codex+Claude na mão, sub-agents, Fugu e Fusion — sem decorar cada um isoladamente.</p></div>
-<div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Espectro de controle · manual ↔ automático · quem roteia.</p></div>
+<div><span class="text-emerald-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Picture a slider: at one end, you write everything and decide who handles each part; at the other, a model decides all of that on its own. Products occupy different points on this slider.</p></div>
+<div><span class="text-emerald-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Gives you a single map showing where to fit Codex+Claude by hand, sub-agents, Fugu, and Fusion—without memorizing each one in isolation.</p></div>
+<div><span class="text-emerald-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Control spectrum · manual ↔ automatic · who routes.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
 <span class="text-lg">✋</span>
-<div><span class="font-medium">Ponta esquerda</span><span class="text-neutral-500 text-sm ml-2">- você fia na mão</span></div>
+<div><span class="font-medium">Left end</span><span class="text-neutral-500 text-sm ml-2">- you put it together by hand</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Você roda Codex para uma coisa, Claude para outra, copia a saída de um na entrada de outro. Controle total, esforço total — a orquestração é seu trabalho manual.</p></div>
-<div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É o baseline com que todo produto se compara. Saber o custo de fazer na mão revela o que um orquestrador automático realmente te poupa (e o que cobra por isso).</p></div>
-<div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Roteamento manual · encadear saídas · controle × esforço.</p></div>
+<div><span class="text-emerald-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">You run Codex for one thing, Claude for another, and copy one model's output into the other's input. Full control, full effort—the orchestration is your manual work.</p></div>
+<div><span class="text-emerald-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">It's the baseline every product is compared against. Knowing the cost of doing it by hand shows what an automatic orchestrator actually saves you (and what it charges for that).</p></div>
+<div><span class="text-emerald-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Manual routing · chaining outputs · control × effort.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
 <span class="text-lg">🔗</span>
-<div><span class="font-medium">O meio</span><span class="text-neutral-500 text-sm ml-2">- sub-agents de um provider</span></div>
+<div><span class="font-medium">The middle</span><span class="text-neutral-500 text-sm ml-2">- sub-agents from one provider</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Ferramentas como o Claude Code automatizam parte da repartição: você dá o objetivo, ele abre workers e divide. A orquestração é automática, mas dentro de um provider só.</p></div>
-<div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É o ponto onde a maioria já está. Mostra que "automático" não exige cross-provider — e prepara o contraste com o Fugu, que cruza providers.</p></div>
-<div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Workflow · sub-agent · intra-provider · automação parcial.</p></div>
+<div><span class="text-emerald-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Tools like Claude Code automate part of the delegation: you give it the objective, it opens workers and divides the work. The orchestration is automatic, but within a single provider.</p></div>
+<div><span class="text-emerald-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">It's where most people already are. It shows that "automatic" doesn't require cross-provider — and sets up the contrast with Fugu, which crosses providers.</p></div>
+<div><span class="text-emerald-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Workflow · sub-agent · intra-provider · partial automation.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
 <span class="text-lg">🧠</span>
-<div><span class="font-medium">Ponta direita</span><span class="text-neutral-500 text-sm ml-2">- orquestração dentro do modelo</span></div>
+<div><span class="font-medium">Right end</span><span class="text-neutral-500 text-sm ml-2">- orchestration within the model</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">No extremo automático, a lógica de "quem faz o quê" mora nos pesos de um modelo treinado para isso (o Fugu). Você manda o pedido; ele decide e cruza providers sozinho.</p></div>
-<div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É a novidade que o curso destrincha. Ver que o roteamento virou "peso de modelo", não código seu, explica tanto o apelo quanto o custo do Fugu.</p></div>
-<div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Roteamento nos pesos · cross-provider · zero código de orquestração.</p></div>
+<div><span class="text-emerald-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">At the fully automated end, the logic of "who does what" lives in the weights of a model trained for this (Fugu). You send the request; it decides and routes across providers on its own.</p></div>
+<div><span class="text-emerald-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">It’s the new concept the course unpacks. Seeing that routing has become a "model weight," not your code, explains both Fugu’s appeal and its cost.</p></div>
+<div><span class="text-emerald-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Routing in the weights · cross-provider · zero orchestration code.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
 <span class="text-lg">🚦</span>
-<div><span class="font-medium">Roteamento</span><span class="text-neutral-500 text-sm ml-2">- o conductor que decide</span></div>
+<div><span class="font-medium">Routing</span><span class="text-neutral-500 text-sm ml-2">- the conductor that decides</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Roteamento é a decisão "para quem mando isso?". Pode ser uma regra sua, um workflow, ou um modelo-roteador pequeno treinado para escolher o especialista certo.</p></div>
-<div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É o coração da "nova forma". Quem domina roteamento domina a primeira das duas perguntas — e é onde mora a inteligência (e o gasto) do orquestrador.</p></div>
-<div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Roteador/conductor · decisão por tarefa · resolver-sozinho vs delegar.</p></div>
+<div><span class="text-emerald-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Routing is the decision “who do I send this to?” It can be your rule, a workflow, or a small router model trained to choose the right specialist.</p></div>
+<div><span class="text-emerald-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">It's the heart of the "new way." Whoever masters routing masters the first of the two questions — and that's where the orchestrator's intelligence (and expense) lies.</p></div>
+<div><span class="text-emerald-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Router/conductor · task-level decision · solve-it-yourself vs. delegate.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
 <span class="text-lg">⚖️</span>
-<div><span class="font-medium">Trade-offs do espectro</span><span class="text-neutral-500 text-sm ml-2">- controle × esforço × custo</span></div>
+<div><span class="font-medium">Spectrum trade-offs</span><span class="text-neutral-500 text-sm ml-2">- control × effort × cost</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Andar para a direita do espectro troca esforço por conveniência — mas costuma custar mais tempo e dinheiro, porque a automação chama mais modelos do que você chamaria.</p></div>
-<div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Te dá o critério para escolher o ponto certo da régua por tarefa, em vez de adotar o mais automático por moda. É a mentalidade que o resto do curso aprofunda.</p></div>
-<div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Controle × conveniência · custo × benefício · escolher o ponto por tarefa.</p></div>
+<div><span class="text-emerald-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Moving to the right on the spectrum trades effort for convenience—but it usually costs more time and money because the automation calls more models than you would.</p></div>
+<div><span class="text-emerald-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">It gives you the criteria to choose the right point on the scale for each task, instead of adopting the most automated option just because it’s trendy. It’s the mindset the rest of the course explores in greater depth.</p></div>
+<div><span class="text-emerald-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">Control × convenience · cost × benefit · choose the right point for each task.</p></div>
 </div></div>
 </div>
 </div>
 <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
-<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-1-2')">Ver em Modal</button>
-<a class="px-4 py-2 text-sm bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition-colors" href="modulo-1-2.html">Ver Completo</a>
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-1-2')">View in Modal</button>
+<a class="px-4 py-2 text-sm bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition-colors" href="modulo-1-2.html">View Full</a>
 </div>
 </div>
 <!-- Navegação entre trilhas -->
 <div class="flex flex-col sm:flex-row gap-4 mt-10">
-<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="../../index.html">← Início</a>
-<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="../trilha2/index.html">Próxima trilha: Fugu Ultra →</a>
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="../../index.html">← Home</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="../trilha2/index.html">Next track: Fugu Ultra →</a>
 </div>
 </div>
 </main>
@@ -430,24 +430,24 @@
 <div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-1-1" onclick="if(event.target === this) closeModal()">
 <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
 <div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
-<div class="flex items-center space-x-3"><span class="text-emerald-400 font-bold">1.1</span><span class="font-semibold">O que é orquestrar várias LLMs</span></div>
-<button aria-label="Fechar" class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+<div class="flex items-center space-x-3"><span class="text-emerald-400 font-bold">1.1</span><span class="font-semibold">What it means to orchestrate multiple LLMs</span></div>
+<button aria-label="Close" class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
 </div>
-<iframe class="flex-1 w-full rounded-b-xl" src="modulo-1-1.html" title="Módulo 1.1"></iframe>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-1-1.html" title="Module 1.1"></iframe>
 </div>
 </div>
 <div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-1-2" onclick="if(event.target === this) closeModal()">
 <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
 <div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
-<div class="flex items-center space-x-3"><span class="text-emerald-400 font-bold">1.2</span><span class="font-semibold">O espectro: da mão ao modelo-maestro</span></div>
-<button aria-label="Fechar" class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+<div class="flex items-center space-x-3"><span class="text-emerald-400 font-bold">1.2</span><span class="font-semibold">The spectrum: from hands-on to maestro model</span></div>
+<button aria-label="Close" class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
 </div>
-<iframe class="flex-1 w-full rounded-b-xl" src="modulo-1-2.html" title="Módulo 1.2"></iframe>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-1-2.html" title="Module 1.2"></iframe>
 </div>
 </div>
 <footer class="border-t border-dark-600 py-8 mt-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p>LLMs Orquestradas — Trilha 1 · Fundamentos · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+<p>Orchestrated LLMs — Track 1 · Fundamentals · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
 </div>
 </footer>
 <script>
@@ -477,7 +477,7 @@
     function closeModal() { document.querySelectorAll('.modal').forEach(m => m.classList.add('hidden')); document.body.style.overflow = 'auto'; }
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
   </script>
-<script src="../../assets/learn.js"></script>
+<script src="../../../assets/learn.js"></script>
 <script>
     if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init(); }
   </script>

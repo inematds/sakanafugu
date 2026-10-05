@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="pt-BR">
+<html class="dark" lang="es">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <meta content="llms-orquestradas" name="inema-course"/>
-<title>Trilha 2 · Fugu Ultra | LLMs Orquestradas</title>
+<title>Ruta 2 · Fugu Ultra | LLMs Orquestradas</title>
 <script>
   (function () {
     try {
@@ -111,10 +111,10 @@
     .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
     html:not(.dark) svg[role="img"] { filter: saturate(0.82) brightness(0.96); }
   </style>
-<link href="../../assets/learn.css" rel="stylesheet"/>
+<link href="../../../assets/learn.css" rel="stylesheet"/>
 <link href="https://inematds.github.io/sakanafugu/curso/trilha2/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/sakanafugu/en/curso/trilha2/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/sakanafugu/es/curso/trilha2/" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="./" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha2/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha2/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
-<a class="skip sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-2 focus:left-2 focus:px-4 focus:py-2 focus:bg-dark-800 focus:rounded-lg focus:text-primary" href="#conteudo">Pular para o conteúdo</a>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha2/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="./" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<a class="skip sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-2 focus:left-2 focus:px-4 focus:py-2 focus:bg-dark-800 focus:rounded-lg focus:text-primary" href="#conteudo">Saltar al contenido</a>
 <!-- ===== NAV (trilha 2 ativa) ===== -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -122,7 +122,7 @@
 <div class="flex items-center space-x-4">
 <a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
 <span class="text-2xl">🐟</span>
-<span class="font-bold text-lg hidden sm:inline">LLMs Orquestradas</span>
+<span class="font-bold text-lg hidden sm:inline">LLMs orquestados</span>
 </a>
 <span class="text-neutral-600">|</span>
 <a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
@@ -138,51 +138,51 @@
 <span class="sm:hidden">T3</span><span class="hidden sm:inline">Fusion</span>
 </a>
 <button class="ml-1 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-inema-journey-open="" type="button">
-<span aria-hidden="true">◷</span><span class="hidden sm:inline">Jornada</span>
+<span aria-hidden="true">◷</span><span class="hidden sm:inline">Recorrido</span>
 <span aria-hidden="true" class="inema-journey-badge hidden" data-count="0" data-inema-journey-badge=""></span>
 </button>
 <div class="relative">
 <button aria-expanded="false" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-sm text-neutral-300 hover:text-neutral-100 hover:bg-dark-700 transition-colors" data-inema-appearance-toggle="[data-inema-appearance]" type="button">
-<span aria-hidden="true">◑</span><span class="hidden sm:inline">Aparência</span>
+<span aria-hidden="true">◑</span><span class="hidden sm:inline">Apariencia</span>
 </button>
 <div class="inema-appearance-pop" data-inema-appearance="">
 <div aria-label="Tema" class="inema-segment" role="group">
-<button data-inema-set-theme="inema-dark">Escuro</button>
+<button data-inema-set-theme="inema-dark">Oscuro</button>
 <button data-inema-set-theme="claro">Claro</button>
-<button data-inema-set-theme="sepia">Sépia</button>
-<button data-inema-set-theme="foco">Foco</button>
+<button data-inema-set-theme="sepia">Sepia</button>
+<button data-inema-set-theme="foco">Enfoque</button>
 <button data-inema-set-theme="contraste">Alto contraste</button>
 </div>
-<div aria-label="Fonte" class="inema-segment" role="group">
+<div aria-label="Fuente" class="inema-segment" role="group">
 <button data-inema-set-font="inter">Inter</button>
 <button data-inema-set-font="system">Sistema</button>
-<button data-inema-set-font="leitura">Leitura</button>
+<button data-inema-set-font="leitura">Lectura</button>
 </div>
-<div aria-label="Tamanho do texto" class="inema-segment" role="group">
+<div aria-label="Tamaño del texto" class="inema-segment" role="group">
 <button data-inema-set-fontscale="100">A</button>
 <button data-inema-set-fontscale="112">A+</button>
 <button data-inema-set-fontscale="125">A++</button>
 </div>
-<div aria-label="Largura da linha" class="inema-segment" role="group">
-<button data-inema-set-linewidth="60">Estreito</button>
-<button data-inema-set-linewidth="68">Médio</button>
-<button data-inema-set-linewidth="75">Largo</button>
+<div aria-label="Ancho de línea" class="inema-segment" role="group">
+<button data-inema-set-linewidth="60">Estrecho</button>
+<button data-inema-set-linewidth="68">Medio</button>
+<button data-inema-set-linewidth="75">Ancho</button>
 </div>
-<div aria-label="Entrelinha" class="inema-segment" role="group">
+<div aria-label="Entre líneas" class="inema-segment" role="group">
 <button data-inema-set-leading="1.45">Compacto</button>
-<button data-inema-set-leading="1.7">Confortável</button>
+<button data-inema-set-leading="1.7">Cómodo</button>
 </div>
-<div aria-label="Cor de acento" class="inema-accent-grid" role="group">
+<div aria-label="Color de acento" class="inema-accent-grid" role="group">
 <button data-inema-set-accent="emerald" title="Esmeralda"></button>
 <button data-inema-set-accent="blue" title="Azul"></button>
-<button data-inema-set-accent="purple" title="Roxo"></button>
-<button data-inema-set-accent="amber" title="Âmbar"></button>
+<button data-inema-set-accent="purple" title="Morado"></button>
+<button data-inema-set-accent="amber" title="Ámbar"></button>
 <button data-inema-set-accent="teal" title="Teal"></button>
 <button data-inema-set-accent="rose" title="Rosa"></button>
 </div>
 </div>
 </div>
-<button aria-label="Alternar tema claro/escuro" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
+<button aria-label="Alternar entre tema claro y oscuro" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-1" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
 </button>
@@ -194,14 +194,14 @@
 <!-- ===== HEADER DA TRILHA ===== -->
 <header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">TRILHA 2</span>
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">RUTA 2</span>
 <h1 class="text-3xl sm:text-4xl font-bold mb-4">🐡 Fugu Ultra</h1>
-<p class="text-lg text-neutral-400 max-w-3xl">O maestro em ação. O Fugu não é um modelo "mais inteligente": é um orquestrador entregue como 1 API — decompõe sua tarefa, delega a um time secreto de modelos frontier, e funde o resultado. Aqui você vê <em>como</em> ele faz isso e, depois, o que aconteceu quando o colocaram contra um modelo forte sozinho em 38 testes graded por código.</p>
+<p class="text-lg text-neutral-400 max-w-3xl">El director en acción. Fugu no es un modelo "más inteligente": es un orquestador ofrecido como 1 API: descompone tu tarea, la delega a un equipo secreto de modelos frontier y fusiona el resultado. Aquí ves <em>cómo</em> él hace esto y, después, qué pasó cuando lo enfrentaron a un modelo potente por sí solo en 38 pruebas evaluadas con código.</p>
 <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8 max-w-3xl">
 <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">2</div><div class="text-xs text-neutral-400">Módulos</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">12</div><div class="text-xs text-neutral-400">Tópicos</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">~1h</div><div class="text-xs text-neutral-400">Duração</div></div>
-<div aria-label="Progresso da trilha 2" aria-valuemax="100" aria-valuemin="0" class="inema-meter bg-dark-800/50 rounded-lg p-3 border border-dark-600" data-inema-meter="trilha:2" role="progressbar">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">12</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">~1h</div><div class="text-xs text-neutral-400">Duración</div></div>
+<div aria-label="Progreso de la ruta 2" aria-valuemax="100" aria-valuemin="0" class="inema-meter bg-dark-800/50 rounded-lg p-3 border border-dark-600" data-inema-meter="trilha:2" role="progressbar">
 <div class="text-xl font-bold text-blue-400" data-inema-meter-pct="">0%</div>
 <div class="text-xs text-neutral-400" data-inema-meter-frac="">0 de 12</div>
 </div>
@@ -211,7 +211,7 @@
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 <!-- Hero SVG: 1 endpoint esconde um time (maestro → modelos → resultado) -->
 <div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mb-12 overflow-hidden">
-<svg aria-label="Um endpoint Fugu esconde um maestro que abre um time de modelos frontier e funde tudo num resultado único" class="w-full h-auto" role="img" viewbox="0 0 1000 230">
+<svg aria-label="Un endpoint Fugu esconde un maestro que abre un equipo de modelos frontier y lo fusiona todo en un único resultado" class="w-full h-auto" role="img" viewbox="0 0 1000 230">
 <defs>
 <lineargradient id="t2h-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#60a5fa"></stop><stop offset="1" stop-color="#3b82f6"></stop></lineargradient>
 <filter height="180%" id="t2h-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
@@ -232,211 +232,211 @@
 </g>
 <g filter="url(#t2h-glow)"><rect fill="#0e1622" height="64" rx="14" stroke="url(#t2h-grad)" stroke-width="2.5" width="210" x="40" y="83"></rect></g>
 <text fill="#60a5fa" font-family="Inter,sans-serif" font-size="16" font-weight="700" text-anchor="middle" x="145" y="110">1 endpoint (Fugu)</text>
-<text fill="#bcd6ff" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="145" y="130">+ maestro escondido</text>
+<text fill="#bcd6ff" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="145" y="130">+ director oculto</text>
 <g font-family="Inter,sans-serif" font-size="13" font-weight="600">
 <g><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="144" x="432" y="36"></rect><text fill="#bfe6ff" text-anchor="middle" x="504" y="57">Opus 4.8</text></g>
 <g><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="144" x="432" y="99"></rect><text fill="#bfe6ff" text-anchor="middle" x="504" y="120">GPT-5.5</text></g>
 <g><rect fill="#0e1b26" height="32" rx="9" stroke="#38bdf8" stroke-width="2" width="144" x="432" y="162"></rect><text fill="#bfe6ff" text-anchor="middle" x="504" y="183">Gemini …</text></g>
 </g>
 <g filter="url(#t2h-glow)"><rect fill="#0e1622" height="64" rx="14" stroke="url(#t2h-grad)" stroke-width="2.5" width="200" x="760" y="83"></rect></g>
-<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="16" font-weight="700" text-anchor="middle" x="860" y="110">1 resposta</text>
-<text fill="#bcd6ff" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="860" y="130">fundida</text>
+<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="16" font-weight="700" text-anchor="middle" x="860" y="110">1 respuesta</text>
+<text fill="#bcd6ff" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="860" y="130">fusionada</text>
 </svg>
-<p class="text-xs text-neutral-400 mt-2 text-center">Por fora, você bate em <strong>um endereço só</strong>. Por dentro, um maestro abre um time de modelos frontier (ciano), espera todos e funde. Toda a Trilha 2 é sobre o que esse desenho custa — e quando vale.</p>
+<p class="text-xs text-neutral-400 mt-2 text-center">Por fuera, tú accedes a <strong>una sola dirección</strong>. Por dentro, un maestro inicia un equipo de modelos frontier (cian), espera a todos y fusiona sus respuestas. Toda la Trilha 2 trata de lo que cuesta ese diseño y cuándo vale la pena.</p>
 </div>
 <!-- ===== MAPA DA TRILHA ===== -->
 <section class="mb-12">
-<h2 class="text-2xl font-bold mb-6">Mapa da trilha</h2>
+<h2 class="text-2xl font-bold mb-6">Mapa de la ruta</h2>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 <a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-blue-500/30 p-5 transition-all" href="#modulo-2-1">
 <div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.1</span><span class="text-xs text-neutral-500">~30 min</span></div>
-<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">🐡 Como o Fugu funciona</h3>
-<p class="text-xs text-neutral-400">Decompõe, delega, funde</p>
+<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">🐡 Cómo funciona Fugu</h3>
+<p class="text-xs text-neutral-400">Descompón, delega, fusiona</p>
 </a>
 <a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-blue-500/30 p-5 transition-all" href="#modulo-2-2">
 <div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.2</span><span class="text-xs text-neutral-500">~30 min</span></div>
-<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">📊 O veredito: 38 testes</h3>
-<p class="text-xs text-neutral-400">36/38 empate, 5× o preço</p>
+<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">📊 El veredicto: 38 pruebas</h3>
+<p class="text-xs text-neutral-400">36/38 empates, 5× el precio</p>
 </a>
 </div>
 </section>
-<h2 class="text-2xl font-bold mb-6">Conteúdo detalhado</h2>
+<h2 class="text-2xl font-bold mb-6">Contenido detallado</h2>
 <!-- ===== MÓDULO 2.1 ===== -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" data-inema-module="2-1" id="modulo-2-1">
 <div class="p-6 border-b border-dark-600">
-<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.1</span><span class="text-xs text-neutral-500">~30 min · 6 tópicos</span></div>
-<h3 class="text-2xl font-bold mb-2">🐡 Como o Fugu funciona</h3>
-<p class="text-neutral-400 text-sm">Não é mais inteligente — é um gerente. Por dentro: conductor pequeno, pool secreto, decompor→delegar→fundir, preço e o que o time nunca viu.</p>
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.1</span><span class="text-xs text-neutral-500">~30 min · 6 temas</span></div>
+<h3 class="text-2xl font-bold mb-2">🐡 Cómo funciona Fugu</h3>
+<p class="text-neutral-400 text-sm">No es más inteligente: es un gerente. Por dentro: conductor pequeño, pool secreto, descomponer→delegar→fusionar, precio y lo que el equipo nunca vio.</p>
 </div>
 <div class="divide-y divide-dark-600">
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
 <span class="text-lg">👔</span>
-<div><span class="font-medium">Não é mais inteligente</span><span class="text-neutral-500 text-sm ml-2">- é um gerente</span></div>
+<div><span class="font-medium">No es más inteligente</span><span class="text-neutral-500 text-sm ml-2">- es un gerente</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">O Fugu não é um LLM novo com um cérebro melhor. É um <strong>orquestrador</strong> empacotado como um modelo: a "inteligência" dele está em coordenar outros, não em saber mais.</p></div>
-<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Desfaz a confusão central. Esperar "mais QI" do Fugu leva a frustração; esperar "melhor gestão" leva às perguntas certas — quanto custa o time e quando ele compensa.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Orquestrador-como-modelo · gerente vs gênio · coordenação ≠ conhecimento.</p></div>
+<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Fugu no es un LLM nuevo con un cerebro mejor. Es un <strong>orquestador</strong> empaquetado como un modelo: su «inteligencia» está en coordinar a otros, no en saber más.</p></div>
+<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Deshace la confusión central. Esperar «más CI» de Fugu lleva a la frustración; esperar «mejor gestión» lleva a las preguntas correctas: cuánto cuesta el equipo y cuándo compensa.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Orquestador como modelo · gerente vs. genio · coordinación ≠ conocimiento.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
 <span class="text-lg">🎚️</span>
-<div><span class="font-medium">O conductor pequeno</span><span class="text-neutral-500 text-sm ml-2">- resolve só ou chama o time</span></div>
+<div><span class="font-medium">El conductor pequeño</span><span class="text-neutral-500 text-sm ml-2">- resuelve solo o llama al equipo</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Um modelo "gerente" pequeno (o conductor) lê o pedido e decide: resolvo sozinho ou monto um time? Ele não é o especialista — é quem reparte.</p></div>
-<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É a primeira das duas perguntas (quem faz cada parte) virada peso de modelo. Entender o conductor explica por que o Fugu às vezes é rápido e às vezes demora minutos.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Conductor/roteador · alone vs team · decisão por tarefa.</p></div>
+<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Un modelo "gerente" pequeño (el conductor) lee la solicitud y decide: ¿la resuelvo solo o formo un equipo? No es el especialista: es quien reparte.</p></div>
+<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es la primera de las dos preguntas (quién hace cada parte) convertida en peso del modelo. Entender el conductor explica por qué Fugu a veces es rápido y otras tarda minutos.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Conductor/enrutador · solo vs. equipo · decisión por tarea.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
 <span class="text-lg">🐟</span>
-<div><span class="font-medium">O pool secreto</span><span class="text-neutral-500 text-sm ml-2">- modelos frontier escondidos</span></div>
+<div><span class="font-medium">El grupo secreto</span><span class="text-neutral-500 text-sm ml-2">- modelos frontier ocultos</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Atrás do endpoint existe um pool de modelos frontier (Opus 4.8, GPT-5.5, Gemini e possivelmente outros). A Sakana mantém esse roster proprietário; você não escolhe nem vê quem entrou.</p></div>
-<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É de onde vem o custo e a opacidade. "Opus está no pool" é inferência razoável, não fato publicado — saber distinguir os dois te protege de marketing.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Pool proprietário · roster fechado · cross-provider · time escondido.</p></div>
+<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Detrás del endpoint hay un pool de modelos frontier (Opus 4.8, GPT-5.5, Gemini y posiblemente otros). Sakana mantiene ese roster propietario; tú no eliges ni ves quién participa.</p></div>
+<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">De ahí vienen el costo y la opacidad. "Opus está en el pool" es una inferencia razonable, no un hecho publicado; saber distinguir ambas cosas te protege del marketing.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Pool propietario · roster cerrado · cross-provider · tiempo oculto.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
 <span class="text-lg">🔀</span>
-<div><span class="font-medium">Decompor → delegar → fundir</span><span class="text-neutral-500 text-sm ml-2">- atrás de 1 endpoint</span></div>
+<div><span class="font-medium">Descomponer → delegar → fusionar</span><span class="text-neutral-500 text-sm ml-2">- detrás de 1 endpoint</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">O ciclo do Fugu: <strong>decompõe</strong> a tarefa em partes, <strong>delega</strong> cada uma a um especialista do pool, e <strong>funde</strong> as respostas — tudo escondido atrás de uma única chamada de API.</p></div>
-<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É a anatomia maestro–especialistas–fusor da Trilha 1, agora concreta. Ver o ciclo explica por que "1 chamada" sua vira muitas chamadas internas pagas.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Decomposição · delegação · fusão · 1 endpoint, N chamadas internas.</p></div>
+<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">El ciclo de Fugu: <strong>descompone</strong> la tarea en partes, <strong>delega</strong> cada una a un especialista del pool, y <strong>fusiona</strong> las respuestas: todo oculto detrás de una única llamada a la API.</p></div>
+<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es la anatomía de maestro–especialistas–fusor de la Ruta 1, ahora concreta. Ver el ciclo explica por qué "1 llamada" tuya se convierte en muchas llamadas internas pagadas.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Descomposición · delegación · fusión · 1 endpoint, N llamadas internas.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
 <span class="text-lg">💲</span>
-<div><span class="font-medium">Fugu vs Fugu Ultra</span><span class="text-neutral-500 text-sm ml-2">- preço e lançamento</span></div>
+<div><span class="font-medium">Fugu vs Fugu Ultra</span><span class="text-neutral-500 text-sm ml-2">- precio y lanzamiento</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Existe o Fugu e o Fugu Ultra (o testado). Preço: <strong>US$ 5 in / US$ 30 out</strong> por 1M tokens — e os tokens de orquestração são billados. Lançado em <strong>22 jun 2026</strong>.</p></div>
-<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">O preço de saída (US$ 30) já avisa: o time custa. Comparado ao Opus 4.8 (US$ 5 in / US$ 25 out), o output é mais caro — e ainda multiplica por todo o time.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Fugu × Fugu Ultra · US$ 5 in / US$ 30 out · tokens de orquestração billados.</p></div>
+<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Existen Fugu y Fugu Ultra (el probado). Precio: <strong>US$ 5 in / US$ 30 out</strong> por 1M tokens — y los tokens de orquestación se facturan. Lanzado en <strong>22 jun 2026</strong>.</p></div>
+<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">El precio de salida (US$ 30) ya te da una pista: el equipo cuesta. Comparado con Opus 4.8 (US$ 5 in / US$ 25 out), la salida es más cara y, además, se multiplica por todo el equipo.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Fugu × Fugu Ultra · US$ 5 in / US$ 30 out · tokens de orquestación facturados.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
 <span class="text-lg">👻</span>
-<div><span class="font-medium">O que o time nunca viu</span><span class="text-neutral-500 text-sm ml-2">- sua resposta cara</span></div>
+<div><span class="font-medium">Lo que el equipo nunca vio</span><span class="text-neutral-500 text-sm ml-2">- tu respuesta costosa</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Um spoiler do veredito: nos 38 testes, o time escondido nunca achou uma resposta que um modelo forte sozinho não achasse. Nem uma vez. Você pagou o time por respostas que o solo já daria.</p></div>
-<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Fecha o módulo com a tensão certa: a mecânica é elegante, mas a pergunta "entregou algo a mais?" precisa de prova. A Trilha 2.2 traz a prova.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Ganho marginal zero · pagar pela orquestração · promessa × prova.</p></div>
+<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Un adelanto del veredicto: en las 38 pruebas, el equipo oculto nunca encontró una respuesta que un modelo potente por sí solo no pudiera encontrar. Ni una sola vez. Pagaste por el equipo para obtener respuestas que el modelo solo ya habría dado.</p></div>
+<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Cierra el módulo con la tensión adecuada: la mecánica es elegante, pero hay que demostrar si «entregó algo más». La Trilha 2.2 aporta la prueba.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Ganancia marginal cero · pagar por la orquestación · promesa × prueba.</p></div>
 </div></div>
 </div>
 </div>
 <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
-<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-2-1')">Ver em Modal</button>
-<a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors" href="modulo-2-1.html">Ver Completo</a>
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-2-1')">Ver en modal</button>
+<a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors" href="modulo-2-1.html">Ver completo</a>
 </div>
 </div>
 <!-- ===== MÓDULO 2.2 ===== -->
 <div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" data-inema-module="2-2" id="modulo-2-2">
 <div class="p-6 border-b border-dark-600">
-<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.2</span><span class="text-xs text-neutral-500">~30 min · 6 tópicos</span></div>
-<h3 class="text-2xl font-bold mb-2">📊 O veredito: 38 testes, e quando vale a pena</h3>
-<p class="text-neutral-400 text-sm">Field test graded por código: Fugu Ultra vs Opus 4.8. 36/38 empate, 4.5× mais lento, 5× mais caro — e o ladder para decidir quando o orquestrador ganha seu lugar.</p>
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.2</span><span class="text-xs text-neutral-500">~30 min · 6 temas</span></div>
+<h3 class="text-2xl font-bold mb-2">📊 El veredicto: 38 pruebas y cuándo vale la pena</h3>
+<p class="text-neutral-400 text-sm">Prueba de campo evaluada por código: Fugu Ultra vs Opus 4.8. Empate de 36/38, 4.5× más lento, 5× más caro; y el ladder para decidir cuándo el orquestador se gana su lugar.</p>
 </div>
 <div class="divide-y divide-dark-600">
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
 <span class="text-lg">🧪</span>
-<div><span class="font-medium">O exame</span><span class="text-neutral-500 text-sm ml-2">- 38 tarefas, 4 waves, graded por código</span></div>
+<div><span class="font-medium">El examen</span><span class="text-neutral-500 text-sm ml-2">- 38 tareas, 4 waves, evaluadas por código</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">38 tarefas em 4 waves de dificuldade crescente, 334 chamadas graded por código (testes ocultos), prompt idêntico dos dois lados, 3–7 runs cada, partial credit nas multi-regra.</p></div>
-<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">A metodologia é o que dá peso ao resultado. "Graded por código" remove o achismo: ou passou no teste, ou não.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">4 waves · graded por código · testes ocultos · partial credit · 3–7 runs.</p></div>
+<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">38 tareas en 4 waves de dificultad creciente, 334 llamadas evaluadas por código (pruebas ocultas), prompt idéntico en ambos lados, 3–7 runs cada uno, crédito parcial en las de varias reglas.</p></div>
+<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">La metodología es lo que le da peso al resultado. «Evaluado por código» elimina las conjeturas: o pasó la prueba o no.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">4 waves · evaluadas por código · pruebas ocultas · crédito parcial · 3–7 runs.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
 <span class="text-lg">🎯</span>
-<div><span class="font-medium">Quem foi mais correto</span><span class="text-neutral-500 text-sm ml-2">- 36 empates, 0 do time</span></div>
+<div><span class="font-medium">Quién fue más preciso</span><span class="text-neutral-500 text-sm ml-2">- 36 empates, 0 del equipo</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Placar: <strong>36 empates · 2 vitórias do Opus (soloist) · 0 do Fugu (time)</strong>. O time escondido nunca achou uma resposta que o solo não achasse.</p></div>
-<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É o resultado que derruba o hype: mais modelos não deram mais acerto. A orquestração não passou do teto do solo aqui.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">36/38 empate · 2 do soloist · 0 do team · ganho marginal zero.</p></div>
+<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Puntuación: <strong>36 empates · 2 victorias de Opus (soloist) · 0 de Fugu (equipo)</strong>. El equipo oculto nunca encontró una respuesta que el modelo solo no encontrara.</p></div>
+<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es el resultado que derriba el hype: más modelos no dieron más aciertos. Aquí la orquestación no superó el techo del modelo en solitario.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">36/38 empates · 2 del soloist · 0 del team · ganancia marginal nula.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
 <span class="text-lg">⏱️</span>
-<div><span class="font-medium">O relógio</span><span class="text-neutral-500 text-sm ml-2">- 4.5× mais lento</span></div>
+<div><span class="font-medium">El reloj</span><span class="text-neutral-500 text-sm ml-2">- 4.5× más lento</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Total: <strong>357 min (Fugu) vs 80 min (Opus)</strong> — 4.5× mais lento. Em código simples: Opus 3–6s, Fugu 2–7min para a mesma resposta.</p></div>
-<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Latência é o custo invisível do fan-out: você espera o time inteiro. Para trabalho interativo, minutos a mais por tarefa pesam.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">357 vs 80 min · 4.5× · latência somada · espera do time.</p></div>
+<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Total: <strong>357 min (Fugu) vs 80 min (Opus)</strong> — 4.5× más lento. En código simple: Opus 3–6s, Fugu 2–7min para la misma respuesta.</p></div>
+<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">La latencia es el costo invisible del fan-out: esperas a que termine todo el equipo. Para el trabajo interactivo, unos minutos más por tarea pesan.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">357 vs 80 min · 4.5× · latencia acumulada · espera del equipo.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
 <span class="text-lg">💸</span>
-<div><span class="font-medium">A conta</span><span class="text-neutral-500 text-sm ml-2">- 5× mais caro</span></div>
+<div><span class="font-medium">La cuenta</span><span class="text-neutral-500 text-sm ml-2">- 5× más caro</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Total: <strong>US$ 53,60 (Fugu) vs US$ 10,66 (Opus)</strong> — 5× mais caro. A maior parte do custo do Fugu são os tokens que o time privado lê e escreve (orchestration tokens).</p></div>
-<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Mostra onde o dinheiro vai: você paga o time inteiro, não só a resposta final. É o custo escondido da Trilha 1, agora com nota fiscal.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">US$ 53,60 vs US$ 10,66 · 5× · orchestration tokens billados.</p></div>
+<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Total: <strong>US$ 53,60 (Fugu) vs US$ 10,66 (Opus)</strong> — 5× más caro. La mayor parte del costo de Fugu son los tokens que el equipo privado lee y escribe (orchestration tokens).</p></div>
+<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Muestra adónde va el dinero: pagas por todo el equipo, no solo por la respuesta final. Es el costo oculto de la Ruta 1, ahora con factura.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">US$ 53,60 vs US$ 10,66 · 5× · tokens de orquestación facturados.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
 <span class="text-lg">🥈</span>
-<div><span class="font-medium">As 2 derrotas do time</span><span class="text-neutral-500 text-sm ml-2">- stats 80%, romano 4/5</span></div>
+<div><span class="font-medium">Las 2 derrotas del equipo</span><span class="text-neutral-500 text-sm ml-2">- stats 80%, romano 4/5</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Nas 2 tarefas que não empataram, foi o solo que ganhou: módulo de stats com 6 bugs (Fugu 80% / Opus 100%) e validação de romano estrito (Fugu 4/5 / Opus 5/5, aceitando "IIII" uma vez).</p></div>
-<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">O time não só não ganhou — onde houve diferença, perdeu. Coordenar não imuniza contra escorregões; às vezes adiciona pontos de falha.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Stats 6 bugs 80% vs 100% · romano 4/5 vs 5/5 · falha do time.</p></div>
+<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">En las 2 tareas en las que no hubo empate, ganó el modelo solo: módulo de stats con 6 bugs (Fugu 80% / Opus 100%) y validación de romano estricto (Fugu 4/5 / Opus 5/5, aceptando "IIII" una vez).</p></div>
+<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">El equipo no solo no ganó: cuando hubo diferencias, perdió. Coordinar no te inmuniza contra tropiezos; a veces añade puntos de falla.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Stats 6 bugs 80% vs 100% · romano 4/5 vs 5/5 · fallo del equipo.</p></div>
 </div></div>
 </div>
 <div class="topic-item">
 <button aria-expanded="false" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
 <span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
 <span class="text-lg">🪜</span>
-<div><span class="font-medium">O ladder de decisão</span><span class="text-neutral-500 text-sm ml-2">- quando o orquestrador ganha</span></div>
+<div><span class="font-medium">La escalera de decisión</span><span class="text-neutral-500 text-sm ml-2">- cuándo gana el orquestador</span></div>
 </button>
 <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
-<div><span class="text-blue-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Uma escada de 3 degraus: (1) um modelo forte já resolve? → use 1 modelo. (2) Não → quer 1 endpoint + hedge e custo/espera não importam? → não: 1 modelo ainda é melhor compra. (3) Sim → o orquestrador ganha seu lugar.</p></div>
-<div><span class="text-blue-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É o critério prático que você leva para casa. Neste exame, toda tarefa caiu pelo topo — mas o ladder serve para qualquer decisão futura, incluindo o setup no Claude Code.</p></div>
-<div><span class="text-blue-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Ladder de decisão · hedge de vendor · 1 endpoint · custo × espera × ganho.</p></div>
+<div><span class="text-blue-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Una escalera de 3 peldaños: (1) ¿un modelo potente ya lo resuelve? → usa 1 modelo. (2) No → ¿quieres 1 endpoint + hedge y no te importan el costo ni la espera? → no: 1 modelo sigue siendo la mejor compra. (3) Sí → el orquestador se gana su lugar.</p></div>
+<div><span class="text-blue-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es el criterio práctico que te llevas. En este examen, todas las tareas se resolvieron en la cima, pero el ladder sirve para cualquier decisión futura, incluida la configuración en Claude Code.</p></div>
+<div><span class="text-blue-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Ladder de decisión · protección frente al proveedor · 1 endpoint · costo × espera × beneficio.</p></div>
 </div></div>
 </div>
 </div>
 <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
-<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-2-2')">Ver em Modal</button>
-<a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors" href="modulo-2-2.html">Ver Completo</a>
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-2-2')">Ver en modal</button>
+<a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors" href="modulo-2-2.html">Ver completo</a>
 </div>
 </div>
 <!-- Navegação entre trilhas -->
 <div class="flex flex-col sm:flex-row gap-4 mt-10">
-<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="../../index.html">← Início</a>
-<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="../trilha3/index.html">Próxima trilha: OpenRouter Fusion →</a>
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="../../index.html">← Inicio</a>
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="../trilha3/index.html">Siguiente ruta: OpenRouter Fusion →</a>
 </div>
 </div>
 </main>
@@ -444,8 +444,8 @@
 <div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-1" onclick="if(event.target === this) closeModal()">
 <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
 <div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
-<div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.1</span><span class="font-semibold">Como o Fugu funciona</span></div>
-<button aria-label="Fechar" class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+<div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.1</span><span class="font-semibold">Cómo funciona Fugu</span></div>
+<button aria-label="Cerrar" class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
 </div>
 <iframe class="flex-1 w-full rounded-b-xl" src="modulo-2-1.html" title="Módulo 2.1"></iframe>
 </div>
@@ -453,15 +453,15 @@
 <div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-2" onclick="if(event.target === this) closeModal()">
 <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
 <div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0">
-<div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.2</span><span class="font-semibold">O veredito: 38 testes, e quando vale a pena</span></div>
-<button aria-label="Fechar" class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
+<div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.2</span><span class="font-semibold">El veredicto: 38 pruebas y cuándo vale la pena</span></div>
+<button aria-label="Cerrar" class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button>
 </div>
 <iframe class="flex-1 w-full rounded-b-xl" src="modulo-2-2.html" title="Módulo 2.2"></iframe>
 </div>
 </div>
 <footer class="border-t border-dark-600 py-8 mt-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p>LLMs Orquestradas — Trilha 2 · Fugu Ultra · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+<p>LLMs orquestados — Ruta 2 · Fugu Ultra · <a class="text-sky-400 hover:text-sky-300" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
 </div>
 </footer>
 <script>
@@ -491,7 +491,7 @@
     function closeModal() { document.querySelectorAll('.modal').forEach(m => m.classList.add('hidden')); document.body.style.overflow = 'auto'; }
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
   </script>
-<script src="../../assets/learn.js"></script>
+<script src="../../../assets/learn.js"></script>
 <script>
     if (window.INEMA && typeof window.INEMA.init === 'function') { window.INEMA.init(); }
   </script>
